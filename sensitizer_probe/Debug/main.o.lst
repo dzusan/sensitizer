@@ -1264,297 +1264,736 @@
    1:../main.c     **** #include "stm32f10x.h"
    2:../main.c     **** #include "stm32f10x_conf.h"
    3:../main.c     **** 
-   4:../main.c     **** 
-   5:../main.c     **** volatile BitAction TmpBitVal;
+   4:../main.c     **** /*Blink frequency*/
+   5:../main.c     **** #define RTC_PRESCALER 8000
    6:../main.c     **** 
-   7:../main.c     **** int main()
-   8:../main.c     **** {
-  57              		.loc 2 8 0
+   7:../main.c     **** void SetupLED(void);
+   8:../main.c     **** void SetupRTC(void);
+   9:../main.c     **** void Setup_RTC_NVIC(void);
+  10:../main.c     **** void SetupUSART(void);
+  11:../main.c     **** void Setup_USART_NVIC(void);
+  12:../main.c     **** 
+  13:../main.c     **** 
+  14:../main.c     **** volatile BitAction TmpBitVal;
+  15:../main.c     **** 
+  16:../main.c     **** int main()
+  17:../main.c     **** {
+  57              		.loc 2 17 0
   58              		.cfi_startproc
-  59              		@ args = 0, pretend = 0, frame = 8
+  59              		@ args = 0, pretend = 0, frame = 0
   60              		@ frame_needed = 1, uses_anonymous_args = 0
   61 000c 80B5     		push	{r7, lr}
   62              	.LCFI2:
   63              		.cfi_def_cfa_offset 8
   64              		.cfi_offset 7, -8
   65              		.cfi_offset 14, -4
-  66 000e 82B0     		sub	sp, sp, #8
+  66 000e 00AF     		add	r7, sp, #0
   67              	.LCFI3:
-  68              		.cfi_def_cfa_offset 16
-  69 0010 00AF     		add	r7, sp, #0
-  70              	.LCFI4:
-  71              		.cfi_def_cfa_register 7
-   9:../main.c     **** 
-  10:../main.c     **** 	TmpBitVal = Bit_RESET;
-  72              		.loc 2 10 0
-  73 0012 334B     		ldr	r3, .L5
-  74 0014 4FF00002 		mov	r2, #0
-  75 0018 1A70     		strb	r2, [r3, #0]
-  11:../main.c     **** 
-  12:../main.c     **** 	/* ==GPIO== */
-  13:../main.c     **** 
-  14:../main.c     **** 	//Clocking
-  15:../main.c     **** 
-  16:../main.c     **** 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
-  76              		.loc 2 16 0
-  77 001a 4FF01000 		mov	r0, #16
-  78 001e 4FF00101 		mov	r1, #1
-  79 0022 FFF7FEFF 		bl	RCC_APB2PeriphClockCmd
-  17:../main.c     **** 
-  18:../main.c     **** 	//Configure
-  19:../main.c     **** 
-  20:../main.c     **** 	GPIO_DeInit(GPIOC);
-  80              		.loc 2 20 0
-  81 0026 2F48     		ldr	r0, .L5+4
-  82 0028 FFF7FEFF 		bl	GPIO_DeInit
-  21:../main.c     **** 
-  22:../main.c     **** 	GPIO_InitTypeDef GPIO_InitStructure;
-  23:../main.c     **** 
-  24:../main.c     **** 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_All;
-  83              		.loc 2 24 0
-  84 002c 4FF6FF73 		movw	r3, #65535
-  85 0030 BB80     		strh	r3, [r7, #4]	@ movhi
-  25:../main.c     **** 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-  86              		.loc 2 25 0
-  87 0032 4FF01003 		mov	r3, #16
-  88 0036 FB71     		strb	r3, [r7, #7]
-  26:../main.c     **** 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  89              		.loc 2 26 0
-  90 0038 4FF00303 		mov	r3, #3
-  91 003c BB71     		strb	r3, [r7, #6]
-  27:../main.c     **** 
-  28:../main.c     **** 	//Init
+  68              		.cfi_def_cfa_register 7
+  18:../main.c     **** 
+  19:../main.c     **** 	TmpBitVal = Bit_RESET;
+  69              		.loc 2 19 0
+  70 0010 064B     		ldr	r3, .L4
+  71 0012 4FF00002 		mov	r2, #0
+  72 0016 1A70     		strb	r2, [r3, #0]
+  20:../main.c     **** 
+  21:../main.c     **** 	SetupLED();
+  73              		.loc 2 21 0
+  74 0018 FFF7FEFF 		bl	SetupLED
+  22:../main.c     **** 
+  23:../main.c     **** 	//Setup_RTC_NVIC();
+  24:../main.c     **** 
+  25:../main.c     **** 	//SetupRTC();
+  26:../main.c     **** 
+  27:../main.c     **** 	Setup_USART_NVIC();
+  75              		.loc 2 27 0
+  76 001c FFF7FEFF 		bl	Setup_USART_NVIC
+  28:../main.c     **** 	SetupUSART();
+  77              		.loc 2 28 0
+  78 0020 FFF7FEFF 		bl	SetupUSART
+  79              	.L3:
   29:../main.c     **** 
-  30:../main.c     **** 	GPIO_Init(GPIOC , &GPIO_InitStructure);
-  92              		.loc 2 30 0
-  93 003e 07F10403 		add	r3, r7, #4
-  94 0042 2848     		ldr	r0, .L5+4
-  95 0044 1946     		mov	r1, r3
-  96 0046 FFF7FEFF 		bl	GPIO_Init
+  30:../main.c     **** 	//Action
   31:../main.c     **** 
-  32:../main.c     **** 	/* =======*/
-  33:../main.c     **** 
-  34:../main.c     **** 	/* ==RTC== */
-  35:../main.c     **** 
-  36:../main.c     **** 	/* Interrupt structure */
-  37:../main.c     **** 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
-  97              		.loc 2 37 0
-  98 004a 4FF4E060 		mov	r0, #1792
-  99 004e FFF7FEFF 		bl	NVIC_PriorityGroupConfig
-  38:../main.c     **** 
-  39:../main.c     **** 	NVIC_InitTypeDef NVIC_InitStructure;
-  40:../main.c     **** 	NVIC_InitStructure.NVIC_IRQChannel = RTC_IRQn;
- 100              		.loc 2 40 0
- 101 0052 4FF00303 		mov	r3, #3
- 102 0056 3B70     		strb	r3, [r7, #0]
-  41:../main.c     **** 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
- 103              		.loc 2 41 0
- 104 0058 4FF00103 		mov	r3, #1
- 105 005c 7B70     		strb	r3, [r7, #1]
-  42:../main.c     **** 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;
- 106              		.loc 2 42 0
- 107 005e 4FF00303 		mov	r3, #3
- 108 0062 BB70     		strb	r3, [r7, #2]
-  43:../main.c     **** 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
- 109              		.loc 2 43 0
- 110 0064 4FF00103 		mov	r3, #1
- 111 0068 FB70     		strb	r3, [r7, #3]
-  44:../main.c     **** 
-  45:../main.c     **** 	NVIC_Init(&NVIC_InitStructure);
- 112              		.loc 2 45 0
- 113 006a 3B46     		mov	r3, r7
- 114 006c 1846     		mov	r0, r3
- 115 006e FFF7FEFF 		bl	NVIC_Init
-  46:../main.c     **** 
-  47:../main.c     **** 	/* CK_RTC clock selection */
-  48:../main.c     **** 	RCC_APB1PeriphClockCmd( RCC_APB1Periph_PWR | RCC_APB1Periph_BKP, ENABLE );
- 116              		.loc 2 48 0
- 117 0072 4FF0C050 		mov	r0, #402653184
- 118 0076 4FF00101 		mov	r1, #1
- 119 007a FFF7FEFF 		bl	RCC_APB1PeriphClockCmd
+  32:../main.c     **** 	/*uint16_t sym;
+  33:../main.c     **** 	int count;*/
+  34:../main.c     **** 
+  35:../main.c     **** 	while(1)
+  36:../main.c     **** 	{
+  37:../main.c     **** 		//USART_SendData(USART3,'E');
+  38:../main.c     **** 		__NOP();
+  80              		.loc 2 38 0 discriminator 1
+  81 0024 FFF7ECFF 		bl	__NOP
+  39:../main.c     **** 		/*sym = USART_ReceiveData(USART3);
+  40:../main.c     **** 		for(count = 0; count < 10000; count++) __NOP();
+  41:../main.c     **** 		if(sym)
+  42:../main.c     **** 		{
+  43:../main.c     **** 			USART_SendData(USART3, sym);
+  44:../main.c     **** 			sym = 0;
+  45:../main.c     **** 		}*/
+  46:../main.c     **** 	}
+  82              		.loc 2 46 0 discriminator 1
+  83 0028 FCE7     		b	.L3
+  84              	.L5:
+  85 002a 00BF     		.align	2
+  86              	.L4:
+  87 002c 00000000 		.word	TmpBitVal
+  88              		.cfi_endproc
+  89              	.LFE29:
+  91              		.align	2
+  92              		.global	RTC_IRQHandler
+  93              		.thumb
+  94              		.thumb_func
+  96              	RTC_IRQHandler:
+  97              	.LFB30:
+  47:../main.c     **** }
+  48:../main.c     **** 
   49:../main.c     **** 
-  50:../main.c     **** 	/* Allow access to BKP Domain */
-  51:../main.c     **** 	PWR_BackupAccessCmd( ENABLE );
- 120              		.loc 2 51 0
- 121 007e 4FF00100 		mov	r0, #1
- 122 0082 FFF7FEFF 		bl	PWR_BackupAccessCmd
-  52:../main.c     **** 
-  53:../main.c     **** 	/* Enable the LSE OSC */
-  54:../main.c     **** 	RCC_LSEConfig( RCC_LSE_ON );
- 123              		.loc 2 54 0
- 124 0086 4FF00100 		mov	r0, #1
- 125 008a FFF7FEFF 		bl	RCC_LSEConfig
-  55:../main.c     **** 
-  56:../main.c     **** 	/* Wait till LSE is ready */
-  57:../main.c     **** 	while ( RCC_GetFlagStatus( RCC_FLAG_LSERDY ) == RESET ){}
- 126              		.loc 2 57 0
- 127 008e 00BF     		nop
- 128              	.L3:
- 129              		.loc 2 57 0 is_stmt 0 discriminator 1
- 130 0090 4FF04100 		mov	r0, #65
- 131 0094 FFF7FEFF 		bl	RCC_GetFlagStatus
- 132 0098 0346     		mov	r3, r0
- 133 009a 002B     		cmp	r3, #0
- 134 009c F8D0     		beq	.L3
-  58:../main.c     **** 
-  59:../main.c     **** 	/* Select the RTC Clock Source */
-  60:../main.c     **** 	RCC_RTCCLKConfig( RCC_RTCCLKSource_LSE );
- 135              		.loc 2 60 0 is_stmt 1
- 136 009e 4FF48070 		mov	r0, #256
- 137 00a2 FFF7FEFF 		bl	RCC_RTCCLKConfig
+  50:../main.c     **** /**************** Interrupts *******************/
+  51:../main.c     **** void RTC_IRQHandler(void)
+  52:../main.c     **** {
+  98              		.loc 2 52 0
+  99              		.cfi_startproc
+ 100              		@ args = 0, pretend = 0, frame = 0
+ 101              		@ frame_needed = 1, uses_anonymous_args = 0
+ 102 0030 80B5     		push	{r7, lr}
+ 103              	.LCFI4:
+ 104              		.cfi_def_cfa_offset 8
+ 105              		.cfi_offset 7, -8
+ 106              		.cfi_offset 14, -4
+ 107 0032 00AF     		add	r7, sp, #0
+ 108              	.LCFI5:
+ 109              		.cfi_def_cfa_register 7
+  53:../main.c     **** 	if(RTC_GetITStatus(RTC_IT_SEC))
+ 110              		.loc 2 53 0
+ 111 0034 4FF00100 		mov	r0, #1
+ 112 0038 FFF7FEFF 		bl	RTC_GetITStatus
+ 113 003c 0346     		mov	r3, r0
+ 114 003e 002B     		cmp	r3, #0
+ 115 0040 11D0     		beq	.L7
+  54:../main.c     **** 	{
+  55:../main.c     **** 		RTC_ClearITPendingBit(RTC_IT_SEC);
+ 116              		.loc 2 55 0
+ 117 0042 4FF00100 		mov	r0, #1
+ 118 0046 FFF7FEFF 		bl	RTC_ClearITPendingBit
+  56:../main.c     **** 		if(TmpBitVal == Bit_RESET) TmpBitVal = Bit_SET;
+ 119              		.loc 2 56 0
+ 120 004a 0C4B     		ldr	r3, .L9
+ 121 004c 1B78     		ldrb	r3, [r3, #0]
+ 122 004e DBB2     		uxtb	r3, r3
+ 123 0050 002B     		cmp	r3, #0
+ 124 0052 04D1     		bne	.L8
+ 125              		.loc 2 56 0 is_stmt 0 discriminator 1
+ 126 0054 094B     		ldr	r3, .L9
+ 127 0056 4FF00102 		mov	r2, #1
+ 128 005a 1A70     		strb	r2, [r3, #0]
+ 129 005c 03E0     		b	.L7
+ 130              	.L8:
+  57:../main.c     **** 		else TmpBitVal = Bit_RESET;
+ 131              		.loc 2 57 0 is_stmt 1
+ 132 005e 074B     		ldr	r3, .L9
+ 133 0060 4FF00002 		mov	r2, #0
+ 134 0064 1A70     		strb	r2, [r3, #0]
+ 135              	.L7:
+  58:../main.c     **** 	}
+  59:../main.c     **** 
+  60:../main.c     **** 	GPIO_WriteBit(GPIOC, GPIO_Pin_12, TmpBitVal);
+ 136              		.loc 2 60 0
+ 137 0066 054B     		ldr	r3, .L9
+ 138 0068 1B78     		ldrb	r3, [r3, #0]
+ 139 006a DBB2     		uxtb	r3, r3
+ 140 006c 0448     		ldr	r0, .L9+4
+ 141 006e 4FF48051 		mov	r1, #4096
+ 142 0072 1A46     		mov	r2, r3
+ 143 0074 FFF7FEFF 		bl	GPIO_WriteBit
   61:../main.c     **** 
-  62:../main.c     **** 	/* Enable the RTC Clock */
-  63:../main.c     **** 	RCC_RTCCLKCmd( ENABLE );
- 138              		.loc 2 63 0
- 139 00a6 4FF00100 		mov	r0, #1
- 140 00aa FFF7FEFF 		bl	RCC_RTCCLKCmd
-  64:../main.c     **** 
-  65:../main.c     **** 	/* Wait for RTC registers synchronization */
-  66:../main.c     **** 	RTC_WaitForSynchro();
- 141              		.loc 2 66 0
- 142 00ae FFF7FEFF 		bl	RTC_WaitForSynchro
-  67:../main.c     **** 
-  68:../main.c     **** 	/* Wait until last write operation on RTC registers has finished */
-  69:../main.c     **** 	RTC_WaitForLastTask();
- 143              		.loc 2 69 0
- 144 00b2 FFF7FEFF 		bl	RTC_WaitForLastTask
-  70:../main.c     **** 
-  71:../main.c     **** 	/* Enable the RTC Second interrupt */
-  72:../main.c     **** 	RTC_ITConfig(RTC_IT_SEC, ENABLE);
- 145              		.loc 2 72 0
- 146 00b6 4FF00100 		mov	r0, #1
- 147 00ba 4FF00101 		mov	r1, #1
- 148 00be FFF7FEFF 		bl	RTC_ITConfig
-  73:../main.c     **** 
-  74:../main.c     **** 	/* Wait until last write operation on RTC registers has finished */
-  75:../main.c     **** 	RTC_WaitForLastTask();
- 149              		.loc 2 75 0
- 150 00c2 FFF7FEFF 		bl	RTC_WaitForLastTask
+  62:../main.c     **** }
+ 144              		.loc 2 62 0
+ 145 0078 80BD     		pop	{r7, pc}
+ 146              	.L10:
+ 147 007a 00BF     		.align	2
+ 148              	.L9:
+ 149 007c 00000000 		.word	TmpBitVal
+ 150 0080 00100140 		.word	1073811456
+ 151              		.cfi_endproc
+ 152              	.LFE30:
+ 154              		.align	2
+ 155              		.global	USART3_IRQHandler
+ 156              		.thumb
+ 157              		.thumb_func
+ 159              	USART3_IRQHandler:
+ 160              	.LFB31:
+  63:../main.c     **** 
+  64:../main.c     **** void USART3_IRQHandler(void)
+  65:../main.c     **** {
+ 161              		.loc 2 65 0
+ 162              		.cfi_startproc
+ 163              		@ args = 0, pretend = 0, frame = 8
+ 164              		@ frame_needed = 1, uses_anonymous_args = 0
+ 165 0084 80B5     		push	{r7, lr}
+ 166              	.LCFI6:
+ 167              		.cfi_def_cfa_offset 8
+ 168              		.cfi_offset 7, -8
+ 169              		.cfi_offset 14, -4
+ 170 0086 82B0     		sub	sp, sp, #8
+ 171              	.LCFI7:
+ 172              		.cfi_def_cfa_offset 16
+ 173 0088 00AF     		add	r7, sp, #0
+ 174              	.LCFI8:
+ 175              		.cfi_def_cfa_register 7
+  66:../main.c     **** 	if(USART_GetITStatus(USART3, USART_IT_RXNE))
+ 176              		.loc 2 66 0
+ 177 008a 1948     		ldr	r0, .L14
+ 178 008c 40F22551 		movw	r1, #1317
+ 179 0090 FFF7FEFF 		bl	USART_GetITStatus
+ 180 0094 0346     		mov	r3, r0
+ 181 0096 002B     		cmp	r3, #0
+ 182 0098 12D0     		beq	.L12
+  67:../main.c     **** 	{
+  68:../main.c     **** 		USART_ClearITPendingBit(USART3, USART_IT_RXNE);
+ 183              		.loc 2 68 0
+ 184 009a 1548     		ldr	r0, .L14
+ 185 009c 40F22551 		movw	r1, #1317
+ 186 00a0 FFF7FEFF 		bl	USART_ClearITPendingBit
+  69:../main.c     **** 		if(TmpBitVal == Bit_RESET) TmpBitVal = Bit_SET;
+ 187              		.loc 2 69 0
+ 188 00a4 134B     		ldr	r3, .L14+4
+ 189 00a6 1B78     		ldrb	r3, [r3, #0]
+ 190 00a8 DBB2     		uxtb	r3, r3
+ 191 00aa 002B     		cmp	r3, #0
+ 192 00ac 04D1     		bne	.L13
+ 193              		.loc 2 69 0 is_stmt 0 discriminator 1
+ 194 00ae 114B     		ldr	r3, .L14+4
+ 195 00b0 4FF00102 		mov	r2, #1
+ 196 00b4 1A70     		strb	r2, [r3, #0]
+ 197 00b6 03E0     		b	.L12
+ 198              	.L13:
+  70:../main.c     **** 		else TmpBitVal = Bit_RESET;
+ 199              		.loc 2 70 0 is_stmt 1
+ 200 00b8 0E4B     		ldr	r3, .L14+4
+ 201 00ba 4FF00002 		mov	r2, #0
+ 202 00be 1A70     		strb	r2, [r3, #0]
+ 203              	.L12:
+  71:../main.c     **** 	}
+  72:../main.c     **** 
+  73:../main.c     **** 	uint16_t sym;
+  74:../main.c     **** 	sym = USART_ReceiveData(USART3);
+ 204              		.loc 2 74 0
+ 205 00c0 0B48     		ldr	r0, .L14
+ 206 00c2 FFF7FEFF 		bl	USART_ReceiveData
+ 207 00c6 0346     		mov	r3, r0
+ 208 00c8 FB80     		strh	r3, [r7, #6]	@ movhi
+  75:../main.c     **** 	USART_SendData(USART3, sym);
+ 209              		.loc 2 75 0
+ 210 00ca FB88     		ldrh	r3, [r7, #6]
+ 211 00cc 0848     		ldr	r0, .L14
+ 212 00ce 1946     		mov	r1, r3
+ 213 00d0 FFF7FEFF 		bl	USART_SendData
   76:../main.c     **** 
-  77:../main.c     **** 	/* Set RTC prescaler: set RTC period to 1sec */
-  78:../main.c     **** 	/* RTC period = RTCCLK/RTC_PR = (32.768 KHz)/(32767+1) */
-  79:../main.c     **** 	RTC_SetPrescaler( 16000 );
- 151              		.loc 2 79 0
- 152 00c6 4FF47A50 		mov	r0, #16000
- 153 00ca FFF7FEFF 		bl	RTC_SetPrescaler
-  80:../main.c     **** 
-  81:../main.c     **** 	/* Wait until last write operation on RTC registers has finished */
-  82:../main.c     **** 	RTC_WaitForLastTask();
- 154              		.loc 2 82 0
- 155 00ce FFF7FEFF 		bl	RTC_WaitForLastTask
-  83:../main.c     **** 
-  84:../main.c     **** 	RTC_EnterConfigMode();
- 156              		.loc 2 84 0
- 157 00d2 FFF7FEFF 		bl	RTC_EnterConfigMode
-  85:../main.c     **** 
-  86:../main.c     **** 	RTC_ExitConfigMode();
- 158              		.loc 2 86 0
- 159 00d6 FFF7FEFF 		bl	RTC_ExitConfigMode
- 160              	.L4:
-  87:../main.c     **** 
-  88:../main.c     **** 	//Action
-  89:../main.c     **** 
-  90:../main.c     **** 	do __NOP(); while (1);
- 161              		.loc 2 90 0 discriminator 1
- 162 00da FFF791FF 		bl	__NOP
- 163 00de FCE7     		b	.L4
- 164              	.L6:
- 165              		.align	2
- 166              	.L5:
- 167 00e0 00000000 		.word	TmpBitVal
- 168 00e4 00100140 		.word	1073811456
- 169              		.cfi_endproc
- 170              	.LFE29:
- 172              		.align	2
- 173              		.global	RTC_IRQHandler
- 174              		.thumb
- 175              		.thumb_func
- 177              	RTC_IRQHandler:
- 178              	.LFB30:
-  91:../main.c     **** }
-  92:../main.c     **** 
-  93:../main.c     **** void RTC_IRQHandler(void)
-  94:../main.c     **** {
- 179              		.loc 2 94 0
- 180              		.cfi_startproc
- 181              		@ args = 0, pretend = 0, frame = 0
- 182              		@ frame_needed = 1, uses_anonymous_args = 0
- 183 00e8 80B5     		push	{r7, lr}
- 184              	.LCFI5:
- 185              		.cfi_def_cfa_offset 8
- 186              		.cfi_offset 7, -8
- 187              		.cfi_offset 14, -4
- 188 00ea 00AF     		add	r7, sp, #0
- 189              	.LCFI6:
- 190              		.cfi_def_cfa_register 7
-  95:../main.c     **** 	if(RTC_GetITStatus(RTC_IT_SEC))
- 191              		.loc 2 95 0
- 192 00ec 4FF00100 		mov	r0, #1
- 193 00f0 FFF7FEFF 		bl	RTC_GetITStatus
- 194 00f4 0346     		mov	r3, r0
- 195 00f6 002B     		cmp	r3, #0
- 196 00f8 11D0     		beq	.L8
-  96:../main.c     **** 	{
-  97:../main.c     **** 		RTC_ClearITPendingBit(RTC_IT_SEC);
- 197              		.loc 2 97 0
- 198 00fa 4FF00100 		mov	r0, #1
- 199 00fe FFF7FEFF 		bl	RTC_ClearITPendingBit
-  98:../main.c     **** 		if(TmpBitVal == Bit_RESET) TmpBitVal = Bit_SET;
- 200              		.loc 2 98 0
- 201 0102 0C4B     		ldr	r3, .L10
- 202 0104 1B78     		ldrb	r3, [r3, #0]
- 203 0106 DBB2     		uxtb	r3, r3
- 204 0108 002B     		cmp	r3, #0
- 205 010a 04D1     		bne	.L9
- 206              		.loc 2 98 0 is_stmt 0 discriminator 1
- 207 010c 094B     		ldr	r3, .L10
- 208 010e 4FF00102 		mov	r2, #1
- 209 0112 1A70     		strb	r2, [r3, #0]
- 210 0114 03E0     		b	.L8
- 211              	.L9:
-  99:../main.c     **** 		else TmpBitVal = Bit_RESET;
- 212              		.loc 2 99 0 is_stmt 1
- 213 0116 074B     		ldr	r3, .L10
- 214 0118 4FF00002 		mov	r2, #0
- 215 011c 1A70     		strb	r2, [r3, #0]
- 216              	.L8:
- 100:../main.c     **** 	}
- 101:../main.c     **** 
- 102:../main.c     **** 	GPIO_WriteBit(GPIOC, GPIO_Pin_12, TmpBitVal);
- 217              		.loc 2 102 0
- 218 011e 054B     		ldr	r3, .L10
- 219 0120 1B78     		ldrb	r3, [r3, #0]
- 220 0122 DBB2     		uxtb	r3, r3
- 221 0124 0448     		ldr	r0, .L10+4
- 222 0126 4FF48051 		mov	r1, #4096
- 223 012a 1A46     		mov	r2, r3
- 224 012c FFF7FEFF 		bl	GPIO_WriteBit
- 103:../main.c     **** 
- 104:../main.c     **** }
- 225              		.loc 2 104 0
- 226 0130 80BD     		pop	{r7, pc}
- 227              	.L11:
- 228 0132 00BF     		.align	2
- 229              	.L10:
- 230 0134 00000000 		.word	TmpBitVal
- 231 0138 00100140 		.word	1073811456
+  77:../main.c     **** 	GPIO_WriteBit(GPIOC, GPIO_Pin_12, TmpBitVal);
+ 214              		.loc 2 77 0
+ 215 00d4 074B     		ldr	r3, .L14+4
+ 216 00d6 1B78     		ldrb	r3, [r3, #0]
+ 217 00d8 DBB2     		uxtb	r3, r3
+ 218 00da 0748     		ldr	r0, .L14+8
+ 219 00dc 4FF48051 		mov	r1, #4096
+ 220 00e0 1A46     		mov	r2, r3
+ 221 00e2 FFF7FEFF 		bl	GPIO_WriteBit
+  78:../main.c     **** 
+  79:../main.c     **** }
+ 222              		.loc 2 79 0
+ 223 00e6 07F10807 		add	r7, r7, #8
+ 224 00ea BD46     		mov	sp, r7
+ 225 00ec 80BD     		pop	{r7, pc}
+ 226              	.L15:
+ 227 00ee 00BF     		.align	2
+ 228              	.L14:
+ 229 00f0 00480040 		.word	1073760256
+ 230 00f4 00000000 		.word	TmpBitVal
+ 231 00f8 00100140 		.word	1073811456
  232              		.cfi_endproc
- 233              	.LFE30:
- 235              	.Letext0:
- 236              		.file 3 "/opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/../../../../arm-none-eab
- 237              		.file 4 "/home/dzusan/workspace/sensitizer_probe/CMSIS/stm32f10x.h"
- 238              		.file 5 "/home/dzusan/workspace/sensitizer_probe/STM32F10x_StdPeriph_Driver/inc/stm32f10x_gpio.h"
- 239              		.file 6 "/home/dzusan/workspace/sensitizer_probe/STM32F10x_StdPeriph_Driver/inc/misc.h"
+ 233              	.LFE31:
+ 235              		.align	2
+ 236              		.global	SetupLED
+ 237              		.thumb
+ 238              		.thumb_func
+ 240              	SetupLED:
+ 241              	.LFB32:
+  80:../main.c     **** 
+  81:../main.c     **** /************ Peripherial functions **************/
+  82:../main.c     **** 
+  83:../main.c     **** void SetupLED(void)
+  84:../main.c     **** {
+ 242              		.loc 2 84 0
+ 243              		.cfi_startproc
+ 244              		@ args = 0, pretend = 0, frame = 8
+ 245              		@ frame_needed = 1, uses_anonymous_args = 0
+ 246 00fc 80B5     		push	{r7, lr}
+ 247              	.LCFI9:
+ 248              		.cfi_def_cfa_offset 8
+ 249              		.cfi_offset 7, -8
+ 250              		.cfi_offset 14, -4
+ 251 00fe 82B0     		sub	sp, sp, #8
+ 252              	.LCFI10:
+ 253              		.cfi_def_cfa_offset 16
+ 254 0100 00AF     		add	r7, sp, #0
+ 255              	.LCFI11:
+ 256              		.cfi_def_cfa_register 7
+  85:../main.c     **** 	/* ==GPIO== */
+  86:../main.c     **** 
+  87:../main.c     **** 	//Clocking
+  88:../main.c     **** 
+  89:../main.c     **** 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
+ 257              		.loc 2 89 0
+ 258 0102 4FF01000 		mov	r0, #16
+ 259 0106 4FF00101 		mov	r1, #1
+ 260 010a FFF7FEFF 		bl	RCC_APB2PeriphClockCmd
+  90:../main.c     **** 
+  91:../main.c     **** 	//Configure
+  92:../main.c     **** 
+  93:../main.c     **** 	GPIO_DeInit(GPIOC);
+ 261              		.loc 2 93 0
+ 262 010e 0B48     		ldr	r0, .L17
+ 263 0110 FFF7FEFF 		bl	GPIO_DeInit
+  94:../main.c     **** 
+  95:../main.c     **** 	GPIO_InitTypeDef GPIO_InitStructure;
+  96:../main.c     **** 
+  97:../main.c     **** 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_All;
+ 264              		.loc 2 97 0
+ 265 0114 4FF6FF73 		movw	r3, #65535
+ 266 0118 BB80     		strh	r3, [r7, #4]	@ movhi
+  98:../main.c     **** 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+ 267              		.loc 2 98 0
+ 268 011a 4FF01003 		mov	r3, #16
+ 269 011e FB71     		strb	r3, [r7, #7]
+  99:../main.c     **** 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+ 270              		.loc 2 99 0
+ 271 0120 4FF00303 		mov	r3, #3
+ 272 0124 BB71     		strb	r3, [r7, #6]
+ 100:../main.c     **** 
+ 101:../main.c     **** 	//Init
+ 102:../main.c     **** 
+ 103:../main.c     **** 	GPIO_Init(GPIOC , &GPIO_InitStructure);
+ 273              		.loc 2 103 0
+ 274 0126 07F10403 		add	r3, r7, #4
+ 275 012a 0448     		ldr	r0, .L17
+ 276 012c 1946     		mov	r1, r3
+ 277 012e FFF7FEFF 		bl	GPIO_Init
+ 104:../main.c     **** 
+ 105:../main.c     **** 	/* =======*/
+ 106:../main.c     **** }
+ 278              		.loc 2 106 0
+ 279 0132 07F10807 		add	r7, r7, #8
+ 280 0136 BD46     		mov	sp, r7
+ 281 0138 80BD     		pop	{r7, pc}
+ 282              	.L18:
+ 283 013a 00BF     		.align	2
+ 284              	.L17:
+ 285 013c 00100140 		.word	1073811456
+ 286              		.cfi_endproc
+ 287              	.LFE32:
+ 289              		.align	2
+ 290              		.global	SetupRTC
+ 291              		.thumb
+ 292              		.thumb_func
+ 294              	SetupRTC:
+ 295              	.LFB33:
+ 107:../main.c     **** 
+ 108:../main.c     **** void SetupRTC(void)
+ 109:../main.c     **** {
+ 296              		.loc 2 109 0
+ 297              		.cfi_startproc
+ 298              		@ args = 0, pretend = 0, frame = 0
+ 299              		@ frame_needed = 1, uses_anonymous_args = 0
+ 300 0140 80B5     		push	{r7, lr}
+ 301              	.LCFI12:
+ 302              		.cfi_def_cfa_offset 8
+ 303              		.cfi_offset 7, -8
+ 304              		.cfi_offset 14, -4
+ 305 0142 00AF     		add	r7, sp, #0
+ 306              	.LCFI13:
+ 307              		.cfi_def_cfa_register 7
+ 110:../main.c     **** 	/* CK_RTC clock selection */
+ 111:../main.c     **** 		RCC_APB1PeriphClockCmd( RCC_APB1Periph_PWR | RCC_APB1Periph_BKP, ENABLE );
+ 308              		.loc 2 111 0
+ 309 0144 4FF0C050 		mov	r0, #402653184
+ 310 0148 4FF00101 		mov	r1, #1
+ 311 014c FFF7FEFF 		bl	RCC_APB1PeriphClockCmd
+ 112:../main.c     **** 
+ 113:../main.c     **** 		/* Allow access to BKP Domain */
+ 114:../main.c     **** 		PWR_BackupAccessCmd( ENABLE );
+ 312              		.loc 2 114 0
+ 313 0150 4FF00100 		mov	r0, #1
+ 314 0154 FFF7FEFF 		bl	PWR_BackupAccessCmd
+ 115:../main.c     **** 
+ 116:../main.c     **** 		/* Enable the LSE OSC */
+ 117:../main.c     **** 		RCC_LSEConfig( RCC_LSE_ON );
+ 315              		.loc 2 117 0
+ 316 0158 4FF00100 		mov	r0, #1
+ 317 015c FFF7FEFF 		bl	RCC_LSEConfig
+ 118:../main.c     **** 
+ 119:../main.c     **** 		/* Wait till LSE is ready */
+ 120:../main.c     **** 		while ( RCC_GetFlagStatus( RCC_FLAG_LSERDY ) == RESET ){}
+ 318              		.loc 2 120 0
+ 319 0160 00BF     		nop
+ 320              	.L20:
+ 321              		.loc 2 120 0 is_stmt 0 discriminator 1
+ 322 0162 4FF04100 		mov	r0, #65
+ 323 0166 FFF7FEFF 		bl	RCC_GetFlagStatus
+ 324 016a 0346     		mov	r3, r0
+ 325 016c 002B     		cmp	r3, #0
+ 326 016e F8D0     		beq	.L20
+ 121:../main.c     **** 
+ 122:../main.c     **** 		/* Select the RTC Clock Source */
+ 123:../main.c     **** 		RCC_RTCCLKConfig( RCC_RTCCLKSource_LSE );
+ 327              		.loc 2 123 0 is_stmt 1
+ 328 0170 4FF48070 		mov	r0, #256
+ 329 0174 FFF7FEFF 		bl	RCC_RTCCLKConfig
+ 124:../main.c     **** 
+ 125:../main.c     **** 		/* Enable the RTC Clock */
+ 126:../main.c     **** 		RCC_RTCCLKCmd( ENABLE );
+ 330              		.loc 2 126 0
+ 331 0178 4FF00100 		mov	r0, #1
+ 332 017c FFF7FEFF 		bl	RCC_RTCCLKCmd
+ 127:../main.c     **** 
+ 128:../main.c     **** 		/* Wait for RTC registers synchronization */
+ 129:../main.c     **** 		RTC_WaitForSynchro();
+ 333              		.loc 2 129 0
+ 334 0180 FFF7FEFF 		bl	RTC_WaitForSynchro
+ 130:../main.c     **** 
+ 131:../main.c     **** 		/* Wait until last write operation on RTC registers has finished */
+ 132:../main.c     **** 		RTC_WaitForLastTask();
+ 335              		.loc 2 132 0
+ 336 0184 FFF7FEFF 		bl	RTC_WaitForLastTask
+ 133:../main.c     **** 
+ 134:../main.c     **** 		/* Enable the RTC Second interrupt */
+ 135:../main.c     **** 		RTC_ITConfig(RTC_IT_SEC, ENABLE);
+ 337              		.loc 2 135 0
+ 338 0188 4FF00100 		mov	r0, #1
+ 339 018c 4FF00101 		mov	r1, #1
+ 340 0190 FFF7FEFF 		bl	RTC_ITConfig
+ 136:../main.c     **** 
+ 137:../main.c     **** 		/* Wait until last write operation on RTC registers has finished */
+ 138:../main.c     **** 		RTC_WaitForLastTask();
+ 341              		.loc 2 138 0
+ 342 0194 FFF7FEFF 		bl	RTC_WaitForLastTask
+ 139:../main.c     **** 
+ 140:../main.c     **** 		/* Set RTC prescaler: set RTC period to 1sec */
+ 141:../main.c     **** 		/* RTC period = RTCCLK/RTC_PR = (32.768 KHz)/(32767+1) */
+ 142:../main.c     **** 		RTC_SetPrescaler( RTC_PRESCALER );
+ 343              		.loc 2 142 0
+ 344 0198 4FF4FA50 		mov	r0, #8000
+ 345 019c FFF7FEFF 		bl	RTC_SetPrescaler
+ 143:../main.c     **** 
+ 144:../main.c     **** 		/* Wait until last write operation on RTC registers has finished */
+ 145:../main.c     **** 		RTC_WaitForLastTask();
+ 346              		.loc 2 145 0
+ 347 01a0 FFF7FEFF 		bl	RTC_WaitForLastTask
+ 146:../main.c     **** 
+ 147:../main.c     **** 		RTC_EnterConfigMode();
+ 348              		.loc 2 147 0
+ 349 01a4 FFF7FEFF 		bl	RTC_EnterConfigMode
+ 148:../main.c     **** 
+ 149:../main.c     **** 		RTC_ExitConfigMode();
+ 350              		.loc 2 149 0
+ 351 01a8 FFF7FEFF 		bl	RTC_ExitConfigMode
+ 150:../main.c     **** }
+ 352              		.loc 2 150 0
+ 353 01ac 80BD     		pop	{r7, pc}
+ 354              		.cfi_endproc
+ 355              	.LFE33:
+ 357 01ae 00BF     		.align	2
+ 358              		.global	Setup_RTC_NVIC
+ 359              		.thumb
+ 360              		.thumb_func
+ 362              	Setup_RTC_NVIC:
+ 363              	.LFB34:
+ 151:../main.c     **** 
+ 152:../main.c     **** void Setup_RTC_NVIC(void)
+ 153:../main.c     **** {
+ 364              		.loc 2 153 0
+ 365              		.cfi_startproc
+ 366              		@ args = 0, pretend = 0, frame = 8
+ 367              		@ frame_needed = 1, uses_anonymous_args = 0
+ 368 01b0 80B5     		push	{r7, lr}
+ 369              	.LCFI14:
+ 370              		.cfi_def_cfa_offset 8
+ 371              		.cfi_offset 7, -8
+ 372              		.cfi_offset 14, -4
+ 373 01b2 82B0     		sub	sp, sp, #8
+ 374              	.LCFI15:
+ 375              		.cfi_def_cfa_offset 16
+ 376 01b4 00AF     		add	r7, sp, #0
+ 377              	.LCFI16:
+ 378              		.cfi_def_cfa_register 7
+ 154:../main.c     **** 	/* Interrupt structure */
+ 155:../main.c     **** 		NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+ 379              		.loc 2 155 0
+ 380 01b6 4FF4E060 		mov	r0, #1792
+ 381 01ba FFF7FEFF 		bl	NVIC_PriorityGroupConfig
+ 156:../main.c     **** 
+ 157:../main.c     **** 		NVIC_InitTypeDef NVIC_InitStructure;
+ 158:../main.c     **** 		NVIC_InitStructure.NVIC_IRQChannel = RTC_IRQn;
+ 382              		.loc 2 158 0
+ 383 01be 4FF00303 		mov	r3, #3
+ 384 01c2 3B71     		strb	r3, [r7, #4]
+ 159:../main.c     **** 		NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+ 385              		.loc 2 159 0
+ 386 01c4 4FF00103 		mov	r3, #1
+ 387 01c8 7B71     		strb	r3, [r7, #5]
+ 160:../main.c     **** 		NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;
+ 388              		.loc 2 160 0
+ 389 01ca 4FF00303 		mov	r3, #3
+ 390 01ce BB71     		strb	r3, [r7, #6]
+ 161:../main.c     **** 		NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+ 391              		.loc 2 161 0
+ 392 01d0 4FF00103 		mov	r3, #1
+ 393 01d4 FB71     		strb	r3, [r7, #7]
+ 162:../main.c     **** 
+ 163:../main.c     **** 		NVIC_Init(&NVIC_InitStructure);
+ 394              		.loc 2 163 0
+ 395 01d6 07F10403 		add	r3, r7, #4
+ 396 01da 1846     		mov	r0, r3
+ 397 01dc FFF7FEFF 		bl	NVIC_Init
+ 164:../main.c     **** }
+ 398              		.loc 2 164 0
+ 399 01e0 07F10807 		add	r7, r7, #8
+ 400 01e4 BD46     		mov	sp, r7
+ 401 01e6 80BD     		pop	{r7, pc}
+ 402              		.cfi_endproc
+ 403              	.LFE34:
+ 405              		.align	2
+ 406              		.global	SetupUSART
+ 407              		.thumb
+ 408              		.thumb_func
+ 410              	SetupUSART:
+ 411              	.LFB35:
+ 165:../main.c     **** 
+ 166:../main.c     **** void SetupUSART(void)
+ 167:../main.c     **** {
+ 412              		.loc 2 167 0
+ 413              		.cfi_startproc
+ 414              		@ args = 0, pretend = 0, frame = 24
+ 415              		@ frame_needed = 1, uses_anonymous_args = 0
+ 416 01e8 80B5     		push	{r7, lr}
+ 417              	.LCFI17:
+ 418              		.cfi_def_cfa_offset 8
+ 419              		.cfi_offset 7, -8
+ 420              		.cfi_offset 14, -4
+ 421 01ea 86B0     		sub	sp, sp, #24
+ 422              	.LCFI18:
+ 423              		.cfi_def_cfa_offset 32
+ 424 01ec 00AF     		add	r7, sp, #0
+ 425              	.LCFI19:
+ 426              		.cfi_def_cfa_register 7
+ 168:../main.c     **** 	/* Enable GPIOB clock                                                   */
+ 169:../main.c     **** 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+ 427              		.loc 2 169 0
+ 428 01ee 4FF00800 		mov	r0, #8
+ 429 01f2 4FF00101 		mov	r1, #1
+ 430 01f6 FFF7FEFF 		bl	RCC_APB2PeriphClockCmd
+ 170:../main.c     **** 
+ 171:../main.c     **** 	GPIO_DeInit(GPIOB);
+ 431              		.loc 2 171 0
+ 432 01fa 2748     		ldr	r0, .L23
+ 433 01fc FFF7FEFF 		bl	GPIO_DeInit
+ 172:../main.c     **** 
+ 173:../main.c     **** 	GPIO_InitTypeDef  GPIO_InitStructure;
+ 174:../main.c     **** 
+ 175:../main.c     **** 	/* Configure USART3 Rx (PB11) as input floating                         */
+ 176:../main.c     **** 	GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_11;
+ 434              		.loc 2 176 0
+ 435 0200 4FF40063 		mov	r3, #2048
+ 436 0204 BB82     		strh	r3, [r7, #20]	@ movhi
+ 177:../main.c     **** 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+ 437              		.loc 2 177 0
+ 438 0206 4FF00303 		mov	r3, #3
+ 439 020a BB75     		strb	r3, [r7, #22]
+ 178:../main.c     **** 	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_IN_FLOATING;
+ 440              		.loc 2 178 0
+ 441 020c 4FF00403 		mov	r3, #4
+ 442 0210 FB75     		strb	r3, [r7, #23]
+ 179:../main.c     **** 	GPIO_Init(GPIOB, &GPIO_InitStructure);
+ 443              		.loc 2 179 0
+ 444 0212 07F11403 		add	r3, r7, #20
+ 445 0216 2048     		ldr	r0, .L23
+ 446 0218 1946     		mov	r1, r3
+ 447 021a FFF7FEFF 		bl	GPIO_Init
+ 180:../main.c     **** 
+ 181:../main.c     **** 	/* Configure USART3 Tx (PB10) as alternate function push-pull            */
+ 182:../main.c     **** 	GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_10;
+ 448              		.loc 2 182 0
+ 449 021e 4FF48063 		mov	r3, #1024
+ 450 0222 BB82     		strh	r3, [r7, #20]	@ movhi
+ 183:../main.c     **** 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+ 451              		.loc 2 183 0
+ 452 0224 4FF00303 		mov	r3, #3
+ 453 0228 BB75     		strb	r3, [r7, #22]
+ 184:../main.c     **** 	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AF_PP;
+ 454              		.loc 2 184 0
+ 455 022a 4FF01803 		mov	r3, #24
+ 456 022e FB75     		strb	r3, [r7, #23]
+ 185:../main.c     **** 	GPIO_Init(GPIOB, &GPIO_InitStructure);
+ 457              		.loc 2 185 0
+ 458 0230 07F11403 		add	r3, r7, #20
+ 459 0234 1848     		ldr	r0, .L23
+ 460 0236 1946     		mov	r1, r3
+ 461 0238 FFF7FEFF 		bl	GPIO_Init
+ 186:../main.c     **** 
+ 187:../main.c     **** 	/* Enable USART3 clock                                                   */
+ 188:../main.c     **** 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3, ENABLE);
+ 462              		.loc 2 188 0
+ 463 023c 4FF48020 		mov	r0, #262144
+ 464 0240 4FF00101 		mov	r1, #1
+ 465 0244 FFF7FEFF 		bl	RCC_APB1PeriphClockCmd
+ 189:../main.c     **** 
+ 190:../main.c     **** 	USART_InitTypeDef USART_InitStructure;
+ 191:../main.c     **** 
+ 192:../main.c     **** 	USART_InitStructure.USART_BaudRate            = 9600;
+ 466              		.loc 2 192 0
+ 467 0248 4FF41653 		mov	r3, #9600
+ 468 024c 7B60     		str	r3, [r7, #4]
+ 193:../main.c     **** 	USART_InitStructure.USART_WordLength          = USART_WordLength_8b;
+ 469              		.loc 2 193 0
+ 470 024e 4FF00003 		mov	r3, #0
+ 471 0252 3B81     		strh	r3, [r7, #8]	@ movhi
+ 194:../main.c     **** 	USART_InitStructure.USART_StopBits            = USART_StopBits_1;
+ 472              		.loc 2 194 0
+ 473 0254 4FF00003 		mov	r3, #0
+ 474 0258 7B81     		strh	r3, [r7, #10]	@ movhi
+ 195:../main.c     **** 	USART_InitStructure.USART_Parity              = USART_Parity_No ;
+ 475              		.loc 2 195 0
+ 476 025a 4FF00003 		mov	r3, #0
+ 477 025e BB81     		strh	r3, [r7, #12]	@ movhi
+ 196:../main.c     **** 	USART_InitStructure.USART_Mode                = USART_Mode_Rx | USART_Mode_Tx;
+ 478              		.loc 2 196 0
+ 479 0260 4FF00C03 		mov	r3, #12
+ 480 0264 FB81     		strh	r3, [r7, #14]	@ movhi
+ 197:../main.c     **** 	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+ 481              		.loc 2 197 0
+ 482 0266 4FF00003 		mov	r3, #0
+ 483 026a 3B82     		strh	r3, [r7, #16]	@ movhi
+ 198:../main.c     **** 
+ 199:../main.c     **** 	USART_Init(USART3, &USART_InitStructure);
+ 484              		.loc 2 199 0
+ 485 026c 07F10403 		add	r3, r7, #4
+ 486 0270 0A48     		ldr	r0, .L23+4
+ 487 0272 1946     		mov	r1, r3
+ 488 0274 FFF7FEFF 		bl	USART_Init
+ 200:../main.c     **** 	USART_Cmd(USART3, ENABLE);
+ 489              		.loc 2 200 0
+ 490 0278 0848     		ldr	r0, .L23+4
+ 491 027a 4FF00101 		mov	r1, #1
+ 492 027e FFF7FEFF 		bl	USART_Cmd
+ 201:../main.c     **** 	/*Interrupt after receive*/
+ 202:../main.c     **** 	USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);
+ 493              		.loc 2 202 0
+ 494 0282 0648     		ldr	r0, .L23+4
+ 495 0284 40F22551 		movw	r1, #1317
+ 496 0288 4FF00102 		mov	r2, #1
+ 497 028c FFF7FEFF 		bl	USART_ITConfig
+ 203:../main.c     **** 
+ 204:../main.c     **** }
+ 498              		.loc 2 204 0
+ 499 0290 07F11807 		add	r7, r7, #24
+ 500 0294 BD46     		mov	sp, r7
+ 501 0296 80BD     		pop	{r7, pc}
+ 502              	.L24:
+ 503              		.align	2
+ 504              	.L23:
+ 505 0298 000C0140 		.word	1073810432
+ 506 029c 00480040 		.word	1073760256
+ 507              		.cfi_endproc
+ 508              	.LFE35:
+ 510              		.align	2
+ 511              		.global	Setup_USART_NVIC
+ 512              		.thumb
+ 513              		.thumb_func
+ 515              	Setup_USART_NVIC:
+ 516              	.LFB36:
+ 205:../main.c     **** 
+ 206:../main.c     **** void Setup_USART_NVIC(void)
+ 207:../main.c     **** {
+ 517              		.loc 2 207 0
+ 518              		.cfi_startproc
+ 519              		@ args = 0, pretend = 0, frame = 8
+ 520              		@ frame_needed = 1, uses_anonymous_args = 0
+ 521 02a0 80B5     		push	{r7, lr}
+ 522              	.LCFI20:
+ 523              		.cfi_def_cfa_offset 8
+ 524              		.cfi_offset 7, -8
+ 525              		.cfi_offset 14, -4
+ 526 02a2 82B0     		sub	sp, sp, #8
+ 527              	.LCFI21:
+ 528              		.cfi_def_cfa_offset 16
+ 529 02a4 00AF     		add	r7, sp, #0
+ 530              	.LCFI22:
+ 531              		.cfi_def_cfa_register 7
+ 208:../main.c     **** 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+ 532              		.loc 2 208 0
+ 533 02a6 4FF4E060 		mov	r0, #1792
+ 534 02aa FFF7FEFF 		bl	NVIC_PriorityGroupConfig
+ 209:../main.c     **** 
+ 210:../main.c     **** 	NVIC_InitTypeDef NVIC_InitStructure;
+ 211:../main.c     **** 
+ 212:../main.c     **** 	NVIC_InitStructure.NVIC_IRQChannel = USART3_IRQn;
+ 535              		.loc 2 212 0
+ 536 02ae 4FF02703 		mov	r3, #39
+ 537 02b2 3B71     		strb	r3, [r7, #4]
+ 213:../main.c     **** 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+ 538              		.loc 2 213 0
+ 539 02b4 4FF00103 		mov	r3, #1
+ 540 02b8 7B71     		strb	r3, [r7, #5]
+ 214:../main.c     **** 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;
+ 541              		.loc 2 214 0
+ 542 02ba 4FF00303 		mov	r3, #3
+ 543 02be BB71     		strb	r3, [r7, #6]
+ 215:../main.c     **** 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+ 544              		.loc 2 215 0
+ 545 02c0 4FF00103 		mov	r3, #1
+ 546 02c4 FB71     		strb	r3, [r7, #7]
+ 216:../main.c     **** 
+ 217:../main.c     **** 	NVIC_Init(&NVIC_InitStructure);
+ 547              		.loc 2 217 0
+ 548 02c6 07F10403 		add	r3, r7, #4
+ 549 02ca 1846     		mov	r0, r3
+ 550 02cc FFF7FEFF 		bl	NVIC_Init
+ 218:../main.c     **** }
+ 551              		.loc 2 218 0
+ 552 02d0 07F10807 		add	r7, r7, #8
+ 553 02d4 BD46     		mov	sp, r7
+ 554 02d6 80BD     		pop	{r7, pc}
+ 555              		.cfi_endproc
+ 556              	.LFE36:
+ 558              	.Letext0:
+ 559              		.file 3 "/opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/../../../../arm-none-eab
+ 560              		.file 4 "/home/dzusan/workspace/sensitizer_probe/CMSIS/stm32f10x.h"
+ 561              		.file 5 "/home/dzusan/workspace/sensitizer_probe/STM32F10x_StdPeriph_Driver/inc/stm32f10x_gpio.h"
+ 562              		.file 6 "/home/dzusan/workspace/sensitizer_probe/STM32F10x_StdPeriph_Driver/inc/stm32f10x_usart.h"
+ 563              		.file 7 "/home/dzusan/workspace/sensitizer_probe/STM32F10x_StdPeriph_Driver/inc/misc.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-     /tmp/cc5Zl1Ja.s:18     .text:00000000 $t
-     /tmp/cc5Zl1Ja.s:22     .text:00000000 __NOP
+     /tmp/ccQDg20j.s:18     .text:00000000 $t
+     /tmp/ccQDg20j.s:22     .text:00000000 __NOP
                             *COM*:00000001 TmpBitVal
-     /tmp/cc5Zl1Ja.s:54     .text:0000000c main
-     /tmp/cc5Zl1Ja.s:167    .text:000000e0 $d
-     /tmp/cc5Zl1Ja.s:172    .text:000000e8 $t
-     /tmp/cc5Zl1Ja.s:177    .text:000000e8 RTC_IRQHandler
-     /tmp/cc5Zl1Ja.s:230    .text:00000134 $d
+     /tmp/ccQDg20j.s:54     .text:0000000c main
+     /tmp/ccQDg20j.s:240    .text:000000fc SetupLED
+     /tmp/ccQDg20j.s:515    .text:000002a0 Setup_USART_NVIC
+     /tmp/ccQDg20j.s:410    .text:000001e8 SetupUSART
+     /tmp/ccQDg20j.s:87     .text:0000002c $d
+     /tmp/ccQDg20j.s:91     .text:00000030 $t
+     /tmp/ccQDg20j.s:96     .text:00000030 RTC_IRQHandler
+     /tmp/ccQDg20j.s:149    .text:0000007c $d
+     /tmp/ccQDg20j.s:154    .text:00000084 $t
+     /tmp/ccQDg20j.s:159    .text:00000084 USART3_IRQHandler
+     /tmp/ccQDg20j.s:229    .text:000000f0 $d
+     /tmp/ccQDg20j.s:235    .text:000000fc $t
+     /tmp/ccQDg20j.s:285    .text:0000013c $d
+     /tmp/ccQDg20j.s:289    .text:00000140 $t
+     /tmp/ccQDg20j.s:294    .text:00000140 SetupRTC
+     /tmp/ccQDg20j.s:362    .text:000001b0 Setup_RTC_NVIC
+     /tmp/ccQDg20j.s:505    .text:00000298 $d
+     /tmp/ccQDg20j.s:510    .text:000002a0 $t
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.1.f2b32ee49e703f71d2941adfc5f04874
                            .group:00000000 wm4.stm32f10x.h.51.b859cb68ed44ee02c916b41cb8c68f1c
@@ -1587,11 +2026,16 @@ DEFINED SYMBOLS
                            .group:00000000 wm4.stm32f10x.h.8304.f7d8ad90959e99679b3257267c3aadfe
 
 UNDEFINED SYMBOLS
+RTC_GetITStatus
+RTC_ClearITPendingBit
+GPIO_WriteBit
+USART_GetITStatus
+USART_ClearITPendingBit
+USART_ReceiveData
+USART_SendData
 RCC_APB2PeriphClockCmd
 GPIO_DeInit
 GPIO_Init
-NVIC_PriorityGroupConfig
-NVIC_Init
 RCC_APB1PeriphClockCmd
 PWR_BackupAccessCmd
 RCC_LSEConfig
@@ -1604,6 +2048,8 @@ RTC_ITConfig
 RTC_SetPrescaler
 RTC_EnterConfigMode
 RTC_ExitConfigMode
-RTC_GetITStatus
-RTC_ClearITPendingBit
-GPIO_WriteBit
+NVIC_PriorityGroupConfig
+NVIC_Init
+USART_Init
+USART_Cmd
+USART_ITConfig
