@@ -15,1985 +15,437 @@
   15              		.text
   16              	.Ltext0:
   17              		.cfi_sections	.debug_frame
-  18              		.align	2
-  19              		.thumb
-  20              		.thumb_func
-  22              	__NOP:
-  23              	.LFB4:
-  24              		.file 1 "/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h"
-   1:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**************************************************************************//**
-   2:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @file     core_cm3.h
-   3:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief    CMSIS Cortex-M3 Core Peripheral Access Layer Header File
-   4:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @version  V1.30
-   5:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @date     30. October 2009
-   6:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-   7:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @note
-   8:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Copyright (C) 2009 ARM Limited. All rights reserved.
-   9:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-  10:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @par
-  11:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * ARM Limited (ARM) is supplying this software for use with Cortex-M 
-  12:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * processor based microcontrollers.  This file can be freely distributed 
-  13:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * within development tools that are supporting such ARM based processors. 
-  14:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-  15:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @par
-  16:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * THIS SOFTWARE IS PROVIDED "AS IS".  NO WARRANTIES, WHETHER EXPRESS, IMPLIED
-  17:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
-  18:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE.
-  19:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * ARM SHALL NOT, IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL, OR
-  20:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
-  21:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-  22:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  ******************************************************************************/
-  23:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-  24:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #ifndef __CM3_CORE_H__
-  25:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __CM3_CORE_H__
-  26:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-  27:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /** @addtogroup CMSIS_CM3_core_LintCinfiguration CMSIS CM3 Core Lint Configuration
-  28:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-  29:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * List of Lint messages which will be suppressed and not shown:
-  30:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *   - Error 10: \n
-  31:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *     register uint32_t __regBasePri         __asm("basepri"); \n
-  32:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *     Error 10: Expecting ';'
-  33:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * .
-  34:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *   - Error 530: \n
-  35:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *     return(__regBasePri); \n
-  36:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *     Warning 530: Symbol '__regBasePri' (line 264) not initialized
-  37:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * . 
-  38:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *   - Error 550: \n
-  39:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *     __regBasePri = (basePri & 0x1ff); \n
-  40:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *     Warning 550: Symbol '__regBasePri' (line 271) not accessed
-  41:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * .
-  42:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *   - Error 754: \n
-  43:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *     uint32_t RESERVED0[24]; \n
-  44:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *     Info 754: local structure member '<some, not used in the HAL>' (line 109, file ./cm3_core.h)
-  45:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * .
-  46:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *   - Error 750: \n
-  47:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *     #define __CM3_CORE_H__ \n
-  48:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *     Info 750: local macro '__CM3_CORE_H__' (line 43, file./cm3_core.h) not referenced
-  49:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * .
-  50:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *   - Error 528: \n
-  51:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *     static __INLINE void NVIC_DisableIRQ(uint32_t IRQn) \n
-  52:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *     Warning 528: Symbol 'NVIC_DisableIRQ(unsigned int)' (line 419, file ./cm3_core.h) not refere
-  53:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * .
-  54:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *   - Error 751: \n
-  55:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *     } InterruptType_Type; \n
-  56:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *     Info 751: local typedef 'InterruptType_Type' (line 170, file ./cm3_core.h) not referenced
-  57:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * .
-  58:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Note:  To re-enable a Message, insert a space before 'lint' *
-  59:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-  60:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-  61:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-  62:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*lint -save */
-  63:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*lint -e10  */
-  64:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*lint -e530 */
-  65:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*lint -e550 */
-  66:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*lint -e754 */
-  67:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*lint -e750 */
-  68:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*lint -e528 */
-  69:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*lint -e751 */
-  70:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-  71:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-  72:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /** @addtogroup CMSIS_CM3_core_definitions CM3 Core Definitions
-  73:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   This file defines all structures and symbols for CMSIS core:
-  74:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****     - CMSIS version number
-  75:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****     - Cortex-M core registers and bitfields
-  76:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****     - Cortex-M core peripheral base address
-  77:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   @{
-  78:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-  79:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-  80:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #ifdef __cplusplus
-  81:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  extern "C" {
-  82:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #endif 
-  83:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-  84:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __CM3_CMSIS_VERSION_MAIN  (0x01)                                                       /*!<
-  85:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __CM3_CMSIS_VERSION_SUB   (0x30)                                                       /*!<
-  86:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __CM3_CMSIS_VERSION       ((__CM3_CMSIS_VERSION_MAIN << 16) | __CM3_CMSIS_VERSION_SUB) /*!<
-  87:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-  88:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __CORTEX_M                (0x03)                                                       /*!<
-  89:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-  90:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #include <stdint.h>                           /* Include standard types */
-  91:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-  92:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #if defined (__ICCARM__)
-  93:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   #include <intrinsics.h>                     /* IAR Intrinsics   */
-  94:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #endif
-  95:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-  96:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-  97:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #ifndef __NVIC_PRIO_BITS
-  98:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   #define __NVIC_PRIO_BITS    4               /*!< standard definition for NVIC Priority Bits */
-  99:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #endif
- 100:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 101:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 102:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 103:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 104:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 105:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * IO definitions
- 106:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 107:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * define access restrictions to peripheral registers
- 108:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 109:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 110:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #ifdef __cplusplus
- 111:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   #define     __I     volatile                /*!< defines 'read only' permissions      */
- 112:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #else
- 113:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   #define     __I     volatile const          /*!< defines 'read only' permissions      */
- 114:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #endif
- 115:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define     __O     volatile                  /*!< defines 'write only' permissions     */
- 116:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define     __IO    volatile                  /*!< defines 'read / write' permissions   */
- 117:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 118:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 119:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 120:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*******************************************************************************
- 121:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *                 Register Abstraction
- 122:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  ******************************************************************************/
- 123:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /** @addtogroup CMSIS_CM3_core_register CMSIS CM3 Core Register
- 124:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  @{
- 125:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** */
- 126:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 127:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 128:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /** @addtogroup CMSIS_CM3_NVIC CMSIS CM3 NVIC
- 129:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   memory mapped structure for Nested Vectored Interrupt Controller (NVIC)
- 130:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   @{
- 131:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 132:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** typedef struct
- 133:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** {
- 134:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t ISER[8];                      /*!< Offset: 0x000  Interrupt Set Enable Register    
- 135:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****        uint32_t RESERVED0[24];                                   
- 136:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t ICER[8];                      /*!< Offset: 0x080  Interrupt Clear Enable Register  
- 137:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****        uint32_t RSERVED1[24];                                    
- 138:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t ISPR[8];                      /*!< Offset: 0x100  Interrupt Set Pending Register   
- 139:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****        uint32_t RESERVED2[24];                                   
- 140:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t ICPR[8];                      /*!< Offset: 0x180  Interrupt Clear Pending Register 
- 141:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****        uint32_t RESERVED3[24];                                   
- 142:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t IABR[8];                      /*!< Offset: 0x200  Interrupt Active bit Register    
- 143:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****        uint32_t RESERVED4[56];                                   
- 144:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint8_t  IP[240];                      /*!< Offset: 0x300  Interrupt Priority Register (8Bit
- 145:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****        uint32_t RESERVED5[644];                                  
- 146:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __O  uint32_t STIR;                         /*!< Offset: 0xE00  Software Trigger Interrupt Regist
- 147:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** }  NVIC_Type;                                               
- 148:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*@}*/ /* end of group CMSIS_CM3_NVIC */
- 149:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 150:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 151:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /** @addtogroup CMSIS_CM3_SCB CMSIS CM3 SCB
- 152:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   memory mapped structure for System Control Block (SCB)
- 153:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   @{
- 154:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 155:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** typedef struct
- 156:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** {
- 157:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t CPUID;                        /*!< Offset: 0x00  CPU ID Base Register              
- 158:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t ICSR;                         /*!< Offset: 0x04  Interrupt Control State Register  
- 159:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t VTOR;                         /*!< Offset: 0x08  Vector Table Offset Register      
- 160:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t AIRCR;                        /*!< Offset: 0x0C  Application Interrupt / Reset Cont
- 161:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t SCR;                          /*!< Offset: 0x10  System Control Register           
- 162:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t CCR;                          /*!< Offset: 0x14  Configuration Control Register    
- 163:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint8_t  SHP[12];                      /*!< Offset: 0x18  System Handlers Priority Registers
- 164:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t SHCSR;                        /*!< Offset: 0x24  System Handler Control and State R
- 165:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t CFSR;                         /*!< Offset: 0x28  Configurable Fault Status Register
- 166:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t HFSR;                         /*!< Offset: 0x2C  Hard Fault Status Register        
- 167:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t DFSR;                         /*!< Offset: 0x30  Debug Fault Status Register       
- 168:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t MMFAR;                        /*!< Offset: 0x34  Mem Manage Address Register       
- 169:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t BFAR;                         /*!< Offset: 0x38  Bus Fault Address Register        
- 170:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t AFSR;                         /*!< Offset: 0x3C  Auxiliary Fault Status Register   
- 171:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t PFR[2];                       /*!< Offset: 0x40  Processor Feature Register        
- 172:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t DFR;                          /*!< Offset: 0x48  Debug Feature Register            
- 173:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t ADR;                          /*!< Offset: 0x4C  Auxiliary Feature Register        
- 174:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t MMFR[4];                      /*!< Offset: 0x50  Memory Model Feature Register     
- 175:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t ISAR[5];                      /*!< Offset: 0x60  ISA Feature Register              
- 176:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** } SCB_Type;                                                
- 177:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 178:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* SCB CPUID Register Definitions */
- 179:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CPUID_IMPLEMENTER_Pos          24                                             /*!< SCB 
- 180:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CPUID_IMPLEMENTER_Msk          (0xFFul << SCB_CPUID_IMPLEMENTER_Pos)          /*!< SCB 
- 181:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 182:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CPUID_VARIANT_Pos              20                                             /*!< SCB 
- 183:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CPUID_VARIANT_Msk              (0xFul << SCB_CPUID_VARIANT_Pos)               /*!< SCB 
- 184:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 185:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CPUID_PARTNO_Pos                4                                             /*!< SCB 
- 186:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CPUID_PARTNO_Msk               (0xFFFul << SCB_CPUID_PARTNO_Pos)              /*!< SCB 
- 187:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 188:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CPUID_REVISION_Pos              0                                             /*!< SCB 
- 189:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CPUID_REVISION_Msk             (0xFul << SCB_CPUID_REVISION_Pos)              /*!< SCB 
- 190:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 191:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* SCB Interrupt Control State Register Definitions */
- 192:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_NMIPENDSET_Pos            31                                             /*!< SCB 
- 193:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_NMIPENDSET_Msk            (1ul << SCB_ICSR_NMIPENDSET_Pos)               /*!< SCB 
- 194:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 195:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_PENDSVSET_Pos             28                                             /*!< SCB 
- 196:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_PENDSVSET_Msk             (1ul << SCB_ICSR_PENDSVSET_Pos)                /*!< SCB 
- 197:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 198:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_PENDSVCLR_Pos             27                                             /*!< SCB 
- 199:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_PENDSVCLR_Msk             (1ul << SCB_ICSR_PENDSVCLR_Pos)                /*!< SCB 
- 200:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 201:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_PENDSTSET_Pos             26                                             /*!< SCB 
- 202:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_PENDSTSET_Msk             (1ul << SCB_ICSR_PENDSTSET_Pos)                /*!< SCB 
- 203:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 204:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_PENDSTCLR_Pos             25                                             /*!< SCB 
- 205:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_PENDSTCLR_Msk             (1ul << SCB_ICSR_PENDSTCLR_Pos)                /*!< SCB 
- 206:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 207:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_ISRPREEMPT_Pos            23                                             /*!< SCB 
- 208:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_ISRPREEMPT_Msk            (1ul << SCB_ICSR_ISRPREEMPT_Pos)               /*!< SCB 
- 209:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 210:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_ISRPENDING_Pos            22                                             /*!< SCB 
- 211:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_ISRPENDING_Msk            (1ul << SCB_ICSR_ISRPENDING_Pos)               /*!< SCB 
- 212:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 213:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_VECTPENDING_Pos           12                                             /*!< SCB 
- 214:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_VECTPENDING_Msk           (0x1FFul << SCB_ICSR_VECTPENDING_Pos)          /*!< SCB 
- 215:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 216:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_RETTOBASE_Pos             11                                             /*!< SCB 
- 217:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_RETTOBASE_Msk             (1ul << SCB_ICSR_RETTOBASE_Pos)                /*!< SCB 
- 218:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 219:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_VECTACTIVE_Pos             0                                             /*!< SCB 
- 220:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_ICSR_VECTACTIVE_Msk            (0x1FFul << SCB_ICSR_VECTACTIVE_Pos)           /*!< SCB 
- 221:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 222:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* SCB Interrupt Control State Register Definitions */
- 223:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_VTOR_TBLBASE_Pos               29                                             /*!< SCB 
- 224:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_VTOR_TBLBASE_Msk               (0x1FFul << SCB_VTOR_TBLBASE_Pos)              /*!< SCB 
- 225:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 226:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_VTOR_TBLOFF_Pos                 7                                             /*!< SCB 
- 227:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_VTOR_TBLOFF_Msk                (0x3FFFFFul << SCB_VTOR_TBLOFF_Pos)            /*!< SCB 
- 228:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 229:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* SCB Application Interrupt and Reset Control Register Definitions */
- 230:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_AIRCR_VECTKEY_Pos              16                                             /*!< SCB 
- 231:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_AIRCR_VECTKEY_Msk              (0xFFFFul << SCB_AIRCR_VECTKEY_Pos)            /*!< SCB 
- 232:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 233:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_AIRCR_VECTKEYSTAT_Pos          16                                             /*!< SCB 
- 234:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_AIRCR_VECTKEYSTAT_Msk          (0xFFFFul << SCB_AIRCR_VECTKEYSTAT_Pos)        /*!< SCB 
- 235:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 236:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_AIRCR_ENDIANESS_Pos            15                                             /*!< SCB 
- 237:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_AIRCR_ENDIANESS_Msk            (1ul << SCB_AIRCR_ENDIANESS_Pos)               /*!< SCB 
- 238:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 239:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_AIRCR_PRIGROUP_Pos              8                                             /*!< SCB 
- 240:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_AIRCR_PRIGROUP_Msk             (7ul << SCB_AIRCR_PRIGROUP_Pos)                /*!< SCB 
- 241:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 242:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_AIRCR_SYSRESETREQ_Pos           2                                             /*!< SCB 
- 243:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_AIRCR_SYSRESETREQ_Msk          (1ul << SCB_AIRCR_SYSRESETREQ_Pos)             /*!< SCB 
- 244:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 245:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_AIRCR_VECTCLRACTIVE_Pos         1                                             /*!< SCB 
- 246:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_AIRCR_VECTCLRACTIVE_Msk        (1ul << SCB_AIRCR_VECTCLRACTIVE_Pos)           /*!< SCB 
- 247:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 248:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_AIRCR_VECTRESET_Pos             0                                             /*!< SCB 
- 249:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_AIRCR_VECTRESET_Msk            (1ul << SCB_AIRCR_VECTRESET_Pos)               /*!< SCB 
- 250:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 251:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* SCB System Control Register Definitions */
- 252:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SCR_SEVONPEND_Pos               4                                             /*!< SCB 
- 253:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SCR_SEVONPEND_Msk              (1ul << SCB_SCR_SEVONPEND_Pos)                 /*!< SCB 
- 254:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 255:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SCR_SLEEPDEEP_Pos               2                                             /*!< SCB 
- 256:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SCR_SLEEPDEEP_Msk              (1ul << SCB_SCR_SLEEPDEEP_Pos)                 /*!< SCB 
- 257:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 258:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SCR_SLEEPONEXIT_Pos             1                                             /*!< SCB 
- 259:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SCR_SLEEPONEXIT_Msk            (1ul << SCB_SCR_SLEEPONEXIT_Pos)               /*!< SCB 
- 260:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 261:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* SCB Configuration Control Register Definitions */
- 262:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CCR_STKALIGN_Pos                9                                             /*!< SCB 
- 263:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CCR_STKALIGN_Msk               (1ul << SCB_CCR_STKALIGN_Pos)                  /*!< SCB 
- 264:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 265:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CCR_BFHFNMIGN_Pos               8                                             /*!< SCB 
- 266:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CCR_BFHFNMIGN_Msk              (1ul << SCB_CCR_BFHFNMIGN_Pos)                 /*!< SCB 
- 267:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 268:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CCR_DIV_0_TRP_Pos               4                                             /*!< SCB 
- 269:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CCR_DIV_0_TRP_Msk              (1ul << SCB_CCR_DIV_0_TRP_Pos)                 /*!< SCB 
- 270:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 271:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CCR_UNALIGN_TRP_Pos             3                                             /*!< SCB 
- 272:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CCR_UNALIGN_TRP_Msk            (1ul << SCB_CCR_UNALIGN_TRP_Pos)               /*!< SCB 
- 273:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 274:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CCR_USERSETMPEND_Pos            1                                             /*!< SCB 
- 275:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CCR_USERSETMPEND_Msk           (1ul << SCB_CCR_USERSETMPEND_Pos)              /*!< SCB 
- 276:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 277:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CCR_NONBASETHRDENA_Pos          0                                             /*!< SCB 
- 278:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CCR_NONBASETHRDENA_Msk         (1ul << SCB_CCR_NONBASETHRDENA_Pos)            /*!< SCB 
- 279:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 280:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* SCB System Handler Control and State Register Definitions */
- 281:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_USGFAULTENA_Pos          18                                             /*!< SCB 
- 282:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_USGFAULTENA_Msk          (1ul << SCB_SHCSR_USGFAULTENA_Pos)             /*!< SCB 
- 283:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 284:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_BUSFAULTENA_Pos          17                                             /*!< SCB 
- 285:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_BUSFAULTENA_Msk          (1ul << SCB_SHCSR_BUSFAULTENA_Pos)             /*!< SCB 
- 286:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 287:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_MEMFAULTENA_Pos          16                                             /*!< SCB 
- 288:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_MEMFAULTENA_Msk          (1ul << SCB_SHCSR_MEMFAULTENA_Pos)             /*!< SCB 
- 289:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 290:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_SVCALLPENDED_Pos         15                                             /*!< SCB 
- 291:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_SVCALLPENDED_Msk         (1ul << SCB_SHCSR_SVCALLPENDED_Pos)            /*!< SCB 
- 292:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 293:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_BUSFAULTPENDED_Pos       14                                             /*!< SCB 
- 294:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_BUSFAULTPENDED_Msk       (1ul << SCB_SHCSR_BUSFAULTPENDED_Pos)          /*!< SCB 
- 295:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 296:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_MEMFAULTPENDED_Pos       13                                             /*!< SCB 
- 297:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_MEMFAULTPENDED_Msk       (1ul << SCB_SHCSR_MEMFAULTPENDED_Pos)          /*!< SCB 
- 298:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 299:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_USGFAULTPENDED_Pos       12                                             /*!< SCB 
- 300:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_USGFAULTPENDED_Msk       (1ul << SCB_SHCSR_USGFAULTPENDED_Pos)          /*!< SCB 
- 301:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 302:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_SYSTICKACT_Pos           11                                             /*!< SCB 
- 303:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_SYSTICKACT_Msk           (1ul << SCB_SHCSR_SYSTICKACT_Pos)              /*!< SCB 
- 304:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 305:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_PENDSVACT_Pos            10                                             /*!< SCB 
- 306:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_PENDSVACT_Msk            (1ul << SCB_SHCSR_PENDSVACT_Pos)               /*!< SCB 
- 307:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 308:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_MONITORACT_Pos            8                                             /*!< SCB 
- 309:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_MONITORACT_Msk           (1ul << SCB_SHCSR_MONITORACT_Pos)              /*!< SCB 
- 310:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 311:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_SVCALLACT_Pos             7                                             /*!< SCB 
- 312:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_SVCALLACT_Msk            (1ul << SCB_SHCSR_SVCALLACT_Pos)               /*!< SCB 
- 313:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****                                      
- 314:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_USGFAULTACT_Pos           3                                             /*!< SCB 
- 315:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_USGFAULTACT_Msk          (1ul << SCB_SHCSR_USGFAULTACT_Pos)             /*!< SCB 
- 316:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 317:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_BUSFAULTACT_Pos           1                                             /*!< SCB 
- 318:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_BUSFAULTACT_Msk          (1ul << SCB_SHCSR_BUSFAULTACT_Pos)             /*!< SCB 
- 319:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 320:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_MEMFAULTACT_Pos           0                                             /*!< SCB 
- 321:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_SHCSR_MEMFAULTACT_Msk          (1ul << SCB_SHCSR_MEMFAULTACT_Pos)             /*!< SCB 
- 322:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 323:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* SCB Configurable Fault Status Registers Definitions */
- 324:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CFSR_USGFAULTSR_Pos            16                                             /*!< SCB 
- 325:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CFSR_USGFAULTSR_Msk            (0xFFFFul << SCB_CFSR_USGFAULTSR_Pos)          /*!< SCB 
- 326:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 327:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CFSR_BUSFAULTSR_Pos             8                                             /*!< SCB 
- 328:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CFSR_BUSFAULTSR_Msk            (0xFFul << SCB_CFSR_BUSFAULTSR_Pos)            /*!< SCB 
- 329:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 330:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CFSR_MEMFAULTSR_Pos             0                                             /*!< SCB 
- 331:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_CFSR_MEMFAULTSR_Msk            (0xFFul << SCB_CFSR_MEMFAULTSR_Pos)            /*!< SCB 
- 332:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 333:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* SCB Hard Fault Status Registers Definitions */
- 334:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_HFSR_DEBUGEVT_Pos              31                                             /*!< SCB 
- 335:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_HFSR_DEBUGEVT_Msk              (1ul << SCB_HFSR_DEBUGEVT_Pos)                 /*!< SCB 
- 336:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 337:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_HFSR_FORCED_Pos                30                                             /*!< SCB 
- 338:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_HFSR_FORCED_Msk                (1ul << SCB_HFSR_FORCED_Pos)                   /*!< SCB 
- 339:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 340:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_HFSR_VECTTBL_Pos                1                                             /*!< SCB 
- 341:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_HFSR_VECTTBL_Msk               (1ul << SCB_HFSR_VECTTBL_Pos)                  /*!< SCB 
- 342:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 343:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* SCB Debug Fault Status Register Definitions */
- 344:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_DFSR_EXTERNAL_Pos               4                                             /*!< SCB 
- 345:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_DFSR_EXTERNAL_Msk              (1ul << SCB_DFSR_EXTERNAL_Pos)                 /*!< SCB 
- 346:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 347:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_DFSR_VCATCH_Pos                 3                                             /*!< SCB 
- 348:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_DFSR_VCATCH_Msk                (1ul << SCB_DFSR_VCATCH_Pos)                   /*!< SCB 
- 349:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 350:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_DFSR_DWTTRAP_Pos                2                                             /*!< SCB 
- 351:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_DFSR_DWTTRAP_Msk               (1ul << SCB_DFSR_DWTTRAP_Pos)                  /*!< SCB 
- 352:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 353:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_DFSR_BKPT_Pos                   1                                             /*!< SCB 
- 354:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_DFSR_BKPT_Msk                  (1ul << SCB_DFSR_BKPT_Pos)                     /*!< SCB 
- 355:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 356:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_DFSR_HALTED_Pos                 0                                             /*!< SCB 
- 357:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_DFSR_HALTED_Msk                (1ul << SCB_DFSR_HALTED_Pos)                   /*!< SCB 
- 358:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*@}*/ /* end of group CMSIS_CM3_SCB */
- 359:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 360:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 361:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /** @addtogroup CMSIS_CM3_SysTick CMSIS CM3 SysTick
- 362:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   memory mapped structure for SysTick
- 363:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   @{
- 364:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 365:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** typedef struct
- 366:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** {
- 367:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t CTRL;                         /*!< Offset: 0x00  SysTick Control and Status Registe
- 368:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t LOAD;                         /*!< Offset: 0x04  SysTick Reload Value Register     
- 369:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t VAL;                          /*!< Offset: 0x08  SysTick Current Value Register    
- 370:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t CALIB;                        /*!< Offset: 0x0C  SysTick Calibration Register      
- 371:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** } SysTick_Type;
- 372:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 373:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* SysTick Control / Status Register Definitions */
- 374:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_CTRL_COUNTFLAG_Pos         16                                             /*!< SysT
- 375:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_CTRL_COUNTFLAG_Msk         (1ul << SysTick_CTRL_COUNTFLAG_Pos)            /*!< SysT
- 376:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 377:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_CTRL_CLKSOURCE_Pos          2                                             /*!< SysT
- 378:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_CTRL_CLKSOURCE_Msk         (1ul << SysTick_CTRL_CLKSOURCE_Pos)            /*!< SysT
- 379:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 380:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_CTRL_TICKINT_Pos            1                                             /*!< SysT
- 381:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_CTRL_TICKINT_Msk           (1ul << SysTick_CTRL_TICKINT_Pos)              /*!< SysT
- 382:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 383:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_CTRL_ENABLE_Pos             0                                             /*!< SysT
- 384:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_CTRL_ENABLE_Msk            (1ul << SysTick_CTRL_ENABLE_Pos)               /*!< SysT
- 385:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 386:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* SysTick Reload Register Definitions */
- 387:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_LOAD_RELOAD_Pos             0                                             /*!< SysT
- 388:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_LOAD_RELOAD_Msk            (0xFFFFFFul << SysTick_LOAD_RELOAD_Pos)        /*!< SysT
- 389:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 390:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* SysTick Current Register Definitions */
- 391:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_VAL_CURRENT_Pos             0                                             /*!< SysT
- 392:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_VAL_CURRENT_Msk            (0xFFFFFFul << SysTick_VAL_CURRENT_Pos)        /*!< SysT
- 393:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 394:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* SysTick Calibration Register Definitions */
- 395:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_CALIB_NOREF_Pos            31                                             /*!< SysT
- 396:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_CALIB_NOREF_Msk            (1ul << SysTick_CALIB_NOREF_Pos)               /*!< SysT
- 397:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 398:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_CALIB_SKEW_Pos             30                                             /*!< SysT
- 399:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_CALIB_SKEW_Msk             (1ul << SysTick_CALIB_SKEW_Pos)                /*!< SysT
- 400:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 401:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_CALIB_TENMS_Pos             0                                             /*!< SysT
- 402:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_CALIB_TENMS_Msk            (0xFFFFFFul << SysTick_VAL_CURRENT_Pos)        /*!< SysT
- 403:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*@}*/ /* end of group CMSIS_CM3_SysTick */
- 404:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 405:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 406:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /** @addtogroup CMSIS_CM3_ITM CMSIS CM3 ITM
- 407:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   memory mapped structure for Instrumentation Trace Macrocell (ITM)
- 408:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   @{
- 409:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 410:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** typedef struct
- 411:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** {
- 412:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __O  union  
- 413:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   {
- 414:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****     __O  uint8_t    u8;                       /*!< Offset:       ITM Stimulus Port 8-bit           
- 415:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****     __O  uint16_t   u16;                      /*!< Offset:       ITM Stimulus Port 16-bit          
- 416:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****     __O  uint32_t   u32;                      /*!< Offset:       ITM Stimulus Port 32-bit          
- 417:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   }  PORT [32];                               /*!< Offset: 0x00  ITM Stimulus Port Registers       
- 418:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****        uint32_t RESERVED0[864];                                 
- 419:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t TER;                          /*!< Offset:       ITM Trace Enable Register         
- 420:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****        uint32_t RESERVED1[15];                                  
- 421:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t TPR;                          /*!< Offset:       ITM Trace Privilege Register      
- 422:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****        uint32_t RESERVED2[15];                                  
- 423:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t TCR;                          /*!< Offset:       ITM Trace Control Register        
- 424:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****        uint32_t RESERVED3[29];                                  
- 425:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t IWR;                          /*!< Offset:       ITM Integration Write Register    
- 426:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t IRR;                          /*!< Offset:       ITM Integration Read Register     
- 427:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t IMCR;                         /*!< Offset:       ITM Integration Mode Control Regis
- 428:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****        uint32_t RESERVED4[43];                                  
- 429:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t LAR;                          /*!< Offset:       ITM Lock Access Register          
- 430:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t LSR;                          /*!< Offset:       ITM Lock Status Register          
- 431:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****        uint32_t RESERVED5[6];                                   
- 432:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t PID4;                         /*!< Offset:       ITM Peripheral Identification Regi
- 433:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t PID5;                         /*!< Offset:       ITM Peripheral Identification Regi
- 434:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t PID6;                         /*!< Offset:       ITM Peripheral Identification Regi
- 435:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t PID7;                         /*!< Offset:       ITM Peripheral Identification Regi
- 436:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t PID0;                         /*!< Offset:       ITM Peripheral Identification Regi
- 437:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t PID1;                         /*!< Offset:       ITM Peripheral Identification Regi
- 438:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t PID2;                         /*!< Offset:       ITM Peripheral Identification Regi
- 439:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t PID3;                         /*!< Offset:       ITM Peripheral Identification Regi
- 440:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t CID0;                         /*!< Offset:       ITM Component  Identification Regi
- 441:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t CID1;                         /*!< Offset:       ITM Component  Identification Regi
- 442:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t CID2;                         /*!< Offset:       ITM Component  Identification Regi
- 443:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t CID3;                         /*!< Offset:       ITM Component  Identification Regi
- 444:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** } ITM_Type;                                                
- 445:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 446:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* ITM Trace Privilege Register Definitions */
- 447:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TPR_PRIVMASK_Pos                0                                             /*!< ITM 
- 448:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TPR_PRIVMASK_Msk               (0xFul << ITM_TPR_PRIVMASK_Pos)                /*!< ITM 
- 449:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 450:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* ITM Trace Control Register Definitions */
- 451:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TCR_BUSY_Pos                   23                                             /*!< ITM 
- 452:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TCR_BUSY_Msk                   (1ul << ITM_TCR_BUSY_Pos)                      /*!< ITM 
- 453:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 454:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TCR_ATBID_Pos                  16                                             /*!< ITM 
- 455:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TCR_ATBID_Msk                  (0x7Ful << ITM_TCR_ATBID_Pos)                  /*!< ITM 
- 456:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 457:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TCR_TSPrescale_Pos              8                                             /*!< ITM 
- 458:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TCR_TSPrescale_Msk             (3ul << ITM_TCR_TSPrescale_Pos)                /*!< ITM 
- 459:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 460:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TCR_SWOENA_Pos                  4                                             /*!< ITM 
- 461:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TCR_SWOENA_Msk                 (1ul << ITM_TCR_SWOENA_Pos)                    /*!< ITM 
- 462:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 463:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TCR_DWTENA_Pos                  3                                             /*!< ITM 
- 464:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TCR_DWTENA_Msk                 (1ul << ITM_TCR_DWTENA_Pos)                    /*!< ITM 
- 465:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 466:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TCR_SYNCENA_Pos                 2                                             /*!< ITM 
- 467:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TCR_SYNCENA_Msk                (1ul << ITM_TCR_SYNCENA_Pos)                   /*!< ITM 
- 468:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 469:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TCR_TSENA_Pos                   1                                             /*!< ITM 
- 470:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TCR_TSENA_Msk                  (1ul << ITM_TCR_TSENA_Pos)                     /*!< ITM 
- 471:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 472:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TCR_ITMENA_Pos                  0                                             /*!< ITM 
- 473:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_TCR_ITMENA_Msk                 (1ul << ITM_TCR_ITMENA_Pos)                    /*!< ITM 
- 474:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 475:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* ITM Integration Write Register Definitions */
- 476:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_IWR_ATVALIDM_Pos                0                                             /*!< ITM 
- 477:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_IWR_ATVALIDM_Msk               (1ul << ITM_IWR_ATVALIDM_Pos)                  /*!< ITM 
- 478:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 479:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* ITM Integration Read Register Definitions */
- 480:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_IRR_ATREADYM_Pos                0                                             /*!< ITM 
- 481:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_IRR_ATREADYM_Msk               (1ul << ITM_IRR_ATREADYM_Pos)                  /*!< ITM 
- 482:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 483:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* ITM Integration Mode Control Register Definitions */
- 484:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_IMCR_INTEGRATION_Pos            0                                             /*!< ITM 
- 485:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_IMCR_INTEGRATION_Msk           (1ul << ITM_IMCR_INTEGRATION_Pos)              /*!< ITM 
- 486:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 487:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* ITM Lock Status Register Definitions */
- 488:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_LSR_ByteAcc_Pos                 2                                             /*!< ITM 
- 489:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_LSR_ByteAcc_Msk                (1ul << ITM_LSR_ByteAcc_Pos)                   /*!< ITM 
- 490:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 491:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_LSR_Access_Pos                  1                                             /*!< ITM 
- 492:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_LSR_Access_Msk                 (1ul << ITM_LSR_Access_Pos)                    /*!< ITM 
- 493:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 494:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_LSR_Present_Pos                 0                                             /*!< ITM 
- 495:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_LSR_Present_Msk                (1ul << ITM_LSR_Present_Pos)                   /*!< ITM 
- 496:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*@}*/ /* end of group CMSIS_CM3_ITM */
- 497:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 498:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 499:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /** @addtogroup CMSIS_CM3_InterruptType CMSIS CM3 Interrupt Type
- 500:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   memory mapped structure for Interrupt Type
- 501:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   @{
- 502:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 503:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** typedef struct
- 504:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** {
- 505:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****        uint32_t RESERVED0;
- 506:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t ICTR;                         /*!< Offset: 0x04  Interrupt Control Type Register */
- 507:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #if ((defined __CM3_REV) && (__CM3_REV >= 0x200))
- 508:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t ACTLR;                        /*!< Offset: 0x08  Auxiliary Control Register      */
- 509:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #else
- 510:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****        uint32_t RESERVED1;
- 511:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #endif
- 512:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** } InterruptType_Type;
- 513:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 514:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* Interrupt Controller Type Register Definitions */
- 515:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define InterruptType_ICTR_INTLINESNUM_Pos  0                                             /*!< Inte
- 516:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define InterruptType_ICTR_INTLINESNUM_Msk (0x1Ful << InterruptType_ICTR_INTLINESNUM_Pos) /*!< Inte
- 517:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 518:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* Auxiliary Control Register Definitions */
- 519:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define InterruptType_ACTLR_DISFOLD_Pos     2                                             /*!< Inte
- 520:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define InterruptType_ACTLR_DISFOLD_Msk    (1ul << InterruptType_ACTLR_DISFOLD_Pos)       /*!< Inte
- 521:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 522:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define InterruptType_ACTLR_DISDEFWBUF_Pos  1                                             /*!< Inte
- 523:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define InterruptType_ACTLR_DISDEFWBUF_Msk (1ul << InterruptType_ACTLR_DISDEFWBUF_Pos)    /*!< Inte
- 524:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 525:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define InterruptType_ACTLR_DISMCYCINT_Pos  0                                             /*!< Inte
- 526:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define InterruptType_ACTLR_DISMCYCINT_Msk (1ul << InterruptType_ACTLR_DISMCYCINT_Pos)    /*!< Inte
- 527:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*@}*/ /* end of group CMSIS_CM3_InterruptType */
- 528:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 529:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 530:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #if defined (__MPU_PRESENT) && (__MPU_PRESENT == 1)
- 531:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /** @addtogroup CMSIS_CM3_MPU CMSIS CM3 MPU
- 532:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   memory mapped structure for Memory Protection Unit (MPU)
- 533:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   @{
- 534:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 535:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** typedef struct
- 536:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** {
- 537:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __I  uint32_t TYPE;                         /*!< Offset: 0x00  MPU Type Register                 
- 538:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t CTRL;                         /*!< Offset: 0x04  MPU Control Register              
- 539:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t RNR;                          /*!< Offset: 0x08  MPU Region RNRber Register        
- 540:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t RBAR;                         /*!< Offset: 0x0C  MPU Region Base Address Register  
- 541:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t RASR;                         /*!< Offset: 0x10  MPU Region Attribute and Size Regi
- 542:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t RBAR_A1;                      /*!< Offset: 0x14  MPU Alias 1 Region Base Address Re
- 543:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t RASR_A1;                      /*!< Offset: 0x18  MPU Alias 1 Region Attribute and S
- 544:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t RBAR_A2;                      /*!< Offset: 0x1C  MPU Alias 2 Region Base Address Re
- 545:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t RASR_A2;                      /*!< Offset: 0x20  MPU Alias 2 Region Attribute and S
- 546:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t RBAR_A3;                      /*!< Offset: 0x24  MPU Alias 3 Region Base Address Re
- 547:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t RASR_A3;                      /*!< Offset: 0x28  MPU Alias 3 Region Attribute and S
- 548:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** } MPU_Type;                                                
- 549:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 550:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* MPU Type Register */
- 551:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_TYPE_IREGION_Pos               16                                             /*!< MPU 
- 552:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_TYPE_IREGION_Msk               (0xFFul << MPU_TYPE_IREGION_Pos)               /*!< MPU 
- 553:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 554:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_TYPE_DREGION_Pos                8                                             /*!< MPU 
- 555:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_TYPE_DREGION_Msk               (0xFFul << MPU_TYPE_DREGION_Pos)               /*!< MPU 
- 556:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 557:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_TYPE_SEPARATE_Pos               0                                             /*!< MPU 
- 558:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_TYPE_SEPARATE_Msk              (1ul << MPU_TYPE_SEPARATE_Pos)                 /*!< MPU 
- 559:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 560:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* MPU Control Register */
- 561:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_CTRL_PRIVDEFENA_Pos             2                                             /*!< MPU 
- 562:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_CTRL_PRIVDEFENA_Msk            (1ul << MPU_CTRL_PRIVDEFENA_Pos)               /*!< MPU 
- 563:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 564:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_CTRL_HFNMIENA_Pos               1                                             /*!< MPU 
- 565:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_CTRL_HFNMIENA_Msk              (1ul << MPU_CTRL_HFNMIENA_Pos)                 /*!< MPU 
- 566:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 567:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_CTRL_ENABLE_Pos                 0                                             /*!< MPU 
- 568:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_CTRL_ENABLE_Msk                (1ul << MPU_CTRL_ENABLE_Pos)                   /*!< MPU 
- 569:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 570:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* MPU Region Number Register */
- 571:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RNR_REGION_Pos                  0                                             /*!< MPU 
- 572:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RNR_REGION_Msk                 (0xFFul << MPU_RNR_REGION_Pos)                 /*!< MPU 
- 573:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 574:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* MPU Region Base Address Register */
- 575:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RBAR_ADDR_Pos                   5                                             /*!< MPU 
- 576:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RBAR_ADDR_Msk                  (0x7FFFFFFul << MPU_RBAR_ADDR_Pos)             /*!< MPU 
- 577:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 578:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RBAR_VALID_Pos                  4                                             /*!< MPU 
- 579:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RBAR_VALID_Msk                 (1ul << MPU_RBAR_VALID_Pos)                    /*!< MPU 
- 580:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 581:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RBAR_REGION_Pos                 0                                             /*!< MPU 
- 582:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RBAR_REGION_Msk                (0xFul << MPU_RBAR_REGION_Pos)                 /*!< MPU 
- 583:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 584:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* MPU Region Attribute and Size Register */
- 585:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_XN_Pos                    28                                             /*!< MPU 
- 586:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_XN_Msk                    (1ul << MPU_RASR_XN_Pos)                       /*!< MPU 
- 587:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 588:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_AP_Pos                    24                                             /*!< MPU 
- 589:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_AP_Msk                    (7ul << MPU_RASR_AP_Pos)                       /*!< MPU 
- 590:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 591:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_TEX_Pos                   19                                             /*!< MPU 
- 592:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_TEX_Msk                   (7ul << MPU_RASR_TEX_Pos)                      /*!< MPU 
- 593:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 594:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_S_Pos                     18                                             /*!< MPU 
- 595:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_S_Msk                     (1ul << MPU_RASR_S_Pos)                        /*!< MPU 
- 596:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 597:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_C_Pos                     17                                             /*!< MPU 
- 598:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_C_Msk                     (1ul << MPU_RASR_C_Pos)                        /*!< MPU 
- 599:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 600:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_B_Pos                     16                                             /*!< MPU 
- 601:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_B_Msk                     (1ul << MPU_RASR_B_Pos)                        /*!< MPU 
- 602:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 603:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_SRD_Pos                    8                                             /*!< MPU 
- 604:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_SRD_Msk                   (0xFFul << MPU_RASR_SRD_Pos)                   /*!< MPU 
- 605:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 606:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_SIZE_Pos                   1                                             /*!< MPU 
- 607:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_SIZE_Msk                  (0x1Ful << MPU_RASR_SIZE_Pos)                  /*!< MPU 
- 608:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 609:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_ENA_Pos                     0                                            /*!< MPU 
- 610:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define MPU_RASR_ENA_Msk                    (0x1Ful << MPU_RASR_ENA_Pos)                  /*!< MPU 
- 611:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 612:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*@}*/ /* end of group CMSIS_CM3_MPU */
- 613:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #endif
- 614:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 615:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 616:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /** @addtogroup CMSIS_CM3_CoreDebug CMSIS CM3 Core Debug
- 617:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   memory mapped structure for Core Debug Register
- 618:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   @{
- 619:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 620:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** typedef struct
- 621:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** {
- 622:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t DHCSR;                        /*!< Offset: 0x00  Debug Halting Control and Status R
- 623:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __O  uint32_t DCRSR;                        /*!< Offset: 0x04  Debug Core Register Selector Regis
- 624:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t DCRDR;                        /*!< Offset: 0x08  Debug Core Register Data Register 
- 625:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __IO uint32_t DEMCR;                        /*!< Offset: 0x0C  Debug Exception and Monitor Contro
- 626:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** } CoreDebug_Type;
- 627:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 628:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* Debug Halting Control and Status Register */
- 629:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_DBGKEY_Pos         16                                             /*!< Core
- 630:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_DBGKEY_Msk         (0xFFFFul << CoreDebug_DHCSR_DBGKEY_Pos)       /*!< Core
- 631:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 632:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_RESET_ST_Pos     25                                             /*!< Core
- 633:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_RESET_ST_Msk     (1ul << CoreDebug_DHCSR_S_RESET_ST_Pos)        /*!< Core
- 634:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 635:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_RETIRE_ST_Pos    24                                             /*!< Core
- 636:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_RETIRE_ST_Msk    (1ul << CoreDebug_DHCSR_S_RETIRE_ST_Pos)       /*!< Core
- 637:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 638:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_LOCKUP_Pos       19                                             /*!< Core
- 639:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_LOCKUP_Msk       (1ul << CoreDebug_DHCSR_S_LOCKUP_Pos)          /*!< Core
- 640:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 641:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_SLEEP_Pos        18                                             /*!< Core
- 642:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_SLEEP_Msk        (1ul << CoreDebug_DHCSR_S_SLEEP_Pos)           /*!< Core
- 643:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 644:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_HALT_Pos         17                                             /*!< Core
- 645:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_HALT_Msk         (1ul << CoreDebug_DHCSR_S_HALT_Pos)            /*!< Core
- 646:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 647:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_REGRDY_Pos       16                                             /*!< Core
- 648:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_REGRDY_Msk       (1ul << CoreDebug_DHCSR_S_REGRDY_Pos)          /*!< Core
- 649:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 650:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_SNAPSTALL_Pos     5                                             /*!< Core
- 651:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_SNAPSTALL_Msk    (1ul << CoreDebug_DHCSR_C_SNAPSTALL_Pos)       /*!< Core
- 652:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 653:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_MASKINTS_Pos      3                                             /*!< Core
- 654:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_MASKINTS_Msk     (1ul << CoreDebug_DHCSR_C_MASKINTS_Pos)        /*!< Core
- 655:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 656:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_STEP_Pos          2                                             /*!< Core
- 657:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_STEP_Msk         (1ul << CoreDebug_DHCSR_C_STEP_Pos)            /*!< Core
- 658:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 659:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_HALT_Pos          1                                             /*!< Core
- 660:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_HALT_Msk         (1ul << CoreDebug_DHCSR_C_HALT_Pos)            /*!< Core
- 661:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 662:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_DEBUGEN_Pos       0                                             /*!< Core
- 663:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_DEBUGEN_Msk      (1ul << CoreDebug_DHCSR_C_DEBUGEN_Pos)         /*!< Core
- 664:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 665:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* Debug Core Register Selector Register */
- 666:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DCRSR_REGWnR_Pos         16                                             /*!< Core
- 667:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DCRSR_REGWnR_Msk         (1ul << CoreDebug_DCRSR_REGWnR_Pos)            /*!< Core
- 668:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 669:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DCRSR_REGSEL_Pos          0                                             /*!< Core
- 670:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DCRSR_REGSEL_Msk         (0x1Ful << CoreDebug_DCRSR_REGSEL_Pos)         /*!< Core
- 671:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 672:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* Debug Exception and Monitor Control Register */
- 673:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_TRCENA_Pos         24                                             /*!< Core
- 674:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_TRCENA_Msk         (1ul << CoreDebug_DEMCR_TRCENA_Pos)            /*!< Core
- 675:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 676:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_MON_REQ_Pos        19                                             /*!< Core
- 677:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_MON_REQ_Msk        (1ul << CoreDebug_DEMCR_MON_REQ_Pos)           /*!< Core
- 678:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 679:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_MON_STEP_Pos       18                                             /*!< Core
- 680:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_MON_STEP_Msk       (1ul << CoreDebug_DEMCR_MON_STEP_Pos)          /*!< Core
- 681:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 682:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_MON_PEND_Pos       17                                             /*!< Core
- 683:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_MON_PEND_Msk       (1ul << CoreDebug_DEMCR_MON_PEND_Pos)          /*!< Core
- 684:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 685:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_MON_EN_Pos         16                                             /*!< Core
- 686:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_MON_EN_Msk         (1ul << CoreDebug_DEMCR_MON_EN_Pos)            /*!< Core
- 687:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 688:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_HARDERR_Pos     10                                             /*!< Core
- 689:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_HARDERR_Msk     (1ul << CoreDebug_DEMCR_VC_HARDERR_Pos)        /*!< Core
- 690:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 691:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_INTERR_Pos       9                                             /*!< Core
- 692:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_INTERR_Msk      (1ul << CoreDebug_DEMCR_VC_INTERR_Pos)         /*!< Core
- 693:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 694:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_BUSERR_Pos       8                                             /*!< Core
- 695:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_BUSERR_Msk      (1ul << CoreDebug_DEMCR_VC_BUSERR_Pos)         /*!< Core
- 696:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 697:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_STATERR_Pos      7                                             /*!< Core
- 698:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_STATERR_Msk     (1ul << CoreDebug_DEMCR_VC_STATERR_Pos)        /*!< Core
- 699:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 700:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_CHKERR_Pos       6                                             /*!< Core
- 701:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_CHKERR_Msk      (1ul << CoreDebug_DEMCR_VC_CHKERR_Pos)         /*!< Core
- 702:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 703:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_NOCPERR_Pos      5                                             /*!< Core
- 704:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_NOCPERR_Msk     (1ul << CoreDebug_DEMCR_VC_NOCPERR_Pos)        /*!< Core
- 705:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 706:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_MMERR_Pos        4                                             /*!< Core
- 707:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_MMERR_Msk       (1ul << CoreDebug_DEMCR_VC_MMERR_Pos)          /*!< Core
- 708:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 709:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_CORERESET_Pos    0                                             /*!< Core
- 710:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_CORERESET_Msk   (1ul << CoreDebug_DEMCR_VC_CORERESET_Pos)      /*!< Core
- 711:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*@}*/ /* end of group CMSIS_CM3_CoreDebug */
- 712:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 713:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 714:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* Memory mapping of Cortex-M3 Hardware */
- 715:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCS_BASE            (0xE000E000)                              /*!< System Control Space Bas
- 716:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM_BASE            (0xE0000000)                              /*!< ITM Base Address        
- 717:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug_BASE      (0xE000EDF0)                              /*!< Core Debug Base Address 
- 718:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick_BASE        (SCS_BASE +  0x0010)                      /*!< SysTick Base Address    
- 719:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define NVIC_BASE           (SCS_BASE +  0x0100)                      /*!< NVIC Base Address       
- 720:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB_BASE            (SCS_BASE +  0x0D00)                      /*!< System Control Block Bas
- 721:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 722:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define InterruptType       ((InterruptType_Type *) SCS_BASE)         /*!< Interrupt Type Register 
- 723:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SCB                 ((SCB_Type *)           SCB_BASE)         /*!< SCB configuration struct
- 724:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define SysTick             ((SysTick_Type *)       SysTick_BASE)     /*!< SysTick configuration st
- 725:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define NVIC                ((NVIC_Type *)          NVIC_BASE)        /*!< NVIC configuration struc
- 726:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define ITM                 ((ITM_Type *)           ITM_BASE)         /*!< ITM configuration struct
- 727:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define CoreDebug           ((CoreDebug_Type *)     CoreDebug_BASE)   /*!< Core Debug configuration
- 728:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 729:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #if defined (__MPU_PRESENT) && (__MPU_PRESENT == 1)
- 730:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   #define MPU_BASE          (SCS_BASE +  0x0D90)                      /*!< Memory Protection Unit  
- 731:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   #define MPU               ((MPU_Type*)            MPU_BASE)         /*!< Memory Protection Unit  
- 732:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #endif
- 733:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 734:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*@}*/ /* end of group CMSIS_CM3_core_register */
- 735:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 736:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 737:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /*******************************************************************************
- 738:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *                Hardware Abstraction Layer
- 739:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  ******************************************************************************/
- 740:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 741:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #if defined ( __CC_ARM   )
- 742:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   #define __ASM            __asm                                      /*!< asm keyword for ARM Comp
- 743:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   #define __INLINE         __inline                                   /*!< inline keyword for ARM C
- 744:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 745:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #elif defined ( __ICCARM__ )
- 746:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   #define __ASM           __asm                                       /*!< asm keyword for IAR Comp
- 747:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   #define __INLINE        inline                                      /*!< inline keyword for IAR C
- 748:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 749:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #elif defined   (  __GNUC__  )
- 750:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   #define __ASM            __asm                                      /*!< asm keyword for GNU Comp
- 751:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   #define __INLINE         inline                                     /*!< inline keyword for GNU C
- 752:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 753:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #elif defined   (  __TASKING__  )
- 754:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   #define __ASM            __asm                                      /*!< asm keyword for TASKING 
- 755:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   #define __INLINE         inline                                     /*!< inline keyword for TASKI
- 756:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 757:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #endif
- 758:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 759:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 760:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* ###################  Compiler specific Intrinsics  ########################### */
- 761:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 762:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #if defined ( __CC_ARM   ) /*------------------RealView Compiler -----------------*/
- 763:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* ARM armcc specific functions */
- 764:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 765:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __enable_fault_irq                __enable_fiq
- 766:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __disable_fault_irq               __disable_fiq
- 767:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 768:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __NOP                             __nop
- 769:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __WFI                             __wfi
- 770:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __WFE                             __wfe
- 771:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __SEV                             __sev
- 772:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __ISB()                           __isb(0)
- 773:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __DSB()                           __dsb(0)
- 774:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __DMB()                           __dmb(0)
- 775:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __REV                             __rev
- 776:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __RBIT                            __rbit
- 777:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __LDREXB(ptr)                     ((unsigned char ) __ldrex(ptr))
- 778:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __LDREXH(ptr)                     ((unsigned short) __ldrex(ptr))
- 779:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __LDREXW(ptr)                     ((unsigned int  ) __ldrex(ptr))
- 780:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __STREXB(value, ptr)              __strex(value, ptr)
- 781:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __STREXH(value, ptr)              __strex(value, ptr)
- 782:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __STREXW(value, ptr)              __strex(value, ptr)
- 783:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 784:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 785:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* intrinsic unsigned long long __ldrexd(volatile void *ptr) */
- 786:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* intrinsic int __strexd(unsigned long long val, volatile void *ptr) */
- 787:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* intrinsic void __enable_irq();     */
- 788:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* intrinsic void __disable_irq();    */
- 789:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 790:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 791:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 792:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Return the Process Stack Pointer
- 793:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 794:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return ProcessStackPointer
- 795:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 796:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Return the actual process stack pointer
- 797:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 798:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern uint32_t __get_PSP(void);
- 799:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 800:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 801:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Set the Process Stack Pointer
- 802:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 803:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  topOfProcStack  Process Stack Pointer
- 804:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 805:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Assign the value ProcessStackPointer to the MSP 
- 806:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * (process stack pointer) Cortex processor register
- 807:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 808:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern void __set_PSP(uint32_t topOfProcStack);
- 809:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 810:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 811:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Return the Main Stack Pointer
- 812:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 813:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return Main Stack Pointer
- 814:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 815:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Return the current value of the MSP (main stack pointer)
- 816:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Cortex processor register
- 817:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 818:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern uint32_t __get_MSP(void);
- 819:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 820:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 821:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Set the Main Stack Pointer
- 822:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 823:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  topOfMainStack  Main Stack Pointer
- 824:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 825:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Assign the value mainStackPointer to the MSP 
- 826:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * (main stack pointer) Cortex processor register
- 827:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 828:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern void __set_MSP(uint32_t topOfMainStack);
- 829:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 830:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 831:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Reverse byte order in unsigned short value
- 832:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 833:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param   value  value to reverse
- 834:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return         reversed value
- 835:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 836:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Reverse byte order in unsigned short value
- 837:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 838:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern uint32_t __REV16(uint16_t value);
- 839:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 840:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 841:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Reverse byte order in signed short value with sign extension to integer
- 842:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 843:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param   value  value to reverse
- 844:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return         reversed value
- 845:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 846:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Reverse byte order in signed short value with sign extension to integer
- 847:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 848:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern int32_t __REVSH(int16_t value);
- 849:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 850:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 851:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #if (__ARMCC_VERSION < 400000)
- 852:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 853:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 854:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Remove the exclusive lock created by ldrex
- 855:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 856:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Removes the exclusive lock which is created by ldrex.
- 857:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 858:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern void __CLREX(void);
- 859:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 860:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 861:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Return the Base Priority value
- 862:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 863:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return BasePriority
- 864:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 865:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Return the content of the base priority register
- 866:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 867:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern uint32_t __get_BASEPRI(void);
- 868:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 869:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 870:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Set the Base Priority value
- 871:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 872:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  basePri  BasePriority
- 873:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 874:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Set the base priority register
- 875:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 876:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern void __set_BASEPRI(uint32_t basePri);
- 877:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 878:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 879:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Return the Priority Mask value
- 880:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 881:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return PriMask
- 882:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 883:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Return state of the priority mask bit from the priority mask register
- 884:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 885:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern uint32_t __get_PRIMASK(void);
- 886:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 887:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 888:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Set the Priority Mask value
- 889:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 890:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param   priMask  PriMask
- 891:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 892:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Set the priority mask bit in the priority mask register
- 893:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 894:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern void __set_PRIMASK(uint32_t priMask);
- 895:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 896:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 897:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Return the Fault Mask value
- 898:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 899:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return FaultMask
- 900:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 901:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Return the content of the fault mask register
- 902:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 903:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern uint32_t __get_FAULTMASK(void);
- 904:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 905:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 906:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Set the Fault Mask value
- 907:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 908:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  faultMask faultMask value
- 909:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 910:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Set the fault mask register
- 911:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 912:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern void __set_FAULTMASK(uint32_t faultMask);
- 913:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 914:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 915:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Return the Control Register value
- 916:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * 
- 917:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return Control value
- 918:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 919:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Return the content of the control register
- 920:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 921:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern uint32_t __get_CONTROL(void);
- 922:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 923:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 924:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Set the Control Register value
- 925:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 926:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  control  Control value
- 927:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 928:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Set the control register
- 929:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 930:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern void __set_CONTROL(uint32_t control);
- 931:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 932:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #else  /* (__ARMCC_VERSION >= 400000)  */
- 933:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 934:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 935:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Remove the exclusive lock created by ldrex
- 936:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 937:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Removes the exclusive lock which is created by ldrex.
- 938:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 939:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __CLREX                           __clrex
- 940:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 941:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 942:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Return the Base Priority value
- 943:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 944:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return BasePriority
- 945:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 946:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Return the content of the base priority register
- 947:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 948:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE uint32_t  __get_BASEPRI(void)
- 949:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** {
- 950:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   register uint32_t __regBasePri         __ASM("basepri");
- 951:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   return(__regBasePri);
- 952:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** }
- 953:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 954:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 955:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Set the Base Priority value
- 956:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 957:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  basePri  BasePriority
- 958:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 959:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Set the base priority register
- 960:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 961:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE void __set_BASEPRI(uint32_t basePri)
- 962:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** {
- 963:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   register uint32_t __regBasePri         __ASM("basepri");
- 964:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __regBasePri = (basePri & 0xff);
- 965:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** }
- 966:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 967:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 968:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Return the Priority Mask value
- 969:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 970:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return PriMask
- 971:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 972:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Return state of the priority mask bit from the priority mask register
- 973:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 974:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE uint32_t __get_PRIMASK(void)
- 975:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** {
- 976:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   register uint32_t __regPriMask         __ASM("primask");
- 977:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   return(__regPriMask);
- 978:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** }
- 979:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 980:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 981:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Set the Priority Mask value
- 982:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 983:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  priMask  PriMask
- 984:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 985:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Set the priority mask bit in the priority mask register
- 986:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
- 987:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE void __set_PRIMASK(uint32_t priMask)
- 988:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** {
- 989:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   register uint32_t __regPriMask         __ASM("primask");
- 990:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __regPriMask = (priMask);
- 991:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** }
- 992:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
- 993:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
- 994:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Return the Fault Mask value
- 995:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 996:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return FaultMask
- 997:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
- 998:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Return the content of the fault mask register
- 999:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-1000:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE uint32_t __get_FAULTMASK(void)
-1001:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** {
-1002:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   register uint32_t __regFaultMask       __ASM("faultmask");
-1003:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   return(__regFaultMask);
-1004:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** }
-1005:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1006:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
-1007:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Set the Fault Mask value
-1008:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1009:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  faultMask  faultMask value
-1010:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1011:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Set the fault mask register
-1012:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-1013:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE void __set_FAULTMASK(uint32_t faultMask)
-1014:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** {
-1015:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   register uint32_t __regFaultMask       __ASM("faultmask");
-1016:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __regFaultMask = (faultMask & 1);
-1017:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** }
-1018:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1019:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
-1020:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Return the Control Register value
-1021:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * 
-1022:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return Control value
-1023:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1024:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Return the content of the control register
-1025:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-1026:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE uint32_t __get_CONTROL(void)
-1027:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** {
-1028:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   register uint32_t __regControl         __ASM("control");
-1029:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   return(__regControl);
-1030:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** }
-1031:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1032:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
-1033:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Set the Control Register value
-1034:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1035:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  control  Control value
-1036:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1037:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Set the control register
-1038:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-1039:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE void __set_CONTROL(uint32_t control)
-1040:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** {
-1041:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   register uint32_t __regControl         __ASM("control");
-1042:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****   __regControl = control;
-1043:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** }
-1044:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1045:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #endif /* __ARMCC_VERSION  */ 
-1046:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1047:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1048:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1049:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #elif (defined (__ICCARM__)) /*------------------ ICC Compiler -------------------*/
-1050:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* IAR iccarm specific functions */
-1051:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1052:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __enable_irq                              __enable_interrupt        /*!< global Interrupt e
-1053:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __disable_irq                             __disable_interrupt       /*!< global Interrupt d
-1054:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1055:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE void __enable_fault_irq()         { __ASM ("cpsie f"); }
-1056:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE void __disable_fault_irq()        { __ASM ("cpsid f"); }
-1057:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1058:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #define __NOP                                     __no_operation            /*!< no operation intri
-1059:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE  void __WFI()                     { __ASM ("wfi"); }
-1060:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE  void __WFE()                     { __ASM ("wfe"); }
-1061:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE  void __SEV()                     { __ASM ("sev"); }
-1062:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE  void __CLREX()                   { __ASM ("clrex"); }
-1063:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1064:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* intrinsic void __ISB(void)                                     */
-1065:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* intrinsic void __DSB(void)                                     */
-1066:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* intrinsic void __DMB(void)                                     */
-1067:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* intrinsic void __set_PRIMASK();                                */
-1068:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* intrinsic void __get_PRIMASK();                                */
-1069:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* intrinsic void __set_FAULTMASK();                              */
-1070:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* intrinsic void __get_FAULTMASK();                              */
-1071:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* intrinsic uint32_t __REV(uint32_t value);                      */
-1072:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* intrinsic uint32_t __REVSH(uint32_t value);                    */
-1073:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* intrinsic unsigned long __STREX(unsigned long, unsigned long); */
-1074:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* intrinsic unsigned long __LDREX(unsigned long *);              */
-1075:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1076:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1077:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
-1078:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Return the Process Stack Pointer
-1079:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1080:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return ProcessStackPointer
-1081:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1082:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Return the actual process stack pointer
-1083:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-1084:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern uint32_t __get_PSP(void);
-1085:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1086:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
-1087:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Set the Process Stack Pointer
-1088:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1089:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  topOfProcStack  Process Stack Pointer
-1090:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1091:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Assign the value ProcessStackPointer to the MSP 
-1092:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * (process stack pointer) Cortex processor register
-1093:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-1094:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern void __set_PSP(uint32_t topOfProcStack);
-1095:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1096:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
-1097:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Return the Main Stack Pointer
-1098:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1099:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return Main Stack Pointer
-1100:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1101:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Return the current value of the MSP (main stack pointer)
-1102:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Cortex processor register
-1103:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-1104:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern uint32_t __get_MSP(void);
-1105:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1106:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
-1107:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Set the Main Stack Pointer
-1108:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1109:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  topOfMainStack  Main Stack Pointer
-1110:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1111:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Assign the value mainStackPointer to the MSP 
-1112:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * (main stack pointer) Cortex processor register
-1113:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-1114:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern void __set_MSP(uint32_t topOfMainStack);
-1115:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1116:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
-1117:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Reverse byte order in unsigned short value
-1118:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1119:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  value  value to reverse
-1120:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return        reversed value
-1121:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1122:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Reverse byte order in unsigned short value
-1123:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-1124:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern uint32_t __REV16(uint16_t value);
-1125:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1126:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
-1127:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  Reverse bit order of value
-1128:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1129:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  value  value to reverse
-1130:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return        reversed value
-1131:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1132:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Reverse bit order of value
-1133:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-1134:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern uint32_t __RBIT(uint32_t value);
-1135:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1136:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
-1137:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  LDR Exclusive (8 bit)
-1138:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1139:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  *addr  address pointer
-1140:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return        value of (*address)
-1141:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1142:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Exclusive LDR command for 8 bit values)
-1143:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-1144:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern uint8_t __LDREXB(uint8_t *addr);
-1145:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1146:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
-1147:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  LDR Exclusive (16 bit)
-1148:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1149:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  *addr  address pointer
-1150:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return        value of (*address)
-1151:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1152:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Exclusive LDR command for 16 bit values
-1153:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-1154:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern uint16_t __LDREXH(uint16_t *addr);
-1155:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1156:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
-1157:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  LDR Exclusive (32 bit)
-1158:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1159:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  *addr  address pointer
-1160:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return        value of (*address)
-1161:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1162:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Exclusive LDR command for 32 bit values
-1163:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-1164:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern uint32_t __LDREXW(uint32_t *addr);
-1165:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1166:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
-1167:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  STR Exclusive (8 bit)
-1168:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1169:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  value  value to store
-1170:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  *addr  address pointer
-1171:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return        successful / failed
-1172:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1173:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Exclusive STR command for 8 bit values
-1174:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-1175:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern uint32_t __STREXB(uint8_t value, uint8_t *addr);
-1176:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1177:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
-1178:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  STR Exclusive (16 bit)
-1179:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1180:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  value  value to store
-1181:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  *addr  address pointer
-1182:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return        successful / failed
-1183:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1184:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Exclusive STR command for 16 bit values
-1185:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-1186:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern uint32_t __STREXH(uint16_t value, uint16_t *addr);
-1187:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1188:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /**
-1189:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @brief  STR Exclusive (32 bit)
-1190:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1191:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  value  value to store
-1192:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @param  *addr  address pointer
-1193:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * @return        successful / failed
-1194:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  *
-1195:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  * Exclusive STR command for 32 bit values
-1196:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h ****  */
-1197:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** extern uint32_t __STREXW(uint32_t value, uint32_t *addr);
-1198:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1199:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1200:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1201:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** #elif (defined (__GNUC__)) /*------------------ GNU Compiler ---------------------*/
-1202:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** /* GNU gcc specific functions */
-1203:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1204:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE void __enable_irq()               { __ASM volatile ("cpsie i"); }
-1205:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE void __disable_irq()              { __ASM volatile ("cpsid i"); }
-1206:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1207:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE void __enable_fault_irq()         { __ASM volatile ("cpsie f"); }
-1208:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE void __disable_fault_irq()        { __ASM volatile ("cpsid f"); }
-1209:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** 
-1210:/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h **** static __INLINE void __NOP()                      { __ASM volatile ("nop"); }
-  25              		.loc 1 1210 0
-  26              		.cfi_startproc
-  27              		@ args = 0, pretend = 0, frame = 0
-  28              		@ frame_needed = 1, uses_anonymous_args = 0
-  29              		@ link register save eliminated.
-  30 0000 80B4     		push	{r7}
-  31              	.LCFI0:
-  32              		.cfi_def_cfa_offset 4
-  33              		.cfi_offset 7, -4
-  34 0002 00AF     		add	r7, sp, #0
-  35              	.LCFI1:
-  36              		.cfi_def_cfa_register 7
-  37              		.loc 1 1210 0
-  38              	@ 1210 "/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h" 1
-  39 0004 00BF     		nop
-  40              	@ 0 "" 2
-  41              		.thumb
-  42 0006 BD46     		mov	sp, r7
-  43 0008 80BC     		pop	{r7}
-  44 000a 7047     		bx	lr
-  45              		.cfi_endproc
-  46              	.LFE4:
-  48              		.comm	TmpBitVal,1,1
-  49              		.align	2
-  50              		.global	main
-  51              		.thumb
-  52              		.thumb_func
-  54              	main:
-  55              	.LFB29:
-  56              		.file 2 "../main.c"
+  18              		.comm	sensorValues,12,4
+  19              		.comm	rotationMatrix,18,4
+  20              		.comm	clearValues,12,4
+  21              		.global	rxCount
+  22              		.bss
+  23              		.align	2
+  26              	rxCount:
+  27 0000 00000000 		.space	4
+  28              		.global	START_RX_BYTE
+  29              		.section	.rodata
+  30              		.align	1
+  33              	START_RX_BYTE:
+  34 0000 0000     		.space	2
+  35              		.global	rxSeq
+  36 0002 0000     		.align	2
+  39              	rxSeq:
+  40 0004 00000000 		.word	START_RX_BYTE
+  41 0008 00000000 		.word	sensorValues
+  42 000c 02000000 		.word	sensorValues+2
+  43 0010 04000000 		.word	sensorValues+4
+  44 0014 06000000 		.word	sensorValues+6
+  45 0018 08000000 		.word	sensorValues+8
+  46 001c 0A000000 		.word	sensorValues+10
+  47 0020 00000000 		.word	rotationMatrix
+  48 0024 02000000 		.word	rotationMatrix+2
+  49 0028 04000000 		.word	rotationMatrix+4
+  50 002c 06000000 		.word	rotationMatrix+6
+  51 0030 08000000 		.word	rotationMatrix+8
+  52 0034 0A000000 		.word	rotationMatrix+10
+  53 0038 0C000000 		.word	rotationMatrix+12
+  54 003c 0E000000 		.word	rotationMatrix+14
+  55 0040 10000000 		.word	rotationMatrix+16
+  56              		.global	txCount
+  57              		.bss
+  58              		.align	2
+  61              	txCount:
+  62 0004 00000000 		.space	4
+  63              		.global	START_TX_BYTE
+  64              		.section	.rodata
+  65              		.align	1
+  68              	START_TX_BYTE:
+  69 0044 0000     		.space	2
+  70              		.global	txSeq
+  71 0046 0000     		.align	2
+  74              	txSeq:
+  75 0048 00000000 		.word	START_TX_BYTE
+  76 004c 00000000 		.word	clearValues
+  77 0050 02000000 		.word	clearValues+2
+  78 0054 04000000 		.word	clearValues+4
+  79 0058 06000000 		.word	clearValues+6
+  80 005c 08000000 		.word	clearValues+8
+  81 0060 0A000000 		.word	clearValues+10
+  82              		.comm	ToolProperties,12,4
+  83              		.comm	TmpBitVal,1,1
+  84              		.text
+  85              		.align	2
+  86              		.global	main
+  87              		.thumb
+  88              		.thumb_func
+  90              	main:
+  91              	.LFB29:
+  92              		.file 1 "../main.c"
    1:../main.c     **** #include "stm32f10x.h"
    2:../main.c     **** #include "stm32f10x_conf.h"
    3:../main.c     **** 
-   4:../main.c     **** /*Blink frequency*/
-   5:../main.c     **** #define RTC_PRESCALER 8000
-   6:../main.c     **** 
-   7:../main.c     **** void SetupLED(void);
-   8:../main.c     **** void SetupRTC(void);
-   9:../main.c     **** void Setup_RTC_NVIC(void);
-  10:../main.c     **** void SetupUSART(void);
-  11:../main.c     **** void Setup_USART_NVIC(void);
+   4:../main.c     **** #include "periph_setup.h"
+   5:../main.c     **** #include "globals.h"
+   6:../main.c     **** #include "calculations.h"
+   7:../main.c     **** 
+   8:../main.c     **** volatile BitAction TmpBitVal;
+   9:../main.c     **** 
+  10:../main.c     **** int main()
+  11:../main.c     **** {
+  93              		.loc 1 11 0
+  94              		.cfi_startproc
+  95              		@ args = 0, pretend = 0, frame = 0
+  96              		@ frame_needed = 1, uses_anonymous_args = 0
+  97 0000 80B5     		push	{r7, lr}
+  98              	.LCFI0:
+  99              		.cfi_def_cfa_offset 8
+ 100              		.cfi_offset 7, -8
+ 101              		.cfi_offset 14, -4
+ 102 0002 00AF     		add	r7, sp, #0
+ 103              	.LCFI1:
+ 104              		.cfi_def_cfa_register 7
   12:../main.c     **** 
-  13:../main.c     **** 
-  14:../main.c     **** volatile BitAction TmpBitVal;
-  15:../main.c     **** 
-  16:../main.c     **** int main()
-  17:../main.c     **** {
-  57              		.loc 2 17 0
-  58              		.cfi_startproc
-  59              		@ args = 0, pretend = 0, frame = 0
-  60              		@ frame_needed = 1, uses_anonymous_args = 0
-  61 000c 80B5     		push	{r7, lr}
-  62              	.LCFI2:
-  63              		.cfi_def_cfa_offset 8
-  64              		.cfi_offset 7, -8
-  65              		.cfi_offset 14, -4
-  66 000e 00AF     		add	r7, sp, #0
-  67              	.LCFI3:
-  68              		.cfi_def_cfa_register 7
-  18:../main.c     **** 
-  19:../main.c     **** 	TmpBitVal = Bit_RESET;
-  69              		.loc 2 19 0
-  70 0010 064B     		ldr	r3, .L4
-  71 0012 4FF00002 		mov	r2, #0
-  72 0016 1A70     		strb	r2, [r3, #0]
-  20:../main.c     **** 
-  21:../main.c     **** 	SetupLED();
-  73              		.loc 2 21 0
-  74 0018 FFF7FEFF 		bl	SetupLED
-  22:../main.c     **** 
-  23:../main.c     **** 	//Setup_RTC_NVIC();
-  24:../main.c     **** 
-  25:../main.c     **** 	//SetupRTC();
-  26:../main.c     **** 
-  27:../main.c     **** 	Setup_USART_NVIC();
-  75              		.loc 2 27 0
-  76 001c FFF7FEFF 		bl	Setup_USART_NVIC
-  28:../main.c     **** 	SetupUSART();
-  77              		.loc 2 28 0
-  78 0020 FFF7FEFF 		bl	SetupUSART
-  79              	.L3:
-  29:../main.c     **** 
-  30:../main.c     **** 	//Action
-  31:../main.c     **** 
-  32:../main.c     **** 	/*uint16_t sym;
-  33:../main.c     **** 	int count;*/
+  13:../main.c     **** 	TmpBitVal = Bit_RESET;
+ 105              		.loc 1 13 0
+ 106 0004 144B     		ldr	r3, .L4
+ 107 0006 4FF00002 		mov	r2, #0
+ 108 000a 1A70     		strb	r2, [r3, #0]
+  14:../main.c     **** 
+  15:../main.c     **** 	SetupLED();
+ 109              		.loc 1 15 0
+ 110 000c FFF7FEFF 		bl	SetupLED
+  16:../main.c     **** 
+  17:../main.c     **** 	Setup_USART_NVIC();
+ 111              		.loc 1 17 0
+ 112 0010 FFF7FEFF 		bl	Setup_USART_NVIC
+  18:../main.c     **** 	SetupUSART();
+ 113              		.loc 1 18 0
+ 114 0014 FFF7FEFF 		bl	SetupUSART
+ 115              	.L3:
+  19:../main.c     **** 
+  20:../main.c     **** 	while(1)
+  21:../main.c     **** 	{
+  22:../main.c     **** 		if(rxCount == END_RX_SEQUENCE)
+ 116              		.loc 1 22 0
+ 117 0018 104B     		ldr	r3, .L4+4
+ 118 001a 1B68     		ldr	r3, [r3, #0]
+ 119 001c 0F2B     		cmp	r3, #15
+ 120 001e 0FD1     		bne	.L2
+  23:../main.c     **** 		{
+  24:../main.c     **** 			USART_ITConfig(USART3, USART_IT_RXNE, DISABLE);
+ 121              		.loc 1 24 0
+ 122 0020 0F48     		ldr	r0, .L4+8
+ 123 0022 40F22551 		movw	r1, #1317
+ 124 0026 4FF00002 		mov	r2, #0
+ 125 002a FFF7FEFF 		bl	USART_ITConfig
+  25:../main.c     **** 			Calculations();
+ 126              		.loc 1 25 0
+ 127 002e FFF7FEFF 		bl	Calculations
+  26:../main.c     **** 			USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);
+ 128              		.loc 1 26 0
+ 129 0032 0B48     		ldr	r0, .L4+8
+ 130 0034 40F22551 		movw	r1, #1317
+ 131 0038 4FF00102 		mov	r2, #1
+ 132 003c FFF7FEFF 		bl	USART_ITConfig
+ 133              	.L2:
+  27:../main.c     **** 		}
+  28:../main.c     **** 
+  29:../main.c     **** 		USART_SendData(USART3, *txSeq[txCount]);
+ 134              		.loc 1 29 0
+ 135 0040 084B     		ldr	r3, .L4+12
+ 136 0042 1A68     		ldr	r2, [r3, #0]
+ 137 0044 084B     		ldr	r3, .L4+16
+ 138 0046 53F82230 		ldr	r3, [r3, r2, lsl #2]
+ 139 004a 1B88     		ldrh	r3, [r3, #0]
+ 140 004c 0448     		ldr	r0, .L4+8
+ 141 004e 1946     		mov	r1, r3
+ 142 0050 FFF7FEFF 		bl	USART_SendData
+  30:../main.c     **** 	}
+ 143              		.loc 1 30 0
+ 144 0054 E0E7     		b	.L3
+ 145              	.L5:
+ 146 0056 00BF     		.align	2
+ 147              	.L4:
+ 148 0058 00000000 		.word	TmpBitVal
+ 149 005c 00000000 		.word	rxCount
+ 150 0060 00480040 		.word	1073760256
+ 151 0064 00000000 		.word	txCount
+ 152 0068 00000000 		.word	txSeq
+ 153              		.cfi_endproc
+ 154              	.LFE29:
+ 156              		.align	2
+ 157              		.global	RTC_IRQHandler
+ 158              		.thumb
+ 159              		.thumb_func
+ 161              	RTC_IRQHandler:
+ 162              	.LFB30:
+  31:../main.c     **** }
+  32:../main.c     **** 
+  33:../main.c     **** 
   34:../main.c     **** 
-  35:../main.c     **** 	while(1)
-  36:../main.c     **** 	{
-  37:../main.c     **** 		//USART_SendData(USART3,'E');
-  38:../main.c     **** 		__NOP();
-  80              		.loc 2 38 0 discriminator 1
-  81 0024 FFF7ECFF 		bl	__NOP
-  39:../main.c     **** 		/*sym = USART_ReceiveData(USART3);
-  40:../main.c     **** 		for(count = 0; count < 10000; count++) __NOP();
-  41:../main.c     **** 		if(sym)
-  42:../main.c     **** 		{
-  43:../main.c     **** 			USART_SendData(USART3, sym);
-  44:../main.c     **** 			sym = 0;
-  45:../main.c     **** 		}*/
-  46:../main.c     **** 	}
-  82              		.loc 2 46 0 discriminator 1
-  83 0028 FCE7     		b	.L3
-  84              	.L5:
-  85 002a 00BF     		.align	2
-  86              	.L4:
-  87 002c 00000000 		.word	TmpBitVal
-  88              		.cfi_endproc
-  89              	.LFE29:
-  91              		.align	2
-  92              		.global	RTC_IRQHandler
-  93              		.thumb
-  94              		.thumb_func
-  96              	RTC_IRQHandler:
-  97              	.LFB30:
-  47:../main.c     **** }
-  48:../main.c     **** 
+  35:../main.c     **** /**************** Interrupts *******************/
+  36:../main.c     **** 
+  37:../main.c     **** void RTC_IRQHandler(void)
+  38:../main.c     **** {
+ 163              		.loc 1 38 0
+ 164              		.cfi_startproc
+ 165              		@ args = 0, pretend = 0, frame = 0
+ 166              		@ frame_needed = 1, uses_anonymous_args = 0
+ 167 006c 80B5     		push	{r7, lr}
+ 168              	.LCFI2:
+ 169              		.cfi_def_cfa_offset 8
+ 170              		.cfi_offset 7, -8
+ 171              		.cfi_offset 14, -4
+ 172 006e 00AF     		add	r7, sp, #0
+ 173              	.LCFI3:
+ 174              		.cfi_def_cfa_register 7
+  39:../main.c     **** 	if(RTC_GetITStatus(RTC_IT_SEC))
+ 175              		.loc 1 39 0
+ 176 0070 4FF00100 		mov	r0, #1
+ 177 0074 FFF7FEFF 		bl	RTC_GetITStatus
+ 178 0078 0346     		mov	r3, r0
+ 179 007a 002B     		cmp	r3, #0
+ 180 007c 11D0     		beq	.L7
+  40:../main.c     **** 	{
+  41:../main.c     **** 		RTC_ClearITPendingBit(RTC_IT_SEC);
+ 181              		.loc 1 41 0
+ 182 007e 4FF00100 		mov	r0, #1
+ 183 0082 FFF7FEFF 		bl	RTC_ClearITPendingBit
+  42:../main.c     **** 		if(TmpBitVal == Bit_RESET) TmpBitVal = Bit_SET;
+ 184              		.loc 1 42 0
+ 185 0086 0C4B     		ldr	r3, .L9
+ 186 0088 1B78     		ldrb	r3, [r3, #0]
+ 187 008a DBB2     		uxtb	r3, r3
+ 188 008c 002B     		cmp	r3, #0
+ 189 008e 04D1     		bne	.L8
+ 190              		.loc 1 42 0 is_stmt 0 discriminator 1
+ 191 0090 094B     		ldr	r3, .L9
+ 192 0092 4FF00102 		mov	r2, #1
+ 193 0096 1A70     		strb	r2, [r3, #0]
+ 194 0098 03E0     		b	.L7
+ 195              	.L8:
+  43:../main.c     **** 		else TmpBitVal = Bit_RESET;
+ 196              		.loc 1 43 0 is_stmt 1
+ 197 009a 074B     		ldr	r3, .L9
+ 198 009c 4FF00002 		mov	r2, #0
+ 199 00a0 1A70     		strb	r2, [r3, #0]
+ 200              	.L7:
+  44:../main.c     **** 	}
+  45:../main.c     **** 
+  46:../main.c     **** 	GPIO_WriteBit(GPIOC, GPIO_Pin_12, TmpBitVal);
+ 201              		.loc 1 46 0
+ 202 00a2 054B     		ldr	r3, .L9
+ 203 00a4 1B78     		ldrb	r3, [r3, #0]
+ 204 00a6 DBB2     		uxtb	r3, r3
+ 205 00a8 0448     		ldr	r0, .L9+4
+ 206 00aa 4FF48051 		mov	r1, #4096
+ 207 00ae 1A46     		mov	r2, r3
+ 208 00b0 FFF7FEFF 		bl	GPIO_WriteBit
+  47:../main.c     **** 
+  48:../main.c     **** }
+ 209              		.loc 1 48 0
+ 210 00b4 80BD     		pop	{r7, pc}
+ 211              	.L10:
+ 212 00b6 00BF     		.align	2
+ 213              	.L9:
+ 214 00b8 00000000 		.word	TmpBitVal
+ 215 00bc 00100140 		.word	1073811456
+ 216              		.cfi_endproc
+ 217              	.LFE30:
+ 219              		.align	2
+ 220              		.global	USART3_IRQHandler
+ 221              		.thumb
+ 222              		.thumb_func
+ 224              	USART3_IRQHandler:
+ 225              	.LFB31:
   49:../main.c     **** 
-  50:../main.c     **** /**************** Interrupts *******************/
-  51:../main.c     **** void RTC_IRQHandler(void)
-  52:../main.c     **** {
-  98              		.loc 2 52 0
-  99              		.cfi_startproc
- 100              		@ args = 0, pretend = 0, frame = 0
- 101              		@ frame_needed = 1, uses_anonymous_args = 0
- 102 0030 80B5     		push	{r7, lr}
- 103              	.LCFI4:
- 104              		.cfi_def_cfa_offset 8
- 105              		.cfi_offset 7, -8
- 106              		.cfi_offset 14, -4
- 107 0032 00AF     		add	r7, sp, #0
- 108              	.LCFI5:
- 109              		.cfi_def_cfa_register 7
-  53:../main.c     **** 	if(RTC_GetITStatus(RTC_IT_SEC))
- 110              		.loc 2 53 0
- 111 0034 4FF00100 		mov	r0, #1
- 112 0038 FFF7FEFF 		bl	RTC_GetITStatus
- 113 003c 0346     		mov	r3, r0
- 114 003e 002B     		cmp	r3, #0
- 115 0040 11D0     		beq	.L7
-  54:../main.c     **** 	{
-  55:../main.c     **** 		RTC_ClearITPendingBit(RTC_IT_SEC);
- 116              		.loc 2 55 0
- 117 0042 4FF00100 		mov	r0, #1
- 118 0046 FFF7FEFF 		bl	RTC_ClearITPendingBit
-  56:../main.c     **** 		if(TmpBitVal == Bit_RESET) TmpBitVal = Bit_SET;
- 119              		.loc 2 56 0
- 120 004a 0C4B     		ldr	r3, .L9
- 121 004c 1B78     		ldrb	r3, [r3, #0]
- 122 004e DBB2     		uxtb	r3, r3
- 123 0050 002B     		cmp	r3, #0
- 124 0052 04D1     		bne	.L8
- 125              		.loc 2 56 0 is_stmt 0 discriminator 1
- 126 0054 094B     		ldr	r3, .L9
- 127 0056 4FF00102 		mov	r2, #1
- 128 005a 1A70     		strb	r2, [r3, #0]
- 129 005c 03E0     		b	.L7
- 130              	.L8:
-  57:../main.c     **** 		else TmpBitVal = Bit_RESET;
- 131              		.loc 2 57 0 is_stmt 1
- 132 005e 074B     		ldr	r3, .L9
- 133 0060 4FF00002 		mov	r2, #0
- 134 0064 1A70     		strb	r2, [r3, #0]
- 135              	.L7:
-  58:../main.c     **** 	}
-  59:../main.c     **** 
-  60:../main.c     **** 	GPIO_WriteBit(GPIOC, GPIO_Pin_12, TmpBitVal);
- 136              		.loc 2 60 0
- 137 0066 054B     		ldr	r3, .L9
- 138 0068 1B78     		ldrb	r3, [r3, #0]
- 139 006a DBB2     		uxtb	r3, r3
- 140 006c 0448     		ldr	r0, .L9+4
- 141 006e 4FF48051 		mov	r1, #4096
- 142 0072 1A46     		mov	r2, r3
- 143 0074 FFF7FEFF 		bl	GPIO_WriteBit
-  61:../main.c     **** 
-  62:../main.c     **** }
- 144              		.loc 2 62 0
- 145 0078 80BD     		pop	{r7, pc}
- 146              	.L10:
- 147 007a 00BF     		.align	2
- 148              	.L9:
- 149 007c 00000000 		.word	TmpBitVal
- 150 0080 00100140 		.word	1073811456
- 151              		.cfi_endproc
- 152              	.LFE30:
- 154              		.align	2
- 155              		.global	USART3_IRQHandler
- 156              		.thumb
- 157              		.thumb_func
- 159              	USART3_IRQHandler:
- 160              	.LFB31:
-  63:../main.c     **** 
-  64:../main.c     **** void USART3_IRQHandler(void)
-  65:../main.c     **** {
- 161              		.loc 2 65 0
- 162              		.cfi_startproc
- 163              		@ args = 0, pretend = 0, frame = 8
- 164              		@ frame_needed = 1, uses_anonymous_args = 0
- 165 0084 80B5     		push	{r7, lr}
- 166              	.LCFI6:
- 167              		.cfi_def_cfa_offset 8
- 168              		.cfi_offset 7, -8
- 169              		.cfi_offset 14, -4
- 170 0086 82B0     		sub	sp, sp, #8
- 171              	.LCFI7:
- 172              		.cfi_def_cfa_offset 16
- 173 0088 00AF     		add	r7, sp, #0
- 174              	.LCFI8:
- 175              		.cfi_def_cfa_register 7
-  66:../main.c     **** 	if(USART_GetITStatus(USART3, USART_IT_RXNE))
- 176              		.loc 2 66 0
- 177 008a 1948     		ldr	r0, .L14
- 178 008c 40F22551 		movw	r1, #1317
- 179 0090 FFF7FEFF 		bl	USART_GetITStatus
- 180 0094 0346     		mov	r3, r0
- 181 0096 002B     		cmp	r3, #0
- 182 0098 12D0     		beq	.L12
-  67:../main.c     **** 	{
-  68:../main.c     **** 		USART_ClearITPendingBit(USART3, USART_IT_RXNE);
- 183              		.loc 2 68 0
- 184 009a 1548     		ldr	r0, .L14
- 185 009c 40F22551 		movw	r1, #1317
- 186 00a0 FFF7FEFF 		bl	USART_ClearITPendingBit
-  69:../main.c     **** 		if(TmpBitVal == Bit_RESET) TmpBitVal = Bit_SET;
- 187              		.loc 2 69 0
- 188 00a4 134B     		ldr	r3, .L14+4
- 189 00a6 1B78     		ldrb	r3, [r3, #0]
- 190 00a8 DBB2     		uxtb	r3, r3
- 191 00aa 002B     		cmp	r3, #0
- 192 00ac 04D1     		bne	.L13
- 193              		.loc 2 69 0 is_stmt 0 discriminator 1
- 194 00ae 114B     		ldr	r3, .L14+4
- 195 00b0 4FF00102 		mov	r2, #1
- 196 00b4 1A70     		strb	r2, [r3, #0]
- 197 00b6 03E0     		b	.L12
- 198              	.L13:
-  70:../main.c     **** 		else TmpBitVal = Bit_RESET;
- 199              		.loc 2 70 0 is_stmt 1
- 200 00b8 0E4B     		ldr	r3, .L14+4
- 201 00ba 4FF00002 		mov	r2, #0
- 202 00be 1A70     		strb	r2, [r3, #0]
- 203              	.L12:
-  71:../main.c     **** 	}
-  72:../main.c     **** 
-  73:../main.c     **** 	uint16_t sym;
-  74:../main.c     **** 	sym = USART_ReceiveData(USART3);
- 204              		.loc 2 74 0
- 205 00c0 0B48     		ldr	r0, .L14
- 206 00c2 FFF7FEFF 		bl	USART_ReceiveData
- 207 00c6 0346     		mov	r3, r0
- 208 00c8 FB80     		strh	r3, [r7, #6]	@ movhi
-  75:../main.c     **** 	USART_SendData(USART3, sym);
- 209              		.loc 2 75 0
- 210 00ca FB88     		ldrh	r3, [r7, #6]
- 211 00cc 0848     		ldr	r0, .L14
- 212 00ce 1946     		mov	r1, r3
- 213 00d0 FFF7FEFF 		bl	USART_SendData
-  76:../main.c     **** 
-  77:../main.c     **** 	GPIO_WriteBit(GPIOC, GPIO_Pin_12, TmpBitVal);
- 214              		.loc 2 77 0
- 215 00d4 074B     		ldr	r3, .L14+4
- 216 00d6 1B78     		ldrb	r3, [r3, #0]
- 217 00d8 DBB2     		uxtb	r3, r3
- 218 00da 0748     		ldr	r0, .L14+8
- 219 00dc 4FF48051 		mov	r1, #4096
- 220 00e0 1A46     		mov	r2, r3
- 221 00e2 FFF7FEFF 		bl	GPIO_WriteBit
-  78:../main.c     **** 
-  79:../main.c     **** }
- 222              		.loc 2 79 0
- 223 00e6 07F10807 		add	r7, r7, #8
- 224 00ea BD46     		mov	sp, r7
- 225 00ec 80BD     		pop	{r7, pc}
- 226              	.L15:
- 227 00ee 00BF     		.align	2
- 228              	.L14:
- 229 00f0 00480040 		.word	1073760256
- 230 00f4 00000000 		.word	TmpBitVal
- 231 00f8 00100140 		.word	1073811456
- 232              		.cfi_endproc
- 233              	.LFE31:
- 235              		.align	2
- 236              		.global	SetupLED
- 237              		.thumb
- 238              		.thumb_func
- 240              	SetupLED:
- 241              	.LFB32:
-  80:../main.c     **** 
-  81:../main.c     **** /************ Peripherial functions **************/
-  82:../main.c     **** 
-  83:../main.c     **** void SetupLED(void)
-  84:../main.c     **** {
- 242              		.loc 2 84 0
- 243              		.cfi_startproc
- 244              		@ args = 0, pretend = 0, frame = 8
- 245              		@ frame_needed = 1, uses_anonymous_args = 0
- 246 00fc 80B5     		push	{r7, lr}
- 247              	.LCFI9:
- 248              		.cfi_def_cfa_offset 8
- 249              		.cfi_offset 7, -8
- 250              		.cfi_offset 14, -4
- 251 00fe 82B0     		sub	sp, sp, #8
- 252              	.LCFI10:
- 253              		.cfi_def_cfa_offset 16
- 254 0100 00AF     		add	r7, sp, #0
- 255              	.LCFI11:
- 256              		.cfi_def_cfa_register 7
-  85:../main.c     **** 	/* ==GPIO== */
-  86:../main.c     **** 
-  87:../main.c     **** 	//Clocking
-  88:../main.c     **** 
-  89:../main.c     **** 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
- 257              		.loc 2 89 0
- 258 0102 4FF01000 		mov	r0, #16
- 259 0106 4FF00101 		mov	r1, #1
- 260 010a FFF7FEFF 		bl	RCC_APB2PeriphClockCmd
-  90:../main.c     **** 
-  91:../main.c     **** 	//Configure
-  92:../main.c     **** 
-  93:../main.c     **** 	GPIO_DeInit(GPIOC);
- 261              		.loc 2 93 0
- 262 010e 0B48     		ldr	r0, .L17
- 263 0110 FFF7FEFF 		bl	GPIO_DeInit
-  94:../main.c     **** 
-  95:../main.c     **** 	GPIO_InitTypeDef GPIO_InitStructure;
-  96:../main.c     **** 
-  97:../main.c     **** 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_All;
- 264              		.loc 2 97 0
- 265 0114 4FF6FF73 		movw	r3, #65535
- 266 0118 BB80     		strh	r3, [r7, #4]	@ movhi
-  98:../main.c     **** 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
- 267              		.loc 2 98 0
- 268 011a 4FF01003 		mov	r3, #16
- 269 011e FB71     		strb	r3, [r7, #7]
-  99:../main.c     **** 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
- 270              		.loc 2 99 0
- 271 0120 4FF00303 		mov	r3, #3
- 272 0124 BB71     		strb	r3, [r7, #6]
- 100:../main.c     **** 
- 101:../main.c     **** 	//Init
- 102:../main.c     **** 
- 103:../main.c     **** 	GPIO_Init(GPIOC , &GPIO_InitStructure);
- 273              		.loc 2 103 0
- 274 0126 07F10403 		add	r3, r7, #4
- 275 012a 0448     		ldr	r0, .L17
- 276 012c 1946     		mov	r1, r3
- 277 012e FFF7FEFF 		bl	GPIO_Init
- 104:../main.c     **** 
- 105:../main.c     **** 	/* =======*/
- 106:../main.c     **** }
- 278              		.loc 2 106 0
- 279 0132 07F10807 		add	r7, r7, #8
- 280 0136 BD46     		mov	sp, r7
- 281 0138 80BD     		pop	{r7, pc}
- 282              	.L18:
- 283 013a 00BF     		.align	2
- 284              	.L17:
- 285 013c 00100140 		.word	1073811456
- 286              		.cfi_endproc
- 287              	.LFE32:
- 289              		.align	2
- 290              		.global	SetupRTC
- 291              		.thumb
- 292              		.thumb_func
- 294              	SetupRTC:
- 295              	.LFB33:
- 107:../main.c     **** 
- 108:../main.c     **** void SetupRTC(void)
- 109:../main.c     **** {
- 296              		.loc 2 109 0
- 297              		.cfi_startproc
- 298              		@ args = 0, pretend = 0, frame = 0
- 299              		@ frame_needed = 1, uses_anonymous_args = 0
- 300 0140 80B5     		push	{r7, lr}
- 301              	.LCFI12:
- 302              		.cfi_def_cfa_offset 8
- 303              		.cfi_offset 7, -8
- 304              		.cfi_offset 14, -4
- 305 0142 00AF     		add	r7, sp, #0
- 306              	.LCFI13:
- 307              		.cfi_def_cfa_register 7
- 110:../main.c     **** 	/* CK_RTC clock selection */
- 111:../main.c     **** 		RCC_APB1PeriphClockCmd( RCC_APB1Periph_PWR | RCC_APB1Periph_BKP, ENABLE );
- 308              		.loc 2 111 0
- 309 0144 4FF0C050 		mov	r0, #402653184
- 310 0148 4FF00101 		mov	r1, #1
- 311 014c FFF7FEFF 		bl	RCC_APB1PeriphClockCmd
- 112:../main.c     **** 
- 113:../main.c     **** 		/* Allow access to BKP Domain */
- 114:../main.c     **** 		PWR_BackupAccessCmd( ENABLE );
- 312              		.loc 2 114 0
- 313 0150 4FF00100 		mov	r0, #1
- 314 0154 FFF7FEFF 		bl	PWR_BackupAccessCmd
- 115:../main.c     **** 
- 116:../main.c     **** 		/* Enable the LSE OSC */
- 117:../main.c     **** 		RCC_LSEConfig( RCC_LSE_ON );
- 315              		.loc 2 117 0
- 316 0158 4FF00100 		mov	r0, #1
- 317 015c FFF7FEFF 		bl	RCC_LSEConfig
- 118:../main.c     **** 
- 119:../main.c     **** 		/* Wait till LSE is ready */
- 120:../main.c     **** 		while ( RCC_GetFlagStatus( RCC_FLAG_LSERDY ) == RESET ){}
- 318              		.loc 2 120 0
- 319 0160 00BF     		nop
- 320              	.L20:
- 321              		.loc 2 120 0 is_stmt 0 discriminator 1
- 322 0162 4FF04100 		mov	r0, #65
- 323 0166 FFF7FEFF 		bl	RCC_GetFlagStatus
- 324 016a 0346     		mov	r3, r0
- 325 016c 002B     		cmp	r3, #0
- 326 016e F8D0     		beq	.L20
- 121:../main.c     **** 
- 122:../main.c     **** 		/* Select the RTC Clock Source */
- 123:../main.c     **** 		RCC_RTCCLKConfig( RCC_RTCCLKSource_LSE );
- 327              		.loc 2 123 0 is_stmt 1
- 328 0170 4FF48070 		mov	r0, #256
- 329 0174 FFF7FEFF 		bl	RCC_RTCCLKConfig
- 124:../main.c     **** 
- 125:../main.c     **** 		/* Enable the RTC Clock */
- 126:../main.c     **** 		RCC_RTCCLKCmd( ENABLE );
- 330              		.loc 2 126 0
- 331 0178 4FF00100 		mov	r0, #1
- 332 017c FFF7FEFF 		bl	RCC_RTCCLKCmd
- 127:../main.c     **** 
- 128:../main.c     **** 		/* Wait for RTC registers synchronization */
- 129:../main.c     **** 		RTC_WaitForSynchro();
- 333              		.loc 2 129 0
- 334 0180 FFF7FEFF 		bl	RTC_WaitForSynchro
- 130:../main.c     **** 
- 131:../main.c     **** 		/* Wait until last write operation on RTC registers has finished */
- 132:../main.c     **** 		RTC_WaitForLastTask();
- 335              		.loc 2 132 0
- 336 0184 FFF7FEFF 		bl	RTC_WaitForLastTask
- 133:../main.c     **** 
- 134:../main.c     **** 		/* Enable the RTC Second interrupt */
- 135:../main.c     **** 		RTC_ITConfig(RTC_IT_SEC, ENABLE);
- 337              		.loc 2 135 0
- 338 0188 4FF00100 		mov	r0, #1
- 339 018c 4FF00101 		mov	r1, #1
- 340 0190 FFF7FEFF 		bl	RTC_ITConfig
- 136:../main.c     **** 
- 137:../main.c     **** 		/* Wait until last write operation on RTC registers has finished */
- 138:../main.c     **** 		RTC_WaitForLastTask();
- 341              		.loc 2 138 0
- 342 0194 FFF7FEFF 		bl	RTC_WaitForLastTask
- 139:../main.c     **** 
- 140:../main.c     **** 		/* Set RTC prescaler: set RTC period to 1sec */
- 141:../main.c     **** 		/* RTC period = RTCCLK/RTC_PR = (32.768 KHz)/(32767+1) */
- 142:../main.c     **** 		RTC_SetPrescaler( RTC_PRESCALER );
- 343              		.loc 2 142 0
- 344 0198 4FF4FA50 		mov	r0, #8000
- 345 019c FFF7FEFF 		bl	RTC_SetPrescaler
- 143:../main.c     **** 
- 144:../main.c     **** 		/* Wait until last write operation on RTC registers has finished */
- 145:../main.c     **** 		RTC_WaitForLastTask();
- 346              		.loc 2 145 0
- 347 01a0 FFF7FEFF 		bl	RTC_WaitForLastTask
- 146:../main.c     **** 
- 147:../main.c     **** 		RTC_EnterConfigMode();
- 348              		.loc 2 147 0
- 349 01a4 FFF7FEFF 		bl	RTC_EnterConfigMode
- 148:../main.c     **** 
- 149:../main.c     **** 		RTC_ExitConfigMode();
- 350              		.loc 2 149 0
- 351 01a8 FFF7FEFF 		bl	RTC_ExitConfigMode
- 150:../main.c     **** }
- 352              		.loc 2 150 0
- 353 01ac 80BD     		pop	{r7, pc}
- 354              		.cfi_endproc
- 355              	.LFE33:
- 357 01ae 00BF     		.align	2
- 358              		.global	Setup_RTC_NVIC
- 359              		.thumb
- 360              		.thumb_func
- 362              	Setup_RTC_NVIC:
- 363              	.LFB34:
- 151:../main.c     **** 
- 152:../main.c     **** void Setup_RTC_NVIC(void)
- 153:../main.c     **** {
- 364              		.loc 2 153 0
- 365              		.cfi_startproc
- 366              		@ args = 0, pretend = 0, frame = 8
- 367              		@ frame_needed = 1, uses_anonymous_args = 0
- 368 01b0 80B5     		push	{r7, lr}
- 369              	.LCFI14:
- 370              		.cfi_def_cfa_offset 8
- 371              		.cfi_offset 7, -8
- 372              		.cfi_offset 14, -4
- 373 01b2 82B0     		sub	sp, sp, #8
- 374              	.LCFI15:
- 375              		.cfi_def_cfa_offset 16
- 376 01b4 00AF     		add	r7, sp, #0
- 377              	.LCFI16:
- 378              		.cfi_def_cfa_register 7
- 154:../main.c     **** 	/* Interrupt structure */
- 155:../main.c     **** 		NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
- 379              		.loc 2 155 0
- 380 01b6 4FF4E060 		mov	r0, #1792
- 381 01ba FFF7FEFF 		bl	NVIC_PriorityGroupConfig
- 156:../main.c     **** 
- 157:../main.c     **** 		NVIC_InitTypeDef NVIC_InitStructure;
- 158:../main.c     **** 		NVIC_InitStructure.NVIC_IRQChannel = RTC_IRQn;
- 382              		.loc 2 158 0
- 383 01be 4FF00303 		mov	r3, #3
- 384 01c2 3B71     		strb	r3, [r7, #4]
- 159:../main.c     **** 		NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
- 385              		.loc 2 159 0
- 386 01c4 4FF00103 		mov	r3, #1
- 387 01c8 7B71     		strb	r3, [r7, #5]
- 160:../main.c     **** 		NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;
- 388              		.loc 2 160 0
- 389 01ca 4FF00303 		mov	r3, #3
- 390 01ce BB71     		strb	r3, [r7, #6]
- 161:../main.c     **** 		NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
- 391              		.loc 2 161 0
- 392 01d0 4FF00103 		mov	r3, #1
- 393 01d4 FB71     		strb	r3, [r7, #7]
- 162:../main.c     **** 
- 163:../main.c     **** 		NVIC_Init(&NVIC_InitStructure);
- 394              		.loc 2 163 0
- 395 01d6 07F10403 		add	r3, r7, #4
- 396 01da 1846     		mov	r0, r3
- 397 01dc FFF7FEFF 		bl	NVIC_Init
- 164:../main.c     **** }
- 398              		.loc 2 164 0
- 399 01e0 07F10807 		add	r7, r7, #8
- 400 01e4 BD46     		mov	sp, r7
- 401 01e6 80BD     		pop	{r7, pc}
- 402              		.cfi_endproc
- 403              	.LFE34:
- 405              		.align	2
- 406              		.global	SetupUSART
- 407              		.thumb
- 408              		.thumb_func
- 410              	SetupUSART:
- 411              	.LFB35:
- 165:../main.c     **** 
- 166:../main.c     **** void SetupUSART(void)
- 167:../main.c     **** {
- 412              		.loc 2 167 0
- 413              		.cfi_startproc
- 414              		@ args = 0, pretend = 0, frame = 24
- 415              		@ frame_needed = 1, uses_anonymous_args = 0
- 416 01e8 80B5     		push	{r7, lr}
- 417              	.LCFI17:
- 418              		.cfi_def_cfa_offset 8
- 419              		.cfi_offset 7, -8
- 420              		.cfi_offset 14, -4
- 421 01ea 86B0     		sub	sp, sp, #24
- 422              	.LCFI18:
- 423              		.cfi_def_cfa_offset 32
- 424 01ec 00AF     		add	r7, sp, #0
- 425              	.LCFI19:
- 426              		.cfi_def_cfa_register 7
- 168:../main.c     **** 	/* Enable GPIOB clock                                                   */
- 169:../main.c     **** 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
- 427              		.loc 2 169 0
- 428 01ee 4FF00800 		mov	r0, #8
- 429 01f2 4FF00101 		mov	r1, #1
- 430 01f6 FFF7FEFF 		bl	RCC_APB2PeriphClockCmd
- 170:../main.c     **** 
- 171:../main.c     **** 	GPIO_DeInit(GPIOB);
- 431              		.loc 2 171 0
- 432 01fa 2748     		ldr	r0, .L23
- 433 01fc FFF7FEFF 		bl	GPIO_DeInit
- 172:../main.c     **** 
- 173:../main.c     **** 	GPIO_InitTypeDef  GPIO_InitStructure;
- 174:../main.c     **** 
- 175:../main.c     **** 	/* Configure USART3 Rx (PB11) as input floating                         */
- 176:../main.c     **** 	GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_11;
- 434              		.loc 2 176 0
- 435 0200 4FF40063 		mov	r3, #2048
- 436 0204 BB82     		strh	r3, [r7, #20]	@ movhi
- 177:../main.c     **** 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
- 437              		.loc 2 177 0
- 438 0206 4FF00303 		mov	r3, #3
- 439 020a BB75     		strb	r3, [r7, #22]
- 178:../main.c     **** 	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_IN_FLOATING;
- 440              		.loc 2 178 0
- 441 020c 4FF00403 		mov	r3, #4
- 442 0210 FB75     		strb	r3, [r7, #23]
- 179:../main.c     **** 	GPIO_Init(GPIOB, &GPIO_InitStructure);
- 443              		.loc 2 179 0
- 444 0212 07F11403 		add	r3, r7, #20
- 445 0216 2048     		ldr	r0, .L23
- 446 0218 1946     		mov	r1, r3
- 447 021a FFF7FEFF 		bl	GPIO_Init
- 180:../main.c     **** 
- 181:../main.c     **** 	/* Configure USART3 Tx (PB10) as alternate function push-pull            */
- 182:../main.c     **** 	GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_10;
- 448              		.loc 2 182 0
- 449 021e 4FF48063 		mov	r3, #1024
- 450 0222 BB82     		strh	r3, [r7, #20]	@ movhi
- 183:../main.c     **** 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
- 451              		.loc 2 183 0
- 452 0224 4FF00303 		mov	r3, #3
- 453 0228 BB75     		strb	r3, [r7, #22]
- 184:../main.c     **** 	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AF_PP;
- 454              		.loc 2 184 0
- 455 022a 4FF01803 		mov	r3, #24
- 456 022e FB75     		strb	r3, [r7, #23]
- 185:../main.c     **** 	GPIO_Init(GPIOB, &GPIO_InitStructure);
- 457              		.loc 2 185 0
- 458 0230 07F11403 		add	r3, r7, #20
- 459 0234 1848     		ldr	r0, .L23
- 460 0236 1946     		mov	r1, r3
- 461 0238 FFF7FEFF 		bl	GPIO_Init
- 186:../main.c     **** 
- 187:../main.c     **** 	/* Enable USART3 clock                                                   */
- 188:../main.c     **** 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3, ENABLE);
- 462              		.loc 2 188 0
- 463 023c 4FF48020 		mov	r0, #262144
- 464 0240 4FF00101 		mov	r1, #1
- 465 0244 FFF7FEFF 		bl	RCC_APB1PeriphClockCmd
- 189:../main.c     **** 
- 190:../main.c     **** 	USART_InitTypeDef USART_InitStructure;
- 191:../main.c     **** 
- 192:../main.c     **** 	USART_InitStructure.USART_BaudRate            = 9600;
- 466              		.loc 2 192 0
- 467 0248 4FF41653 		mov	r3, #9600
- 468 024c 7B60     		str	r3, [r7, #4]
- 193:../main.c     **** 	USART_InitStructure.USART_WordLength          = USART_WordLength_8b;
- 469              		.loc 2 193 0
- 470 024e 4FF00003 		mov	r3, #0
- 471 0252 3B81     		strh	r3, [r7, #8]	@ movhi
- 194:../main.c     **** 	USART_InitStructure.USART_StopBits            = USART_StopBits_1;
- 472              		.loc 2 194 0
- 473 0254 4FF00003 		mov	r3, #0
- 474 0258 7B81     		strh	r3, [r7, #10]	@ movhi
- 195:../main.c     **** 	USART_InitStructure.USART_Parity              = USART_Parity_No ;
- 475              		.loc 2 195 0
- 476 025a 4FF00003 		mov	r3, #0
- 477 025e BB81     		strh	r3, [r7, #12]	@ movhi
- 196:../main.c     **** 	USART_InitStructure.USART_Mode                = USART_Mode_Rx | USART_Mode_Tx;
- 478              		.loc 2 196 0
- 479 0260 4FF00C03 		mov	r3, #12
- 480 0264 FB81     		strh	r3, [r7, #14]	@ movhi
- 197:../main.c     **** 	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
- 481              		.loc 2 197 0
- 482 0266 4FF00003 		mov	r3, #0
- 483 026a 3B82     		strh	r3, [r7, #16]	@ movhi
- 198:../main.c     **** 
- 199:../main.c     **** 	USART_Init(USART3, &USART_InitStructure);
- 484              		.loc 2 199 0
- 485 026c 07F10403 		add	r3, r7, #4
- 486 0270 0A48     		ldr	r0, .L23+4
- 487 0272 1946     		mov	r1, r3
- 488 0274 FFF7FEFF 		bl	USART_Init
- 200:../main.c     **** 	USART_Cmd(USART3, ENABLE);
- 489              		.loc 2 200 0
- 490 0278 0848     		ldr	r0, .L23+4
- 491 027a 4FF00101 		mov	r1, #1
- 492 027e FFF7FEFF 		bl	USART_Cmd
- 201:../main.c     **** 	/*Interrupt after receive*/
- 202:../main.c     **** 	USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);
- 493              		.loc 2 202 0
- 494 0282 0648     		ldr	r0, .L23+4
- 495 0284 40F22551 		movw	r1, #1317
- 496 0288 4FF00102 		mov	r2, #1
- 497 028c FFF7FEFF 		bl	USART_ITConfig
- 203:../main.c     **** 
- 204:../main.c     **** }
- 498              		.loc 2 204 0
- 499 0290 07F11807 		add	r7, r7, #24
- 500 0294 BD46     		mov	sp, r7
- 501 0296 80BD     		pop	{r7, pc}
- 502              	.L24:
- 503              		.align	2
- 504              	.L23:
- 505 0298 000C0140 		.word	1073810432
- 506 029c 00480040 		.word	1073760256
- 507              		.cfi_endproc
- 508              	.LFE35:
- 510              		.align	2
- 511              		.global	Setup_USART_NVIC
- 512              		.thumb
- 513              		.thumb_func
- 515              	Setup_USART_NVIC:
- 516              	.LFB36:
- 205:../main.c     **** 
- 206:../main.c     **** void Setup_USART_NVIC(void)
- 207:../main.c     **** {
- 517              		.loc 2 207 0
- 518              		.cfi_startproc
- 519              		@ args = 0, pretend = 0, frame = 8
- 520              		@ frame_needed = 1, uses_anonymous_args = 0
- 521 02a0 80B5     		push	{r7, lr}
- 522              	.LCFI20:
- 523              		.cfi_def_cfa_offset 8
- 524              		.cfi_offset 7, -8
- 525              		.cfi_offset 14, -4
- 526 02a2 82B0     		sub	sp, sp, #8
- 527              	.LCFI21:
- 528              		.cfi_def_cfa_offset 16
- 529 02a4 00AF     		add	r7, sp, #0
- 530              	.LCFI22:
- 531              		.cfi_def_cfa_register 7
- 208:../main.c     **** 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
- 532              		.loc 2 208 0
- 533 02a6 4FF4E060 		mov	r0, #1792
- 534 02aa FFF7FEFF 		bl	NVIC_PriorityGroupConfig
- 209:../main.c     **** 
- 210:../main.c     **** 	NVIC_InitTypeDef NVIC_InitStructure;
- 211:../main.c     **** 
- 212:../main.c     **** 	NVIC_InitStructure.NVIC_IRQChannel = USART3_IRQn;
- 535              		.loc 2 212 0
- 536 02ae 4FF02703 		mov	r3, #39
- 537 02b2 3B71     		strb	r3, [r7, #4]
- 213:../main.c     **** 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
- 538              		.loc 2 213 0
- 539 02b4 4FF00103 		mov	r3, #1
- 540 02b8 7B71     		strb	r3, [r7, #5]
- 214:../main.c     **** 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;
- 541              		.loc 2 214 0
- 542 02ba 4FF00303 		mov	r3, #3
- 543 02be BB71     		strb	r3, [r7, #6]
- 215:../main.c     **** 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
- 544              		.loc 2 215 0
- 545 02c0 4FF00103 		mov	r3, #1
- 546 02c4 FB71     		strb	r3, [r7, #7]
- 216:../main.c     **** 
- 217:../main.c     **** 	NVIC_Init(&NVIC_InitStructure);
- 547              		.loc 2 217 0
- 548 02c6 07F10403 		add	r3, r7, #4
- 549 02ca 1846     		mov	r0, r3
- 550 02cc FFF7FEFF 		bl	NVIC_Init
- 218:../main.c     **** }
- 551              		.loc 2 218 0
- 552 02d0 07F10807 		add	r7, r7, #8
- 553 02d4 BD46     		mov	sp, r7
- 554 02d6 80BD     		pop	{r7, pc}
- 555              		.cfi_endproc
- 556              	.LFE36:
- 558              	.Letext0:
- 559              		.file 3 "/opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/../../../../arm-none-eab
- 560              		.file 4 "/home/dzusan/workspace/sensitizer_probe/CMSIS/stm32f10x.h"
- 561              		.file 5 "/home/dzusan/workspace/sensitizer_probe/STM32F10x_StdPeriph_Driver/inc/stm32f10x_gpio.h"
- 562              		.file 6 "/home/dzusan/workspace/sensitizer_probe/STM32F10x_StdPeriph_Driver/inc/stm32f10x_usart.h"
- 563              		.file 7 "/home/dzusan/workspace/sensitizer_probe/STM32F10x_StdPeriph_Driver/inc/misc.h"
+  50:../main.c     **** void USART3_IRQHandler(void)
+  51:../main.c     **** {
+ 226              		.loc 1 51 0
+ 227              		.cfi_startproc
+ 228              		@ args = 0, pretend = 0, frame = 8
+ 229              		@ frame_needed = 1, uses_anonymous_args = 0
+ 230 00c0 80B5     		push	{r7, lr}
+ 231              	.LCFI4:
+ 232              		.cfi_def_cfa_offset 8
+ 233              		.cfi_offset 7, -8
+ 234              		.cfi_offset 14, -4
+ 235 00c2 82B0     		sub	sp, sp, #8
+ 236              	.LCFI5:
+ 237              		.cfi_def_cfa_offset 16
+ 238 00c4 00AF     		add	r7, sp, #0
+ 239              	.LCFI6:
+ 240              		.cfi_def_cfa_register 7
+  52:../main.c     **** 	if(USART_GetITStatus(USART3, USART_IT_RXNE))
+ 241              		.loc 1 52 0
+ 242 00c6 3248     		ldr	r0, .L18
+ 243 00c8 40F22551 		movw	r1, #1317
+ 244 00cc FFF7FEFF 		bl	USART_GetITStatus
+ 245 00d0 0346     		mov	r3, r0
+ 246 00d2 002B     		cmp	r3, #0
+ 247 00d4 25D0     		beq	.L12
+ 248              	.LBB2:
+  53:../main.c     **** 	{
+  54:../main.c     **** 		USART_ClearITPendingBit(USART3, USART_IT_RXNE);
+ 249              		.loc 1 54 0
+ 250 00d6 2E48     		ldr	r0, .L18
+ 251 00d8 40F22551 		movw	r1, #1317
+ 252 00dc FFF7FEFF 		bl	USART_ClearITPendingBit
+  55:../main.c     **** 		uint16_t tmp;
+  56:../main.c     **** 		tmp = USART_ReceiveData(USART3);
+ 253              		.loc 1 56 0
+ 254 00e0 2B48     		ldr	r0, .L18
+ 255 00e2 FFF7FEFF 		bl	USART_ReceiveData
+ 256 00e6 0346     		mov	r3, r0
+ 257 00e8 FB80     		strh	r3, [r7, #6]	@ movhi
+  57:../main.c     **** 		rxCount++;
+ 258              		.loc 1 57 0
+ 259 00ea 2A4B     		ldr	r3, .L18+4
+ 260 00ec 1B68     		ldr	r3, [r3, #0]
+ 261 00ee 03F10102 		add	r2, r3, #1
+ 262 00f2 284B     		ldr	r3, .L18+4
+ 263 00f4 1A60     		str	r2, [r3, #0]
+  58:../main.c     **** 
+  59:../main.c     **** 		if(rxCount > END_RX_SEQUENCE)
+ 264              		.loc 1 59 0
+ 265 00f6 274B     		ldr	r3, .L18+4
+ 266 00f8 1B68     		ldr	r3, [r3, #0]
+ 267 00fa 0F2B     		cmp	r3, #15
+ 268 00fc 09DD     		ble	.L13
+  60:../main.c     **** 		{
+  61:../main.c     **** 			if(tmp == START_RX_BYTE) rxCount = 0;
+ 269              		.loc 1 61 0
+ 270 00fe 264B     		ldr	r3, .L18+8
+ 271 0100 1B88     		ldrh	r3, [r3, #0]
+ 272 0102 FA88     		ldrh	r2, [r7, #6]
+ 273 0104 9A42     		cmp	r2, r3
+ 274 0106 28D1     		bne	.L14
+ 275              		.loc 1 61 0 is_stmt 0 discriminator 1
+ 276 0108 224B     		ldr	r3, .L18+4
+ 277 010a 4FF00002 		mov	r2, #0
+ 278 010e 1A60     		str	r2, [r3, #0]
+ 279 0110 23E0     		b	.L14
+ 280              	.L13:
+  62:../main.c     **** 		}
+  63:../main.c     **** 		else *rxSeq[rxCount] = tmp;
+ 281              		.loc 1 63 0 is_stmt 1
+ 282 0112 204B     		ldr	r3, .L18+4
+ 283 0114 1A68     		ldr	r2, [r3, #0]
+ 284 0116 214B     		ldr	r3, .L18+12
+ 285 0118 53F82230 		ldr	r3, [r3, r2, lsl #2]
+ 286 011c FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 287 011e 1A80     		strh	r2, [r3, #0]	@ movhi
+ 288 0120 1BE0     		b	.L14
+ 289              	.L12:
+ 290              	.LBE2:
+  64:../main.c     **** 	}
+  65:../main.c     **** 	else if(USART_GetITStatus(USART3, USART_IT_TC))
+ 291              		.loc 1 65 0
+ 292 0122 1B48     		ldr	r0, .L18
+ 293 0124 40F22661 		movw	r1, #1574
+ 294 0128 FFF7FEFF 		bl	USART_GetITStatus
+ 295 012c 0346     		mov	r3, r0
+ 296 012e 002B     		cmp	r3, #0
+ 297 0130 13D0     		beq	.L14
+  66:../main.c     **** 	{
+  67:../main.c     **** 		USART_ClearITPendingBit(USART3, USART_IT_TC);
+ 298              		.loc 1 67 0
+ 299 0132 1748     		ldr	r0, .L18
+ 300 0134 40F22661 		movw	r1, #1574
+ 301 0138 FFF7FEFF 		bl	USART_ClearITPendingBit
+  68:../main.c     **** 		if(txCount > END_TX_SEQUENCE) txCount = 0;
+ 302              		.loc 1 68 0
+ 303 013c 184B     		ldr	r3, .L18+16
+ 304 013e 1B68     		ldr	r3, [r3, #0]
+ 305 0140 062B     		cmp	r3, #6
+ 306 0142 04DD     		ble	.L15
+ 307              		.loc 1 68 0 is_stmt 0 discriminator 1
+ 308 0144 164B     		ldr	r3, .L18+16
+ 309 0146 4FF00002 		mov	r2, #0
+ 310 014a 1A60     		str	r2, [r3, #0]
+ 311 014c 05E0     		b	.L14
+ 312              	.L15:
+  69:../main.c     **** 		else txCount++;
+ 313              		.loc 1 69 0 is_stmt 1
+ 314 014e 144B     		ldr	r3, .L18+16
+ 315 0150 1B68     		ldr	r3, [r3, #0]
+ 316 0152 03F10102 		add	r2, r3, #1
+ 317 0156 124B     		ldr	r3, .L18+16
+ 318 0158 1A60     		str	r2, [r3, #0]
+ 319              	.L14:
+  70:../main.c     **** 	}
+  71:../main.c     **** 
+  72:../main.c     **** 	if(TmpBitVal == Bit_RESET) TmpBitVal = Bit_SET;
+ 320              		.loc 1 72 0
+ 321 015a 124B     		ldr	r3, .L18+20
+ 322 015c 1B78     		ldrb	r3, [r3, #0]
+ 323 015e DBB2     		uxtb	r3, r3
+ 324 0160 002B     		cmp	r3, #0
+ 325 0162 04D1     		bne	.L16
+ 326              		.loc 1 72 0 is_stmt 0 discriminator 1
+ 327 0164 0F4B     		ldr	r3, .L18+20
+ 328 0166 4FF00102 		mov	r2, #1
+ 329 016a 1A70     		strb	r2, [r3, #0]
+ 330 016c 03E0     		b	.L17
+ 331              	.L16:
+  73:../main.c     **** 	else TmpBitVal = Bit_RESET;
+ 332              		.loc 1 73 0 is_stmt 1
+ 333 016e 0D4B     		ldr	r3, .L18+20
+ 334 0170 4FF00002 		mov	r2, #0
+ 335 0174 1A70     		strb	r2, [r3, #0]
+ 336              	.L17:
+  74:../main.c     **** 	GPIO_WriteBit(GPIOC, GPIO_Pin_12, TmpBitVal);
+ 337              		.loc 1 74 0
+ 338 0176 0B4B     		ldr	r3, .L18+20
+ 339 0178 1B78     		ldrb	r3, [r3, #0]
+ 340 017a DBB2     		uxtb	r3, r3
+ 341 017c 0A48     		ldr	r0, .L18+24
+ 342 017e 4FF48051 		mov	r1, #4096
+ 343 0182 1A46     		mov	r2, r3
+ 344 0184 FFF7FEFF 		bl	GPIO_WriteBit
+  75:../main.c     **** }
+ 345              		.loc 1 75 0
+ 346 0188 07F10807 		add	r7, r7, #8
+ 347 018c BD46     		mov	sp, r7
+ 348 018e 80BD     		pop	{r7, pc}
+ 349              	.L19:
+ 350              		.align	2
+ 351              	.L18:
+ 352 0190 00480040 		.word	1073760256
+ 353 0194 00000000 		.word	rxCount
+ 354 0198 00000000 		.word	START_RX_BYTE
+ 355 019c 00000000 		.word	rxSeq
+ 356 01a0 00000000 		.word	txCount
+ 357 01a4 00000000 		.word	TmpBitVal
+ 358 01a8 00100140 		.word	1073811456
+ 359              		.cfi_endproc
+ 360              	.LFE31:
+ 362              	.Letext0:
+ 363              		.file 2 "/opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/../../../../arm-none-eab
+ 364              		.file 3 "/home/dzusan/workspace/sensitizer_probe/CMSIS/stm32f10x.h"
+ 365              		.file 4 "/home/dzusan/workspace/sensitizer_probe/STM32F10x_StdPeriph_Driver/inc/stm32f10x_gpio.h"
+ 366              		.file 5 "../globals.h"
+ 367              		.file 6 "/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-     /tmp/ccQDg20j.s:18     .text:00000000 $t
-     /tmp/ccQDg20j.s:22     .text:00000000 __NOP
+                            *COM*:0000000c sensorValues
+                            *COM*:00000012 rotationMatrix
+                            *COM*:0000000c clearValues
+     /tmp/ccSMlgAY.s:26     .bss:00000000 rxCount
+     /tmp/ccSMlgAY.s:23     .bss:00000000 $d
+     /tmp/ccSMlgAY.s:33     .rodata:00000000 START_RX_BYTE
+     /tmp/ccSMlgAY.s:30     .rodata:00000000 $d
+     /tmp/ccSMlgAY.s:39     .rodata:00000004 rxSeq
+     /tmp/ccSMlgAY.s:61     .bss:00000004 txCount
+     /tmp/ccSMlgAY.s:68     .rodata:00000044 START_TX_BYTE
+     /tmp/ccSMlgAY.s:74     .rodata:00000048 txSeq
+                            *COM*:0000000c ToolProperties
                             *COM*:00000001 TmpBitVal
-     /tmp/ccQDg20j.s:54     .text:0000000c main
-     /tmp/ccQDg20j.s:240    .text:000000fc SetupLED
-     /tmp/ccQDg20j.s:515    .text:000002a0 Setup_USART_NVIC
-     /tmp/ccQDg20j.s:410    .text:000001e8 SetupUSART
-     /tmp/ccQDg20j.s:87     .text:0000002c $d
-     /tmp/ccQDg20j.s:91     .text:00000030 $t
-     /tmp/ccQDg20j.s:96     .text:00000030 RTC_IRQHandler
-     /tmp/ccQDg20j.s:149    .text:0000007c $d
-     /tmp/ccQDg20j.s:154    .text:00000084 $t
-     /tmp/ccQDg20j.s:159    .text:00000084 USART3_IRQHandler
-     /tmp/ccQDg20j.s:229    .text:000000f0 $d
-     /tmp/ccQDg20j.s:235    .text:000000fc $t
-     /tmp/ccQDg20j.s:285    .text:0000013c $d
-     /tmp/ccQDg20j.s:289    .text:00000140 $t
-     /tmp/ccQDg20j.s:294    .text:00000140 SetupRTC
-     /tmp/ccQDg20j.s:362    .text:000001b0 Setup_RTC_NVIC
-     /tmp/ccQDg20j.s:505    .text:00000298 $d
-     /tmp/ccQDg20j.s:510    .text:000002a0 $t
+     /tmp/ccSMlgAY.s:85     .text:00000000 $t
+     /tmp/ccSMlgAY.s:90     .text:00000000 main
+     /tmp/ccSMlgAY.s:148    .text:00000058 $d
+     /tmp/ccSMlgAY.s:156    .text:0000006c $t
+     /tmp/ccSMlgAY.s:161    .text:0000006c RTC_IRQHandler
+     /tmp/ccSMlgAY.s:214    .text:000000b8 $d
+     /tmp/ccSMlgAY.s:219    .text:000000c0 $t
+     /tmp/ccSMlgAY.s:224    .text:000000c0 USART3_IRQHandler
+     /tmp/ccSMlgAY.s:352    .text:00000190 $d
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.1.f2b32ee49e703f71d2941adfc5f04874
                            .group:00000000 wm4.stm32f10x.h.51.b859cb68ed44ee02c916b41cb8c68f1c
@@ -2024,32 +476,19 @@ DEFINED SYMBOLS
                            .group:00000000 wm4.stm32f10x_wwdg.h.25.dde12201d86b5aa9ecaafb5eccdc6549
                            .group:00000000 wm4.misc.h.25.068e106f368fa5369a681ef57c106f4b
                            .group:00000000 wm4.stm32f10x.h.8304.f7d8ad90959e99679b3257267c3aadfe
+                           .group:00000000 wm4.periph_setup.h.9.5317853503f61c3ea290521dac9d9aa0
+                           .group:00000000 wm4.globals.h.9.1f37abdb950a05551c25a0507896055d
 
 UNDEFINED SYMBOLS
+SetupLED
+Setup_USART_NVIC
+SetupUSART
+USART_ITConfig
+Calculations
+USART_SendData
 RTC_GetITStatus
 RTC_ClearITPendingBit
 GPIO_WriteBit
 USART_GetITStatus
 USART_ClearITPendingBit
 USART_ReceiveData
-USART_SendData
-RCC_APB2PeriphClockCmd
-GPIO_DeInit
-GPIO_Init
-RCC_APB1PeriphClockCmd
-PWR_BackupAccessCmd
-RCC_LSEConfig
-RCC_GetFlagStatus
-RCC_RTCCLKConfig
-RCC_RTCCLKCmd
-RTC_WaitForSynchro
-RTC_WaitForLastTask
-RTC_ITConfig
-RTC_SetPrescaler
-RTC_EnterConfigMode
-RTC_ExitConfigMode
-NVIC_PriorityGroupConfig
-NVIC_Init
-USART_Init
-USART_Cmd
-USART_ITConfig

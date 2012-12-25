@@ -5,35 +5,35 @@ Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
   0 .isr_vector   0000010c  08000000  08000000  00008000  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  1 .text         000021f0  0800010c  0800010c  0000810c  2**2
+  1 .text         00002294  0800010c  0800010c  0000810c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .ARM.attributes 00000031  080022fc  080022fc  00010014  2**0
+  2 .ARM.attributes 00000031  080023a0  080023a0  00010070  2**0
                   CONTENTS, READONLY
-  3 .data         00000014  20000000  08002482  00010000  2**2
+  3 .data         00000070  20000000  08002559  00010000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  4 .bss          00000004  20000014  08002496  00010014  2**0
+  4 .bss          00000038  20000070  080025cc  00010070  2**2
                   ALLOC
-  5 ._user_heap_stack 00000100  20000018  0800249a  00010014  2**0
+  5 ._user_heap_stack 00000100  200000a8  08002604  00010070  2**0
                   ALLOC
-  6 .debug_info   00002fc3  00000000  00000000  00010045  2**0
+  6 .debug_info   000032f1  00000000  00000000  000100a1  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00000af0  00000000  00000000  00013008  2**0
+  7 .debug_abbrev 00000bfb  00000000  00000000  00013392  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_loc    00001910  00000000  00000000  00013af8  2**0
+  8 .debug_loc    000018e4  00000000  00000000  00013f8d  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_aranges 00000108  00000000  00000000  00015408  2**3
+  9 .debug_aranges 00000128  00000000  00000000  00015878  2**3
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_macro  0000d2d9  00000000  00000000  00015510  2**0
+ 10 .debug_macro  0000d463  00000000  00000000  000159a0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_line   00001df3  00000000  00000000  000227e9  2**0
+ 11 .debug_line   000021a3  00000000  00000000  00022e03  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_str    0004e3ef  00000000  00000000  000245dc  2**0
+ 12 .debug_str    0004e4ba  00000000  00000000  00024fa6  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .comment      00000030  00000000  00000000  000729cb  2**0
+ 13 .comment      00000030  00000000  00000000  00073460  2**0
                   CONTENTS, READONLY
- 14 .debug_frame  00000d90  00000000  00000000  000729fc  2**2
+ 14 .debug_frame  00000d84  00000000  00000000  00073490  2**2
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_ranges 00000020  00000000  00000000  00073790  2**3
+ 15 .debug_ranges 00000020  00000000  00000000  00074218  2**3
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -5741,580 +5741,639 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT)
  8001fd4:	4770      	bx	lr
  8001fd6:	bf00      	nop
 
-08001fd8 <__NOP>:
-static __INLINE void __disable_irq()              { __ASM volatile ("cpsid i"); }
-
-static __INLINE void __enable_fault_irq()         { __ASM volatile ("cpsie f"); }
-static __INLINE void __disable_fault_irq()        { __ASM volatile ("cpsid f"); }
-
-static __INLINE void __NOP()                      { __ASM volatile ("nop"); }
- 8001fd8:	b480      	push	{r7}
- 8001fda:	af00      	add	r7, sp, #0
- 8001fdc:	bf00      	nop
- 8001fde:	46bd      	mov	sp, r7
- 8001fe0:	bc80      	pop	{r7}
- 8001fe2:	4770      	bx	lr
-
-08001fe4 <main>:
-
+08001fd8 <main>:
+#include "globals.h"
 
 volatile BitAction TmpBitVal;
 
 int main()
 {
- 8001fe4:	b580      	push	{r7, lr}
- 8001fe6:	af00      	add	r7, sp, #0
+ 8001fd8:	b580      	push	{r7, lr}
+ 8001fda:	af00      	add	r7, sp, #0
 
 	TmpBitVal = Bit_RESET;
- 8001fe8:	4b06      	ldr	r3, [pc, #24]	; (8002004 <main+0x20>)
- 8001fea:	f04f 0200 	mov.w	r2, #0
- 8001fee:	701a      	strb	r2, [r3, #0]
+ 8001fdc:	4b13      	ldr	r3, [pc, #76]	; (800202c <main+0x54>)
+ 8001fde:	f04f 0200 	mov.w	r2, #0
+ 8001fe2:	701a      	strb	r2, [r3, #0]
 
 	SetupLED();
- 8001ff0:	f000 f870 	bl	80020d4 <SetupLED>
-
-	//Setup_RTC_NVIC();
-
-	//SetupRTC();
+ 8001fe4:	f000 f8c8 	bl	8002178 <SetupLED>
 
 	Setup_USART_NVIC();
- 8001ff4:	f000 f940 	bl	8002278 <Setup_USART_NVIC>
+ 8001fe8:	f000 f998 	bl	800231c <Setup_USART_NVIC>
 	SetupUSART();
- 8001ff8:	f000 f8e2 	bl	80021c0 <SetupUSART>
-	int count;*/
+ 8001fec:	f000 f93a 	bl	8002264 <SetupUSART>
 
 	while(1)
 	{
-		//USART_SendData(USART3,'E');
-		__NOP();
- 8001ffc:	f7ff ffec 	bl	8001fd8 <__NOP>
-		if(sym)
+		if(rxCount == END_RX_SEQUENCE)
+ 8001ff0:	4b0f      	ldr	r3, [pc, #60]	; (8002030 <main+0x58>)
+ 8001ff2:	681b      	ldr	r3, [r3, #0]
+ 8001ff4:	2b0f      	cmp	r3, #15
+ 8001ff6:	d10d      	bne.n	8002014 <main+0x3c>
 		{
-			USART_SendData(USART3, sym);
-			sym = 0;
-		}*/
-	}
- 8002000:	e7fc      	b.n	8001ffc <main+0x18>
- 8002002:	bf00      	nop
- 8002004:	20000014 	.word	0x20000014
+			USART_ITConfig(USART3, USART_IT_RXNE, DISABLE);
+ 8001ff8:	480e      	ldr	r0, [pc, #56]	; (8002034 <main+0x5c>)
+ 8001ffa:	f240 5125 	movw	r1, #1317	; 0x525
+ 8001ffe:	f04f 0200 	mov.w	r2, #0
+ 8002002:	f7ff fcd7 	bl	80019b4 <USART_ITConfig>
+			/*Math func*/
+			USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);
+ 8002006:	480b      	ldr	r0, [pc, #44]	; (8002034 <main+0x5c>)
+ 8002008:	f240 5125 	movw	r1, #1317	; 0x525
+ 800200c:	f04f 0201 	mov.w	r2, #1
+ 8002010:	f7ff fcd0 	bl	80019b4 <USART_ITConfig>
+		}
 
-08002008 <RTC_IRQHandler>:
-}
+		USART_SendData(USART3, *txSeq[txCount]);
+ 8002014:	4b08      	ldr	r3, [pc, #32]	; (8002038 <main+0x60>)
+ 8002016:	681a      	ldr	r2, [r3, #0]
+ 8002018:	4b08      	ldr	r3, [pc, #32]	; (800203c <main+0x64>)
+ 800201a:	f853 3022 	ldr.w	r3, [r3, r2, lsl #2]
+ 800201e:	881b      	ldrh	r3, [r3, #0]
+ 8002020:	4804      	ldr	r0, [pc, #16]	; (8002034 <main+0x5c>)
+ 8002022:	4619      	mov	r1, r3
+ 8002024:	f7ff fdd0 	bl	8001bc8 <USART_SendData>
+	}
+ 8002028:	e7e2      	b.n	8001ff0 <main+0x18>
+ 800202a:	bf00      	nop
+ 800202c:	20000078 	.word	0x20000078
+ 8002030:	20000070 	.word	0x20000070
+ 8002034:	40004800 	.word	0x40004800
+ 8002038:	20000074 	.word	0x20000074
+ 800203c:	20000054 	.word	0x20000054
+
+08002040 <RTC_IRQHandler>:
 
 
 /**************** Interrupts *******************/
+
 void RTC_IRQHandler(void)
 {
- 8002008:	b580      	push	{r7, lr}
- 800200a:	af00      	add	r7, sp, #0
+ 8002040:	b580      	push	{r7, lr}
+ 8002042:	af00      	add	r7, sp, #0
 	if(RTC_GetITStatus(RTC_IT_SEC))
- 800200c:	f04f 0001 	mov.w	r0, #1
- 8002010:	f7ff fad0 	bl	80015b4 <RTC_GetITStatus>
- 8002014:	4603      	mov	r3, r0
- 8002016:	2b00      	cmp	r3, #0
- 8002018:	d011      	beq.n	800203e <RTC_IRQHandler+0x36>
+ 8002044:	f04f 0001 	mov.w	r0, #1
+ 8002048:	f7ff fab4 	bl	80015b4 <RTC_GetITStatus>
+ 800204c:	4603      	mov	r3, r0
+ 800204e:	2b00      	cmp	r3, #0
+ 8002050:	d011      	beq.n	8002076 <RTC_IRQHandler+0x36>
 	{
 		RTC_ClearITPendingBit(RTC_IT_SEC);
- 800201a:	f04f 0001 	mov.w	r0, #1
- 800201e:	f7ff faf5 	bl	800160c <RTC_ClearITPendingBit>
+ 8002052:	f04f 0001 	mov.w	r0, #1
+ 8002056:	f7ff fad9 	bl	800160c <RTC_ClearITPendingBit>
 		if(TmpBitVal == Bit_RESET) TmpBitVal = Bit_SET;
- 8002022:	4b0c      	ldr	r3, [pc, #48]	; (8002054 <RTC_IRQHandler+0x4c>)
- 8002024:	781b      	ldrb	r3, [r3, #0]
- 8002026:	b2db      	uxtb	r3, r3
- 8002028:	2b00      	cmp	r3, #0
- 800202a:	d104      	bne.n	8002036 <RTC_IRQHandler+0x2e>
- 800202c:	4b09      	ldr	r3, [pc, #36]	; (8002054 <RTC_IRQHandler+0x4c>)
- 800202e:	f04f 0201 	mov.w	r2, #1
- 8002032:	701a      	strb	r2, [r3, #0]
- 8002034:	e003      	b.n	800203e <RTC_IRQHandler+0x36>
+ 800205a:	4b0c      	ldr	r3, [pc, #48]	; (800208c <RTC_IRQHandler+0x4c>)
+ 800205c:	781b      	ldrb	r3, [r3, #0]
+ 800205e:	b2db      	uxtb	r3, r3
+ 8002060:	2b00      	cmp	r3, #0
+ 8002062:	d104      	bne.n	800206e <RTC_IRQHandler+0x2e>
+ 8002064:	4b09      	ldr	r3, [pc, #36]	; (800208c <RTC_IRQHandler+0x4c>)
+ 8002066:	f04f 0201 	mov.w	r2, #1
+ 800206a:	701a      	strb	r2, [r3, #0]
+ 800206c:	e003      	b.n	8002076 <RTC_IRQHandler+0x36>
 		else TmpBitVal = Bit_RESET;
- 8002036:	4b07      	ldr	r3, [pc, #28]	; (8002054 <RTC_IRQHandler+0x4c>)
- 8002038:	f04f 0200 	mov.w	r2, #0
- 800203c:	701a      	strb	r2, [r3, #0]
+ 800206e:	4b07      	ldr	r3, [pc, #28]	; (800208c <RTC_IRQHandler+0x4c>)
+ 8002070:	f04f 0200 	mov.w	r2, #0
+ 8002074:	701a      	strb	r2, [r3, #0]
 	}
 
 	GPIO_WriteBit(GPIOC, GPIO_Pin_12, TmpBitVal);
- 800203e:	4b05      	ldr	r3, [pc, #20]	; (8002054 <RTC_IRQHandler+0x4c>)
- 8002040:	781b      	ldrb	r3, [r3, #0]
- 8002042:	b2db      	uxtb	r3, r3
- 8002044:	4804      	ldr	r0, [pc, #16]	; (8002058 <RTC_IRQHandler+0x50>)
- 8002046:	f44f 5180 	mov.w	r1, #4096	; 0x1000
- 800204a:	461a      	mov	r2, r3
- 800204c:	f7fe fb2a 	bl	80006a4 <GPIO_WriteBit>
+ 8002076:	4b05      	ldr	r3, [pc, #20]	; (800208c <RTC_IRQHandler+0x4c>)
+ 8002078:	781b      	ldrb	r3, [r3, #0]
+ 800207a:	b2db      	uxtb	r3, r3
+ 800207c:	4804      	ldr	r0, [pc, #16]	; (8002090 <RTC_IRQHandler+0x50>)
+ 800207e:	f44f 5180 	mov.w	r1, #4096	; 0x1000
+ 8002082:	461a      	mov	r2, r3
+ 8002084:	f7fe fb0e 	bl	80006a4 <GPIO_WriteBit>
 
 }
- 8002050:	bd80      	pop	{r7, pc}
- 8002052:	bf00      	nop
- 8002054:	20000014 	.word	0x20000014
- 8002058:	40011000 	.word	0x40011000
+ 8002088:	bd80      	pop	{r7, pc}
+ 800208a:	bf00      	nop
+ 800208c:	20000078 	.word	0x20000078
+ 8002090:	40011000 	.word	0x40011000
 
-0800205c <USART3_IRQHandler>:
+08002094 <USART3_IRQHandler>:
 
 void USART3_IRQHandler(void)
 {
- 800205c:	b580      	push	{r7, lr}
- 800205e:	b082      	sub	sp, #8
- 8002060:	af00      	add	r7, sp, #0
+ 8002094:	b580      	push	{r7, lr}
+ 8002096:	b082      	sub	sp, #8
+ 8002098:	af00      	add	r7, sp, #0
 	if(USART_GetITStatus(USART3, USART_IT_RXNE))
- 8002062:	4819      	ldr	r0, [pc, #100]	; (80020c8 <USART3_IRQHandler+0x6c>)
- 8002064:	f240 5125 	movw	r1, #1317	; 0x525
- 8002068:	f7ff ff32 	bl	8001ed0 <USART_GetITStatus>
- 800206c:	4603      	mov	r3, r0
- 800206e:	2b00      	cmp	r3, #0
- 8002070:	d012      	beq.n	8002098 <USART3_IRQHandler+0x3c>
+ 800209a:	4831      	ldr	r0, [pc, #196]	; (8002160 <USART3_IRQHandler+0xcc>)
+ 800209c:	f240 5125 	movw	r1, #1317	; 0x525
+ 80020a0:	f7ff ff16 	bl	8001ed0 <USART_GetITStatus>
+ 80020a4:	4603      	mov	r3, r0
+ 80020a6:	2b00      	cmp	r3, #0
+ 80020a8:	d023      	beq.n	80020f2 <USART3_IRQHandler+0x5e>
 	{
 		USART_ClearITPendingBit(USART3, USART_IT_RXNE);
- 8002072:	4815      	ldr	r0, [pc, #84]	; (80020c8 <USART3_IRQHandler+0x6c>)
- 8002074:	f240 5125 	movw	r1, #1317	; 0x525
- 8002078:	f7ff ff8c 	bl	8001f94 <USART_ClearITPendingBit>
-		if(TmpBitVal == Bit_RESET) TmpBitVal = Bit_SET;
- 800207c:	4b13      	ldr	r3, [pc, #76]	; (80020cc <USART3_IRQHandler+0x70>)
- 800207e:	781b      	ldrb	r3, [r3, #0]
- 8002080:	b2db      	uxtb	r3, r3
- 8002082:	2b00      	cmp	r3, #0
- 8002084:	d104      	bne.n	8002090 <USART3_IRQHandler+0x34>
- 8002086:	4b11      	ldr	r3, [pc, #68]	; (80020cc <USART3_IRQHandler+0x70>)
- 8002088:	f04f 0201 	mov.w	r2, #1
- 800208c:	701a      	strb	r2, [r3, #0]
- 800208e:	e003      	b.n	8002098 <USART3_IRQHandler+0x3c>
-		else TmpBitVal = Bit_RESET;
- 8002090:	4b0e      	ldr	r3, [pc, #56]	; (80020cc <USART3_IRQHandler+0x70>)
- 8002092:	f04f 0200 	mov.w	r2, #0
- 8002096:	701a      	strb	r2, [r3, #0]
+ 80020aa:	482d      	ldr	r0, [pc, #180]	; (8002160 <USART3_IRQHandler+0xcc>)
+ 80020ac:	f240 5125 	movw	r1, #1317	; 0x525
+ 80020b0:	f7ff ff70 	bl	8001f94 <USART_ClearITPendingBit>
+		uint16_t tmp;
+		tmp = USART_ReceiveData(USART3);
+ 80020b4:	482a      	ldr	r0, [pc, #168]	; (8002160 <USART3_IRQHandler+0xcc>)
+ 80020b6:	f7ff fd9b 	bl	8001bf0 <USART_ReceiveData>
+ 80020ba:	4603      	mov	r3, r0
+ 80020bc:	80fb      	strh	r3, [r7, #6]
+		rxCount++;
+ 80020be:	4b29      	ldr	r3, [pc, #164]	; (8002164 <USART3_IRQHandler+0xd0>)
+ 80020c0:	681b      	ldr	r3, [r3, #0]
+ 80020c2:	f103 0201 	add.w	r2, r3, #1
+ 80020c6:	4b27      	ldr	r3, [pc, #156]	; (8002164 <USART3_IRQHandler+0xd0>)
+ 80020c8:	601a      	str	r2, [r3, #0]
+
+		if(rxCount > END_RX_SEQUENCE)
+ 80020ca:	4b26      	ldr	r3, [pc, #152]	; (8002164 <USART3_IRQHandler+0xd0>)
+ 80020cc:	681b      	ldr	r3, [r3, #0]
+ 80020ce:	2b0f      	cmp	r3, #15
+ 80020d0:	dd07      	ble.n	80020e2 <USART3_IRQHandler+0x4e>
+		{
+			if(tmp == START_RX_BYTE) rxCount = 0;
+ 80020d2:	88fb      	ldrh	r3, [r7, #6]
+ 80020d4:	2b00      	cmp	r3, #0
+ 80020d6:	d128      	bne.n	800212a <USART3_IRQHandler+0x96>
+ 80020d8:	4b22      	ldr	r3, [pc, #136]	; (8002164 <USART3_IRQHandler+0xd0>)
+ 80020da:	f04f 0200 	mov.w	r2, #0
+ 80020de:	601a      	str	r2, [r3, #0]
+ 80020e0:	e023      	b.n	800212a <USART3_IRQHandler+0x96>
+		}
+		else *rxSeq[rxCount] = tmp;
+ 80020e2:	4b20      	ldr	r3, [pc, #128]	; (8002164 <USART3_IRQHandler+0xd0>)
+ 80020e4:	681a      	ldr	r2, [r3, #0]
+ 80020e6:	4b20      	ldr	r3, [pc, #128]	; (8002168 <USART3_IRQHandler+0xd4>)
+ 80020e8:	f853 3022 	ldr.w	r3, [r3, r2, lsl #2]
+ 80020ec:	88fa      	ldrh	r2, [r7, #6]
+ 80020ee:	801a      	strh	r2, [r3, #0]
+ 80020f0:	e01b      	b.n	800212a <USART3_IRQHandler+0x96>
+	}
+	else if(USART_GetITStatus(USART3, USART_IT_TC))
+ 80020f2:	481b      	ldr	r0, [pc, #108]	; (8002160 <USART3_IRQHandler+0xcc>)
+ 80020f4:	f240 6126 	movw	r1, #1574	; 0x626
+ 80020f8:	f7ff feea 	bl	8001ed0 <USART_GetITStatus>
+ 80020fc:	4603      	mov	r3, r0
+ 80020fe:	2b00      	cmp	r3, #0
+ 8002100:	d013      	beq.n	800212a <USART3_IRQHandler+0x96>
+	{
+		USART_ClearITPendingBit(USART3, USART_IT_TC);
+ 8002102:	4817      	ldr	r0, [pc, #92]	; (8002160 <USART3_IRQHandler+0xcc>)
+ 8002104:	f240 6126 	movw	r1, #1574	; 0x626
+ 8002108:	f7ff ff44 	bl	8001f94 <USART_ClearITPendingBit>
+		if(txCount > END_TX_SEQUENCE) txCount = 0;
+ 800210c:	4b17      	ldr	r3, [pc, #92]	; (800216c <USART3_IRQHandler+0xd8>)
+ 800210e:	681b      	ldr	r3, [r3, #0]
+ 8002110:	2b06      	cmp	r3, #6
+ 8002112:	dd04      	ble.n	800211e <USART3_IRQHandler+0x8a>
+ 8002114:	4b15      	ldr	r3, [pc, #84]	; (800216c <USART3_IRQHandler+0xd8>)
+ 8002116:	f04f 0200 	mov.w	r2, #0
+ 800211a:	601a      	str	r2, [r3, #0]
+ 800211c:	e005      	b.n	800212a <USART3_IRQHandler+0x96>
+		else txCount++;
+ 800211e:	4b13      	ldr	r3, [pc, #76]	; (800216c <USART3_IRQHandler+0xd8>)
+ 8002120:	681b      	ldr	r3, [r3, #0]
+ 8002122:	f103 0201 	add.w	r2, r3, #1
+ 8002126:	4b11      	ldr	r3, [pc, #68]	; (800216c <USART3_IRQHandler+0xd8>)
+ 8002128:	601a      	str	r2, [r3, #0]
 	}
 
-	uint16_t sym;
-	sym = USART_ReceiveData(USART3);
- 8002098:	480b      	ldr	r0, [pc, #44]	; (80020c8 <USART3_IRQHandler+0x6c>)
- 800209a:	f7ff fda9 	bl	8001bf0 <USART_ReceiveData>
- 800209e:	4603      	mov	r3, r0
- 80020a0:	80fb      	strh	r3, [r7, #6]
-	USART_SendData(USART3, sym);
- 80020a2:	88fb      	ldrh	r3, [r7, #6]
- 80020a4:	4808      	ldr	r0, [pc, #32]	; (80020c8 <USART3_IRQHandler+0x6c>)
- 80020a6:	4619      	mov	r1, r3
- 80020a8:	f7ff fd8e 	bl	8001bc8 <USART_SendData>
-
+	if(TmpBitVal == Bit_RESET) TmpBitVal = Bit_SET;
+ 800212a:	4b11      	ldr	r3, [pc, #68]	; (8002170 <USART3_IRQHandler+0xdc>)
+ 800212c:	781b      	ldrb	r3, [r3, #0]
+ 800212e:	b2db      	uxtb	r3, r3
+ 8002130:	2b00      	cmp	r3, #0
+ 8002132:	d104      	bne.n	800213e <USART3_IRQHandler+0xaa>
+ 8002134:	4b0e      	ldr	r3, [pc, #56]	; (8002170 <USART3_IRQHandler+0xdc>)
+ 8002136:	f04f 0201 	mov.w	r2, #1
+ 800213a:	701a      	strb	r2, [r3, #0]
+ 800213c:	e003      	b.n	8002146 <USART3_IRQHandler+0xb2>
+	else TmpBitVal = Bit_RESET;
+ 800213e:	4b0c      	ldr	r3, [pc, #48]	; (8002170 <USART3_IRQHandler+0xdc>)
+ 8002140:	f04f 0200 	mov.w	r2, #0
+ 8002144:	701a      	strb	r2, [r3, #0]
 	GPIO_WriteBit(GPIOC, GPIO_Pin_12, TmpBitVal);
- 80020ac:	4b07      	ldr	r3, [pc, #28]	; (80020cc <USART3_IRQHandler+0x70>)
- 80020ae:	781b      	ldrb	r3, [r3, #0]
- 80020b0:	b2db      	uxtb	r3, r3
- 80020b2:	4807      	ldr	r0, [pc, #28]	; (80020d0 <USART3_IRQHandler+0x74>)
- 80020b4:	f44f 5180 	mov.w	r1, #4096	; 0x1000
- 80020b8:	461a      	mov	r2, r3
- 80020ba:	f7fe faf3 	bl	80006a4 <GPIO_WriteBit>
-
+ 8002146:	4b0a      	ldr	r3, [pc, #40]	; (8002170 <USART3_IRQHandler+0xdc>)
+ 8002148:	781b      	ldrb	r3, [r3, #0]
+ 800214a:	b2db      	uxtb	r3, r3
+ 800214c:	4809      	ldr	r0, [pc, #36]	; (8002174 <USART3_IRQHandler+0xe0>)
+ 800214e:	f44f 5180 	mov.w	r1, #4096	; 0x1000
+ 8002152:	461a      	mov	r2, r3
+ 8002154:	f7fe faa6 	bl	80006a4 <GPIO_WriteBit>
 }
- 80020be:	f107 0708 	add.w	r7, r7, #8
- 80020c2:	46bd      	mov	sp, r7
- 80020c4:	bd80      	pop	{r7, pc}
- 80020c6:	bf00      	nop
- 80020c8:	40004800 	.word	0x40004800
- 80020cc:	20000014 	.word	0x20000014
- 80020d0:	40011000 	.word	0x40011000
+ 8002158:	f107 0708 	add.w	r7, r7, #8
+ 800215c:	46bd      	mov	sp, r7
+ 800215e:	bd80      	pop	{r7, pc}
+ 8002160:	40004800 	.word	0x40004800
+ 8002164:	20000070 	.word	0x20000070
+ 8002168:	20000014 	.word	0x20000014
+ 800216c:	20000074 	.word	0x20000074
+ 8002170:	20000078 	.word	0x20000078
+ 8002174:	40011000 	.word	0x40011000
 
-080020d4 <SetupLED>:
+08002178 <SetupLED>:
 
-/************ Peripherial functions **************/
+/* Includes ------------------------------------------------------------------*/
+#include "periph_setup.h"
 
 void SetupLED(void)
 {
- 80020d4:	b580      	push	{r7, lr}
- 80020d6:	b082      	sub	sp, #8
- 80020d8:	af00      	add	r7, sp, #0
+ 8002178:	b580      	push	{r7, lr}
+ 800217a:	b082      	sub	sp, #8
+ 800217c:	af00      	add	r7, sp, #0
 	/* ==GPIO== */
 
 	//Clocking
 
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
- 80020da:	f04f 0010 	mov.w	r0, #16
- 80020de:	f04f 0101 	mov.w	r1, #1
- 80020e2:	f7ff f815 	bl	8001110 <RCC_APB2PeriphClockCmd>
+ 800217e:	f04f 0010 	mov.w	r0, #16
+ 8002182:	f04f 0101 	mov.w	r1, #1
+ 8002186:	f7fe ffc3 	bl	8001110 <RCC_APB2PeriphClockCmd>
 
 	//Configure
 
 	GPIO_DeInit(GPIOC);
- 80020e6:	480b      	ldr	r0, [pc, #44]	; (8002114 <SetupLED+0x40>)
- 80020e8:	f7fe f8de 	bl	80002a8 <GPIO_DeInit>
+ 800218a:	480b      	ldr	r0, [pc, #44]	; (80021b8 <SetupLED+0x40>)
+ 800218c:	f7fe f88c 	bl	80002a8 <GPIO_DeInit>
 
 	GPIO_InitTypeDef GPIO_InitStructure;
 
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_All;
- 80020ec:	f64f 73ff 	movw	r3, #65535	; 0xffff
- 80020f0:	80bb      	strh	r3, [r7, #4]
+ 8002190:	f64f 73ff 	movw	r3, #65535	; 0xffff
+ 8002194:	80bb      	strh	r3, [r7, #4]
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
- 80020f2:	f04f 0310 	mov.w	r3, #16
- 80020f6:	71fb      	strb	r3, [r7, #7]
+ 8002196:	f04f 0310 	mov.w	r3, #16
+ 800219a:	71fb      	strb	r3, [r7, #7]
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
- 80020f8:	f04f 0303 	mov.w	r3, #3
- 80020fc:	71bb      	strb	r3, [r7, #6]
+ 800219c:	f04f 0303 	mov.w	r3, #3
+ 80021a0:	71bb      	strb	r3, [r7, #6]
 
 	//Init
 
 	GPIO_Init(GPIOC , &GPIO_InitStructure);
- 80020fe:	f107 0304 	add.w	r3, r7, #4
- 8002102:	4804      	ldr	r0, [pc, #16]	; (8002114 <SetupLED+0x40>)
- 8002104:	4619      	mov	r1, r3
- 8002106:	f7fe f96b 	bl	80003e0 <GPIO_Init>
+ 80021a2:	f107 0304 	add.w	r3, r7, #4
+ 80021a6:	4804      	ldr	r0, [pc, #16]	; (80021b8 <SetupLED+0x40>)
+ 80021a8:	4619      	mov	r1, r3
+ 80021aa:	f7fe f919 	bl	80003e0 <GPIO_Init>
 
 	/* =======*/
 }
- 800210a:	f107 0708 	add.w	r7, r7, #8
- 800210e:	46bd      	mov	sp, r7
- 8002110:	bd80      	pop	{r7, pc}
- 8002112:	bf00      	nop
- 8002114:	40011000 	.word	0x40011000
+ 80021ae:	f107 0708 	add.w	r7, r7, #8
+ 80021b2:	46bd      	mov	sp, r7
+ 80021b4:	bd80      	pop	{r7, pc}
+ 80021b6:	bf00      	nop
+ 80021b8:	40011000 	.word	0x40011000
 
-08002118 <SetupRTC>:
+080021bc <SetupRTC>:
 
 void SetupRTC(void)
 {
- 8002118:	b580      	push	{r7, lr}
- 800211a:	af00      	add	r7, sp, #0
+ 80021bc:	b580      	push	{r7, lr}
+ 80021be:	af00      	add	r7, sp, #0
 	/* CK_RTC clock selection */
 		RCC_APB1PeriphClockCmd( RCC_APB1Periph_PWR | RCC_APB1Periph_BKP, ENABLE );
- 800211c:	f04f 50c0 	mov.w	r0, #402653184	; 0x18000000
- 8002120:	f04f 0101 	mov.w	r1, #1
- 8002124:	f7ff f814 	bl	8001150 <RCC_APB1PeriphClockCmd>
+ 80021c0:	f04f 50c0 	mov.w	r0, #402653184	; 0x18000000
+ 80021c4:	f04f 0101 	mov.w	r1, #1
+ 80021c8:	f7fe ffc2 	bl	8001150 <RCC_APB1PeriphClockCmd>
 
 		/* Allow access to BKP Domain */
 		PWR_BackupAccessCmd( ENABLE );
- 8002128:	f04f 0001 	mov.w	r0, #1
- 800212c:	f7fe fc2e 	bl	800098c <PWR_BackupAccessCmd>
+ 80021cc:	f04f 0001 	mov.w	r0, #1
+ 80021d0:	f7fe fbdc 	bl	800098c <PWR_BackupAccessCmd>
 
 		/* Enable the LSE OSC */
 		RCC_LSEConfig( RCC_LSE_ON );
- 8002130:	f04f 0001 	mov.w	r0, #1
- 8002134:	f7fe feb6 	bl	8000ea4 <RCC_LSEConfig>
+ 80021d4:	f04f 0001 	mov.w	r0, #1
+ 80021d8:	f7fe fe64 	bl	8000ea4 <RCC_LSEConfig>
 
 		/* Wait till LSE is ready */
 		while ( RCC_GetFlagStatus( RCC_FLAG_LSERDY ) == RESET ){}
- 8002138:	bf00      	nop
- 800213a:	f04f 0041 	mov.w	r0, #65	; 0x41
- 800213e:	f7ff f897 	bl	8001270 <RCC_GetFlagStatus>
- 8002142:	4603      	mov	r3, r0
- 8002144:	2b00      	cmp	r3, #0
- 8002146:	d0f8      	beq.n	800213a <SetupRTC+0x22>
+ 80021dc:	bf00      	nop
+ 80021de:	f04f 0041 	mov.w	r0, #65	; 0x41
+ 80021e2:	f7ff f845 	bl	8001270 <RCC_GetFlagStatus>
+ 80021e6:	4603      	mov	r3, r0
+ 80021e8:	2b00      	cmp	r3, #0
+ 80021ea:	d0f8      	beq.n	80021de <SetupRTC+0x22>
 
 		/* Select the RTC Clock Source */
 		RCC_RTCCLKConfig( RCC_RTCCLKSource_LSE );
- 8002148:	f44f 7080 	mov.w	r0, #256	; 0x100
- 800214c:	f7fe fee0 	bl	8000f10 <RCC_RTCCLKConfig>
+ 80021ec:	f44f 7080 	mov.w	r0, #256	; 0x100
+ 80021f0:	f7fe fe8e 	bl	8000f10 <RCC_RTCCLKConfig>
 
 		/* Enable the RTC Clock */
 		RCC_RTCCLKCmd( ENABLE );
- 8002150:	f04f 0001 	mov.w	r0, #1
- 8002154:	f7fe feee 	bl	8000f34 <RCC_RTCCLKCmd>
+ 80021f4:	f04f 0001 	mov.w	r0, #1
+ 80021f8:	f7fe fe9c 	bl	8000f34 <RCC_RTCCLKCmd>
 
 		/* Wait for RTC registers synchronization */
 		RTC_WaitForSynchro();
- 8002158:	f7ff f9dc 	bl	8001514 <RTC_WaitForSynchro>
+ 80021fc:	f7ff f98a 	bl	8001514 <RTC_WaitForSynchro>
 
 		/* Wait until last write operation on RTC registers has finished */
 		RTC_WaitForLastTask();
- 800215c:	f7ff f9ca 	bl	80014f4 <RTC_WaitForLastTask>
+ 8002200:	f7ff f978 	bl	80014f4 <RTC_WaitForLastTask>
 
 		/* Enable the RTC Second interrupt */
 		RTC_ITConfig(RTC_IT_SEC, ENABLE);
- 8002160:	f04f 0001 	mov.w	r0, #1
- 8002164:	f04f 0101 	mov.w	r1, #1
- 8002168:	f7ff f8fe 	bl	8001368 <RTC_ITConfig>
+ 8002204:	f04f 0001 	mov.w	r0, #1
+ 8002208:	f04f 0101 	mov.w	r1, #1
+ 800220c:	f7ff f8ac 	bl	8001368 <RTC_ITConfig>
 
 		/* Wait until last write operation on RTC registers has finished */
 		RTC_WaitForLastTask();
- 800216c:	f7ff f9c2 	bl	80014f4 <RTC_WaitForLastTask>
+ 8002210:	f7ff f970 	bl	80014f4 <RTC_WaitForLastTask>
 
 		/* Set RTC prescaler: set RTC period to 1sec */
 		/* RTC period = RTCCLK/RTC_PR = (32.768 KHz)/(32767+1) */
 		RTC_SetPrescaler( RTC_PRESCALER );
- 8002170:	f44f 50fa 	mov.w	r0, #8000	; 0x1f40
- 8002174:	f7ff f96e 	bl	8001454 <RTC_SetPrescaler>
+ 8002214:	f44f 50fa 	mov.w	r0, #8000	; 0x1f40
+ 8002218:	f7ff f91c 	bl	8001454 <RTC_SetPrescaler>
 
 		/* Wait until last write operation on RTC registers has finished */
 		RTC_WaitForLastTask();
- 8002178:	f7ff f9bc 	bl	80014f4 <RTC_WaitForLastTask>
+ 800221c:	f7ff f96a 	bl	80014f4 <RTC_WaitForLastTask>
 
 		RTC_EnterConfigMode();
- 800217c:	f7ff f91a 	bl	80013b4 <RTC_EnterConfigMode>
+ 8002220:	f7ff f8c8 	bl	80013b4 <RTC_EnterConfigMode>
 
 		RTC_ExitConfigMode();
- 8002180:	f7ff f928 	bl	80013d4 <RTC_ExitConfigMode>
+ 8002224:	f7ff f8d6 	bl	80013d4 <RTC_ExitConfigMode>
 }
- 8002184:	bd80      	pop	{r7, pc}
- 8002186:	bf00      	nop
+ 8002228:	bd80      	pop	{r7, pc}
+ 800222a:	bf00      	nop
 
-08002188 <Setup_RTC_NVIC>:
+0800222c <Setup_RTC_NVIC>:
 
 void Setup_RTC_NVIC(void)
 {
- 8002188:	b580      	push	{r7, lr}
- 800218a:	b082      	sub	sp, #8
- 800218c:	af00      	add	r7, sp, #0
+ 800222c:	b580      	push	{r7, lr}
+ 800222e:	b082      	sub	sp, #8
+ 8002230:	af00      	add	r7, sp, #0
 	/* Interrupt structure */
 		NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
- 800218e:	f44f 60e0 	mov.w	r0, #1792	; 0x700
- 8002192:	f7fd ffbb 	bl	800010c <NVIC_PriorityGroupConfig>
+ 8002232:	f44f 60e0 	mov.w	r0, #1792	; 0x700
+ 8002236:	f7fd ff69 	bl	800010c <NVIC_PriorityGroupConfig>
 
 		NVIC_InitTypeDef NVIC_InitStructure;
 		NVIC_InitStructure.NVIC_IRQChannel = RTC_IRQn;
- 8002196:	f04f 0303 	mov.w	r3, #3
- 800219a:	713b      	strb	r3, [r7, #4]
+ 800223a:	f04f 0303 	mov.w	r3, #3
+ 800223e:	713b      	strb	r3, [r7, #4]
 		NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
- 800219c:	f04f 0301 	mov.w	r3, #1
- 80021a0:	717b      	strb	r3, [r7, #5]
+ 8002240:	f04f 0301 	mov.w	r3, #1
+ 8002244:	717b      	strb	r3, [r7, #5]
 		NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;
- 80021a2:	f04f 0303 	mov.w	r3, #3
- 80021a6:	71bb      	strb	r3, [r7, #6]
+ 8002246:	f04f 0303 	mov.w	r3, #3
+ 800224a:	71bb      	strb	r3, [r7, #6]
 		NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
- 80021a8:	f04f 0301 	mov.w	r3, #1
- 80021ac:	71fb      	strb	r3, [r7, #7]
+ 800224c:	f04f 0301 	mov.w	r3, #1
+ 8002250:	71fb      	strb	r3, [r7, #7]
 
 		NVIC_Init(&NVIC_InitStructure);
- 80021ae:	f107 0304 	add.w	r3, r7, #4
- 80021b2:	4618      	mov	r0, r3
- 80021b4:	f7fd ffbc 	bl	8000130 <NVIC_Init>
+ 8002252:	f107 0304 	add.w	r3, r7, #4
+ 8002256:	4618      	mov	r0, r3
+ 8002258:	f7fd ff6a 	bl	8000130 <NVIC_Init>
 }
- 80021b8:	f107 0708 	add.w	r7, r7, #8
- 80021bc:	46bd      	mov	sp, r7
- 80021be:	bd80      	pop	{r7, pc}
+ 800225c:	f107 0708 	add.w	r7, r7, #8
+ 8002260:	46bd      	mov	sp, r7
+ 8002262:	bd80      	pop	{r7, pc}
 
-080021c0 <SetupUSART>:
+08002264 <SetupUSART>:
 
 void SetupUSART(void)
 {
- 80021c0:	b580      	push	{r7, lr}
- 80021c2:	b086      	sub	sp, #24
- 80021c4:	af00      	add	r7, sp, #0
+ 8002264:	b580      	push	{r7, lr}
+ 8002266:	b086      	sub	sp, #24
+ 8002268:	af00      	add	r7, sp, #0
 	/* Enable GPIOB clock                                                   */
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
- 80021c6:	f04f 0008 	mov.w	r0, #8
- 80021ca:	f04f 0101 	mov.w	r1, #1
- 80021ce:	f7fe ff9f 	bl	8001110 <RCC_APB2PeriphClockCmd>
+ 800226a:	f04f 0008 	mov.w	r0, #8
+ 800226e:	f04f 0101 	mov.w	r1, #1
+ 8002272:	f7fe ff4d 	bl	8001110 <RCC_APB2PeriphClockCmd>
 
 	GPIO_DeInit(GPIOB);
- 80021d2:	4827      	ldr	r0, [pc, #156]	; (8002270 <SetupUSART+0xb0>)
- 80021d4:	f7fe f868 	bl	80002a8 <GPIO_DeInit>
+ 8002276:	4827      	ldr	r0, [pc, #156]	; (8002314 <SetupUSART+0xb0>)
+ 8002278:	f7fe f816 	bl	80002a8 <GPIO_DeInit>
 
 	GPIO_InitTypeDef  GPIO_InitStructure;
 
 	/* Configure USART3 Rx (PB11) as input floating                         */
 	GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_11;
- 80021d8:	f44f 6300 	mov.w	r3, #2048	; 0x800
- 80021dc:	82bb      	strh	r3, [r7, #20]
+ 800227c:	f44f 6300 	mov.w	r3, #2048	; 0x800
+ 8002280:	82bb      	strh	r3, [r7, #20]
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
- 80021de:	f04f 0303 	mov.w	r3, #3
- 80021e2:	75bb      	strb	r3, [r7, #22]
+ 8002282:	f04f 0303 	mov.w	r3, #3
+ 8002286:	75bb      	strb	r3, [r7, #22]
 	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_IN_FLOATING;
- 80021e4:	f04f 0304 	mov.w	r3, #4
- 80021e8:	75fb      	strb	r3, [r7, #23]
+ 8002288:	f04f 0304 	mov.w	r3, #4
+ 800228c:	75fb      	strb	r3, [r7, #23]
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
- 80021ea:	f107 0314 	add.w	r3, r7, #20
- 80021ee:	4820      	ldr	r0, [pc, #128]	; (8002270 <SetupUSART+0xb0>)
- 80021f0:	4619      	mov	r1, r3
- 80021f2:	f7fe f8f5 	bl	80003e0 <GPIO_Init>
+ 800228e:	f107 0314 	add.w	r3, r7, #20
+ 8002292:	4820      	ldr	r0, [pc, #128]	; (8002314 <SetupUSART+0xb0>)
+ 8002294:	4619      	mov	r1, r3
+ 8002296:	f7fe f8a3 	bl	80003e0 <GPIO_Init>
 
 	/* Configure USART3 Tx (PB10) as alternate function push-pull            */
 	GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_10;
- 80021f6:	f44f 6380 	mov.w	r3, #1024	; 0x400
- 80021fa:	82bb      	strh	r3, [r7, #20]
+ 800229a:	f44f 6380 	mov.w	r3, #1024	; 0x400
+ 800229e:	82bb      	strh	r3, [r7, #20]
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
- 80021fc:	f04f 0303 	mov.w	r3, #3
- 8002200:	75bb      	strb	r3, [r7, #22]
+ 80022a0:	f04f 0303 	mov.w	r3, #3
+ 80022a4:	75bb      	strb	r3, [r7, #22]
 	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AF_PP;
- 8002202:	f04f 0318 	mov.w	r3, #24
- 8002206:	75fb      	strb	r3, [r7, #23]
+ 80022a6:	f04f 0318 	mov.w	r3, #24
+ 80022aa:	75fb      	strb	r3, [r7, #23]
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
- 8002208:	f107 0314 	add.w	r3, r7, #20
- 800220c:	4818      	ldr	r0, [pc, #96]	; (8002270 <SetupUSART+0xb0>)
- 800220e:	4619      	mov	r1, r3
- 8002210:	f7fe f8e6 	bl	80003e0 <GPIO_Init>
+ 80022ac:	f107 0314 	add.w	r3, r7, #20
+ 80022b0:	4818      	ldr	r0, [pc, #96]	; (8002314 <SetupUSART+0xb0>)
+ 80022b2:	4619      	mov	r1, r3
+ 80022b4:	f7fe f894 	bl	80003e0 <GPIO_Init>
 
 	/* Enable USART3 clock                                                   */
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3, ENABLE);
- 8002214:	f44f 2080 	mov.w	r0, #262144	; 0x40000
- 8002218:	f04f 0101 	mov.w	r1, #1
- 800221c:	f7fe ff98 	bl	8001150 <RCC_APB1PeriphClockCmd>
+ 80022b8:	f44f 2080 	mov.w	r0, #262144	; 0x40000
+ 80022bc:	f04f 0101 	mov.w	r1, #1
+ 80022c0:	f7fe ff46 	bl	8001150 <RCC_APB1PeriphClockCmd>
 
 	USART_InitTypeDef USART_InitStructure;
 
 	USART_InitStructure.USART_BaudRate            = 9600;
- 8002220:	f44f 5316 	mov.w	r3, #9600	; 0x2580
- 8002224:	607b      	str	r3, [r7, #4]
+ 80022c4:	f44f 5316 	mov.w	r3, #9600	; 0x2580
+ 80022c8:	607b      	str	r3, [r7, #4]
 	USART_InitStructure.USART_WordLength          = USART_WordLength_8b;
- 8002226:	f04f 0300 	mov.w	r3, #0
- 800222a:	813b      	strh	r3, [r7, #8]
+ 80022ca:	f04f 0300 	mov.w	r3, #0
+ 80022ce:	813b      	strh	r3, [r7, #8]
 	USART_InitStructure.USART_StopBits            = USART_StopBits_1;
- 800222c:	f04f 0300 	mov.w	r3, #0
- 8002230:	817b      	strh	r3, [r7, #10]
+ 80022d0:	f04f 0300 	mov.w	r3, #0
+ 80022d4:	817b      	strh	r3, [r7, #10]
 	USART_InitStructure.USART_Parity              = USART_Parity_No ;
- 8002232:	f04f 0300 	mov.w	r3, #0
- 8002236:	81bb      	strh	r3, [r7, #12]
+ 80022d6:	f04f 0300 	mov.w	r3, #0
+ 80022da:	81bb      	strh	r3, [r7, #12]
 	USART_InitStructure.USART_Mode                = USART_Mode_Rx | USART_Mode_Tx;
- 8002238:	f04f 030c 	mov.w	r3, #12
- 800223c:	81fb      	strh	r3, [r7, #14]
+ 80022dc:	f04f 030c 	mov.w	r3, #12
+ 80022e0:	81fb      	strh	r3, [r7, #14]
 	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
- 800223e:	f04f 0300 	mov.w	r3, #0
- 8002242:	823b      	strh	r3, [r7, #16]
+ 80022e2:	f04f 0300 	mov.w	r3, #0
+ 80022e6:	823b      	strh	r3, [r7, #16]
 
 	USART_Init(USART3, &USART_InitStructure);
- 8002244:	f107 0304 	add.w	r3, r7, #4
- 8002248:	480a      	ldr	r0, [pc, #40]	; (8002274 <SetupUSART+0xb4>)
- 800224a:	4619      	mov	r1, r3
- 800224c:	f7ff fa5c 	bl	8001708 <USART_Init>
+ 80022e8:	f107 0304 	add.w	r3, r7, #4
+ 80022ec:	480a      	ldr	r0, [pc, #40]	; (8002318 <SetupUSART+0xb4>)
+ 80022ee:	4619      	mov	r1, r3
+ 80022f0:	f7ff fa0a 	bl	8001708 <USART_Init>
 	USART_Cmd(USART3, ENABLE);
- 8002250:	4808      	ldr	r0, [pc, #32]	; (8002274 <SetupUSART+0xb4>)
- 8002252:	f04f 0101 	mov.w	r1, #1
- 8002256:	f7ff fb8d 	bl	8001974 <USART_Cmd>
-	/*Interrupt after receive*/
-	USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);
- 800225a:	4806      	ldr	r0, [pc, #24]	; (8002274 <SetupUSART+0xb4>)
- 800225c:	f240 5125 	movw	r1, #1317	; 0x525
- 8002260:	f04f 0201 	mov.w	r2, #1
- 8002264:	f7ff fba6 	bl	80019b4 <USART_ITConfig>
+ 80022f4:	4808      	ldr	r0, [pc, #32]	; (8002318 <SetupUSART+0xb4>)
+ 80022f6:	f04f 0101 	mov.w	r1, #1
+ 80022fa:	f7ff fb3b 	bl	8001974 <USART_Cmd>
+	/*Interrupt after reception or transfer*/
+	USART_ITConfig(USART3, USART_IT_RXNE | USART_IT_TC, ENABLE);
+ 80022fe:	4806      	ldr	r0, [pc, #24]	; (8002318 <SetupUSART+0xb4>)
+ 8002300:	f240 7127 	movw	r1, #1831	; 0x727
+ 8002304:	f04f 0201 	mov.w	r2, #1
+ 8002308:	f7ff fb54 	bl	80019b4 <USART_ITConfig>
 
 }
- 8002268:	f107 0718 	add.w	r7, r7, #24
- 800226c:	46bd      	mov	sp, r7
- 800226e:	bd80      	pop	{r7, pc}
- 8002270:	40010c00 	.word	0x40010c00
- 8002274:	40004800 	.word	0x40004800
+ 800230c:	f107 0718 	add.w	r7, r7, #24
+ 8002310:	46bd      	mov	sp, r7
+ 8002312:	bd80      	pop	{r7, pc}
+ 8002314:	40010c00 	.word	0x40010c00
+ 8002318:	40004800 	.word	0x40004800
 
-08002278 <Setup_USART_NVIC>:
+0800231c <Setup_USART_NVIC>:
 
 void Setup_USART_NVIC(void)
 {
- 8002278:	b580      	push	{r7, lr}
- 800227a:	b082      	sub	sp, #8
- 800227c:	af00      	add	r7, sp, #0
+ 800231c:	b580      	push	{r7, lr}
+ 800231e:	b082      	sub	sp, #8
+ 8002320:	af00      	add	r7, sp, #0
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
- 800227e:	f44f 60e0 	mov.w	r0, #1792	; 0x700
- 8002282:	f7fd ff43 	bl	800010c <NVIC_PriorityGroupConfig>
+ 8002322:	f44f 60e0 	mov.w	r0, #1792	; 0x700
+ 8002326:	f7fd fef1 	bl	800010c <NVIC_PriorityGroupConfig>
 
 	NVIC_InitTypeDef NVIC_InitStructure;
 
 	NVIC_InitStructure.NVIC_IRQChannel = USART3_IRQn;
- 8002286:	f04f 0327 	mov.w	r3, #39	; 0x27
- 800228a:	713b      	strb	r3, [r7, #4]
+ 800232a:	f04f 0327 	mov.w	r3, #39	; 0x27
+ 800232e:	713b      	strb	r3, [r7, #4]
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
- 800228c:	f04f 0301 	mov.w	r3, #1
- 8002290:	717b      	strb	r3, [r7, #5]
+ 8002330:	f04f 0301 	mov.w	r3, #1
+ 8002334:	717b      	strb	r3, [r7, #5]
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;
- 8002292:	f04f 0303 	mov.w	r3, #3
- 8002296:	71bb      	strb	r3, [r7, #6]
+ 8002336:	f04f 0303 	mov.w	r3, #3
+ 800233a:	71bb      	strb	r3, [r7, #6]
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
- 8002298:	f04f 0301 	mov.w	r3, #1
- 800229c:	71fb      	strb	r3, [r7, #7]
+ 800233c:	f04f 0301 	mov.w	r3, #1
+ 8002340:	71fb      	strb	r3, [r7, #7]
 
 	NVIC_Init(&NVIC_InitStructure);
- 800229e:	f107 0304 	add.w	r3, r7, #4
- 80022a2:	4618      	mov	r0, r3
- 80022a4:	f7fd ff44 	bl	8000130 <NVIC_Init>
+ 8002342:	f107 0304 	add.w	r3, r7, #4
+ 8002346:	4618      	mov	r0, r3
+ 8002348:	f7fd fef2 	bl	8000130 <NVIC_Init>
 }
- 80022a8:	f107 0708 	add.w	r7, r7, #8
- 80022ac:	46bd      	mov	sp, r7
- 80022ae:	bd80      	pop	{r7, pc}
+ 800234c:	f107 0708 	add.w	r7, r7, #8
+ 8002350:	46bd      	mov	sp, r7
+ 8002352:	bd80      	pop	{r7, pc}
 
-080022b0 <Reset_Handler>:
+08002354 <Reset_Handler>:
 	.weak	Reset_Handler
 	.type	Reset_Handler, %function
 Reset_Handler:
 
 /* Copy the data segment initializers from flash to SRAM */
   movs	r1, #0
- 80022b0:	2100      	movs	r1, #0
+ 8002354:	2100      	movs	r1, #0
   b	LoopCopyDataInit
- 80022b2:	f000 b804 	b.w	80022be <LoopCopyDataInit>
+ 8002356:	f000 b804 	b.w	8002362 <LoopCopyDataInit>
 
-080022b6 <CopyDataInit>:
+0800235a <CopyDataInit>:
 
 CopyDataInit:
 	ldr	r3, =_sidata
- 80022b6:	4b0b      	ldr	r3, [pc, #44]	; (80022e4 <LoopFillZerobss+0xe>)
+ 800235a:	4b0b      	ldr	r3, [pc, #44]	; (8002388 <LoopFillZerobss+0xe>)
 	ldr	r3, [r3, r1]
- 80022b8:	585b      	ldr	r3, [r3, r1]
+ 800235c:	585b      	ldr	r3, [r3, r1]
 	str	r3, [r0, r1]
- 80022ba:	5043      	str	r3, [r0, r1]
+ 800235e:	5043      	str	r3, [r0, r1]
 	adds	r1, r1, #4
- 80022bc:	3104      	adds	r1, #4
+ 8002360:	3104      	adds	r1, #4
 
-080022be <LoopCopyDataInit>:
+08002362 <LoopCopyDataInit>:
 
 LoopCopyDataInit:
 	ldr	r0, =_sdata
- 80022be:	480a      	ldr	r0, [pc, #40]	; (80022e8 <LoopFillZerobss+0x12>)
+ 8002362:	480a      	ldr	r0, [pc, #40]	; (800238c <LoopFillZerobss+0x12>)
 	ldr	r3, =_edata
- 80022c0:	4b0a      	ldr	r3, [pc, #40]	; (80022ec <LoopFillZerobss+0x16>)
+ 8002364:	4b0a      	ldr	r3, [pc, #40]	; (8002390 <LoopFillZerobss+0x16>)
 	adds	r2, r0, r1
- 80022c2:	1842      	adds	r2, r0, r1
+ 8002366:	1842      	adds	r2, r0, r1
 	cmp	r2, r3
- 80022c4:	429a      	cmp	r2, r3
+ 8002368:	429a      	cmp	r2, r3
 	bcc	CopyDataInit
- 80022c6:	f4ff aff6 	bcc.w	80022b6 <CopyDataInit>
+ 800236a:	f4ff aff6 	bcc.w	800235a <CopyDataInit>
 	ldr	r2, =_sbss
- 80022ca:	4a09      	ldr	r2, [pc, #36]	; (80022f0 <LoopFillZerobss+0x1a>)
+ 800236e:	4a09      	ldr	r2, [pc, #36]	; (8002394 <LoopFillZerobss+0x1a>)
 	b	LoopFillZerobss
- 80022cc:	f000 b803 	b.w	80022d6 <LoopFillZerobss>
+ 8002370:	f000 b803 	b.w	800237a <LoopFillZerobss>
 
-080022d0 <FillZerobss>:
+08002374 <FillZerobss>:
 /* Zero fill the bss segment. */
 FillZerobss:
 	movs	r3, #0
- 80022d0:	2300      	movs	r3, #0
+ 8002374:	2300      	movs	r3, #0
 	str	r3, [r2], #4
- 80022d2:	f842 3b04 	str.w	r3, [r2], #4
+ 8002376:	f842 3b04 	str.w	r3, [r2], #4
 
-080022d6 <LoopFillZerobss>:
+0800237a <LoopFillZerobss>:
 
 LoopFillZerobss:
 	ldr	r3, = _ebss
- 80022d6:	4b07      	ldr	r3, [pc, #28]	; (80022f4 <LoopFillZerobss+0x1e>)
+ 800237a:	4b07      	ldr	r3, [pc, #28]	; (8002398 <LoopFillZerobss+0x1e>)
 	cmp	r2, r3
- 80022d8:	429a      	cmp	r2, r3
+ 800237c:	429a      	cmp	r2, r3
 	bcc	FillZerobss
- 80022da:	f4ff aff9 	bcc.w	80022d0 <FillZerobss>
+ 800237e:	f4ff aff9 	bcc.w	8002374 <FillZerobss>
 /* Call the clock system intitialization function.*/
     //bl  SystemInit
 /* Call static constructors */
     //bl __libc_init_array
 /* Call the application's entry point.*/
 	bl	main
- 80022de:	f7ff fe81 	bl	8001fe4 <main>
+ 8002382:	f7ff fe29 	bl	8001fd8 <main>
 	bx	lr
- 80022e2:	4770      	bx	lr
+ 8002386:	4770      	bx	lr
 /* Copy the data segment initializers from flash to SRAM */
   movs	r1, #0
   b	LoopCopyDataInit
 
 CopyDataInit:
 	ldr	r3, =_sidata
- 80022e4:	08002482 	.word	0x08002482
+ 8002388:	08002559 	.word	0x08002559
 	ldr	r3, [r3, r1]
 	str	r3, [r0, r1]
 	adds	r1, r1, #4
 
 LoopCopyDataInit:
 	ldr	r0, =_sdata
- 80022e8:	20000000 	.word	0x20000000
+ 800238c:	20000000 	.word	0x20000000
 	ldr	r3, =_edata
- 80022ec:	20000014 	.word	0x20000014
+ 8002390:	20000070 	.word	0x20000070
 	adds	r2, r0, r1
 	cmp	r2, r3
 	bcc	CopyDataInit
 	ldr	r2, =_sbss
- 80022f0:	20000014 	.word	0x20000014
+ 8002394:	20000070 	.word	0x20000070
 FillZerobss:
 	movs	r3, #0
 	str	r3, [r2], #4
 
 LoopFillZerobss:
 	ldr	r3, = _ebss
- 80022f4:	20000018 	.word	0x20000018
+ 8002398:	200000a8 	.word	0x200000a8
 
-080022f8 <ADC1_2_IRQHandler>:
+0800239c <ADC1_2_IRQHandler>:
  * @retval : None
 */
     .section	.text.Default_Handler,"ax",%progbits
 Default_Handler:
 Infinite_Loop:
 	b	Infinite_Loop
- 80022f8:	f7ff bffe 	b.w	80022f8 <ADC1_2_IRQHandler>
+ 800239c:	f7ff bffe 	b.w	800239c <ADC1_2_IRQHandler>

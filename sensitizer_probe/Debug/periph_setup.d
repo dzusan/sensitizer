@@ -1,4 +1,4 @@
-main.d: ../main.c \
+periph_setup.d: ../periph_setup.c ../periph_setup.h \
  /home/dzusan/workspace/sensitizer_probe/CMSIS/stm32f10x.h \
  /home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h \
  /home/dzusan/workspace/sensitizer_probe/CMSIS/system_stm32f10x.h \
@@ -25,9 +25,9 @@ main.d: ../main.c \
  /home/dzusan/workspace/sensitizer_probe/STM32F10x_StdPeriph_Driver/inc/stm32f10x_tim.h \
  /home/dzusan/workspace/sensitizer_probe/STM32F10x_StdPeriph_Driver/inc/stm32f10x_usart.h \
  /home/dzusan/workspace/sensitizer_probe/STM32F10x_StdPeriph_Driver/inc/stm32f10x_wwdg.h \
- /home/dzusan/workspace/sensitizer_probe/STM32F10x_StdPeriph_Driver/inc/misc.h \
- /home/dzusan/workspace/sensitizer_probe/CMSIS/stm32f10x_conf.h \
- ../periph_setup.h ../globals.h ../calculations.h
+ /home/dzusan/workspace/sensitizer_probe/STM32F10x_StdPeriph_Driver/inc/misc.h
+
+../periph_setup.h:
 
 /home/dzusan/workspace/sensitizer_probe/CMSIS/stm32f10x.h:
 
@@ -82,11 +82,3 @@ main.d: ../main.c \
 /home/dzusan/workspace/sensitizer_probe/STM32F10x_StdPeriph_Driver/inc/stm32f10x_wwdg.h:
 
 /home/dzusan/workspace/sensitizer_probe/STM32F10x_StdPeriph_Driver/inc/misc.h:
-
-/home/dzusan/workspace/sensitizer_probe/CMSIS/stm32f10x_conf.h:
-
-../periph_setup.h:
-
-../globals.h:
-
-../calculations.h:

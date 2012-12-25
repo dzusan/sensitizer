@@ -1634,29 +1634,29 @@
  906              		.file 2 "/opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/../../../../arm-none-eab
 DEFINED SYMBOLS
                             *ABS*:00000000 core_cm3.c
-     /tmp/ccctsHzl.s:18     .text:00000000 $t
-     /tmp/ccctsHzl.s:23     .text:00000000 __get_PSP
-     /tmp/ccctsHzl.s:53     .text:00000010 __set_PSP
-     /tmp/ccctsHzl.s:77     .text:00000018 __get_MSP
-     /tmp/ccctsHzl.s:106    .text:00000028 __set_MSP
-     /tmp/ccctsHzl.s:130    .text:00000030 __get_BASEPRI
-     /tmp/ccctsHzl.s:173    .text:00000050 __set_BASEPRI
-     /tmp/ccctsHzl.s:210    .text:00000068 __get_PRIMASK
-     /tmp/ccctsHzl.s:253    .text:00000088 __set_PRIMASK
-     /tmp/ccctsHzl.s:290    .text:000000a0 __get_FAULTMASK
-     /tmp/ccctsHzl.s:333    .text:000000c0 __set_FAULTMASK
-     /tmp/ccctsHzl.s:370    .text:000000d8 __get_CONTROL
-     /tmp/ccctsHzl.s:413    .text:000000f8 __set_CONTROL
-     /tmp/ccctsHzl.s:450    .text:00000110 __REV
-     /tmp/ccctsHzl.s:495    .text:00000134 __REV16
-     /tmp/ccctsHzl.s:541    .text:00000158 __REVSH
-     /tmp/ccctsHzl.s:587    .text:0000017c __RBIT
-     /tmp/ccctsHzl.s:632    .text:000001a0 __LDREXB
-     /tmp/ccctsHzl.s:677    .text:000001c4 __LDREXH
-     /tmp/ccctsHzl.s:722    .text:000001e8 __LDREXW
-     /tmp/ccctsHzl.s:767    .text:0000020c __STREXB
-     /tmp/ccctsHzl.s:815    .text:00000238 __STREXH
-     /tmp/ccctsHzl.s:863    .text:00000264 __STREXW
+     /tmp/ccqbgCfL.s:18     .text:00000000 $t
+     /tmp/ccqbgCfL.s:23     .text:00000000 __get_PSP
+     /tmp/ccqbgCfL.s:53     .text:00000010 __set_PSP
+     /tmp/ccqbgCfL.s:77     .text:00000018 __get_MSP
+     /tmp/ccqbgCfL.s:106    .text:00000028 __set_MSP
+     /tmp/ccqbgCfL.s:130    .text:00000030 __get_BASEPRI
+     /tmp/ccqbgCfL.s:173    .text:00000050 __set_BASEPRI
+     /tmp/ccqbgCfL.s:210    .text:00000068 __get_PRIMASK
+     /tmp/ccqbgCfL.s:253    .text:00000088 __set_PRIMASK
+     /tmp/ccqbgCfL.s:290    .text:000000a0 __get_FAULTMASK
+     /tmp/ccqbgCfL.s:333    .text:000000c0 __set_FAULTMASK
+     /tmp/ccqbgCfL.s:370    .text:000000d8 __get_CONTROL
+     /tmp/ccqbgCfL.s:413    .text:000000f8 __set_CONTROL
+     /tmp/ccqbgCfL.s:450    .text:00000110 __REV
+     /tmp/ccqbgCfL.s:495    .text:00000134 __REV16
+     /tmp/ccqbgCfL.s:541    .text:00000158 __REVSH
+     /tmp/ccqbgCfL.s:587    .text:0000017c __RBIT
+     /tmp/ccqbgCfL.s:632    .text:000001a0 __LDREXB
+     /tmp/ccqbgCfL.s:677    .text:000001c4 __LDREXH
+     /tmp/ccqbgCfL.s:722    .text:000001e8 __LDREXW
+     /tmp/ccqbgCfL.s:767    .text:0000020c __STREXB
+     /tmp/ccqbgCfL.s:815    .text:00000238 __STREXH
+     /tmp/ccqbgCfL.s:863    .text:00000264 __STREXW
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.1.f2b32ee49e703f71d2941adfc5f04874
                            .group:00000000 wm4.stdint.h.10.90b695f550ca6cc3fb08fa83baf01e05
