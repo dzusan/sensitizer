@@ -6,17 +6,20 @@
 C_SRCS += \
 ../calculations.c \
 ../main.c \
-../periph_setup.c 
+../periph_setup.c \
+../utils.c 
 
 OBJS += \
 ./calculations.o \
 ./main.o \
-./periph_setup.o 
+./periph_setup.o \
+./utils.o 
 
 C_DEPS += \
 ./calculations.d \
 ./main.d \
-./periph_setup.d 
+./periph_setup.d \
+./utils.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

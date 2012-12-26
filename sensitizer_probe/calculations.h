@@ -10,7 +10,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 /*#include <math.h>*/
-#include "globals.h"
+#include "utils.h"
 
 float typeConversion(uint16_t);
 void Calculations(void);

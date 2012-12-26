@@ -5,7 +5,6 @@
  *      Author: dzusan
  */
 
-
 #include "calculations.h"
 
 float typeConversion(uint16_t input)
@@ -48,8 +47,8 @@ void Calculations(void)
 
 	for(countEx = 0; countEx < 3; countEx++)
 	{
-		clearValues.forceVector[countEx]  -= tmpCoordinateGravityForceVector[countEx];
-		clearValues.torqueVector[countEx] -= gravityForceTorqueVector[countEx];
+		clearValues.forceVector[countEx]  = sensorValues.forceVector[countEx]  - tmpCoordinateGravityForceVector[countEx];
+		clearValues.torqueVector[countEx] = sensorValues.torqueVector[countEx] - gravityForceTorqueVector[countEx];
 	}
 
 }

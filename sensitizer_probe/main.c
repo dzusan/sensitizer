@@ -2,7 +2,7 @@
 #include "stm32f10x_conf.h"
 
 #include "periph_setup.h"
-#include "globals.h"
+#include "utils.h"
 #include "calculations.h"
 
 volatile BitAction TmpBitVal;
