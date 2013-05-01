@@ -1,0 +1,27 @@
+/*
+ * periph_setup.h
+ *
+ *  Created on: 23.12.2012
+ *      Author: dzusan
+ */
+
+#ifndef PERIPH_SETUP_H_
+#define PERIPH_SETUP_H_
+
+/* Includes -----------------------------------------------------------------*/
+#include "stm32f10x.h"
+
+/*Test LED blink frequency*/
+#define RTC_PRESCALER 240000
+
+extern volatile CanTxMsg CanTxMsgStructure;
+
+void SetupLED(void);
+void SetupRTC(void);
+void Setup_RTC_NVIC(void);
+void SetupUSART(void);
+void Setup_USART_NVIC(void);
+void SetupCAN(void);
+void Setup_CAN_NVIC(void);
+
+#endif /* PERIPH_SETUP_H_ */
