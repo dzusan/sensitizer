@@ -1,0 +1,434 @@
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.comm	txSeq,28,4
+  19              		.comm	TmpBitVal,1,1
+  20              		.align	2
+  21              		.global	main
+  22              		.thumb
+  23              		.thumb_func
+  25              	main:
+  26              	.LFB29:
+  27              		.file 1 "../main.c"
+   1:../main.c     **** #include "stm32f10x.h"
+   2:../main.c     **** #include "stm32f10x_conf.h"
+   3:../main.c     **** 
+   4:../main.c     **** #include "periph_setup.h"
+   5:../main.c     **** #include "utils.h"
+   6:../main.c     **** #include "calculations.h"
+   7:../main.c     **** 
+   8:../main.c     **** volatile BitAction TmpBitVal;
+   9:../main.c     **** 
+  10:../main.c     **** int main()
+  11:../main.c     **** {
+  28              		.loc 1 11 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 1, uses_anonymous_args = 0
+  32 0000 80B5     		push	{r7, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 7, -8
+  36              		.cfi_offset 14, -4
+  37 0002 00AF     		add	r7, sp, #0
+  38              	.LCFI1:
+  39              		.cfi_def_cfa_register 7
+  12:../main.c     **** 
+  13:../main.c     **** 	TmpBitVal = Bit_RESET;
+  40              		.loc 1 13 0
+  41 0004 144B     		ldr	r3, .L4
+  42 0006 4FF00002 		mov	r2, #0
+  43 000a 1A70     		strb	r2, [r3, #0]
+  14:../main.c     **** 
+  15:../main.c     **** 	SetupLED();
+  44              		.loc 1 15 0
+  45 000c FFF7FEFF 		bl	SetupLED
+  16:../main.c     **** 
+  17:../main.c     **** 	Setup_USART_NVIC();
+  46              		.loc 1 17 0
+  47 0010 FFF7FEFF 		bl	Setup_USART_NVIC
+  18:../main.c     **** 	SetupUSART();
+  48              		.loc 1 18 0
+  49 0014 FFF7FEFF 		bl	SetupUSART
+  50              	.L3:
+  19:../main.c     **** 
+  20:../main.c     **** 	while(1)
+  21:../main.c     **** 	{
+  22:../main.c     **** 		if(rxCount == END_RX_SEQUENCE)
+  51              		.loc 1 22 0
+  52 0018 104B     		ldr	r3, .L4+4
+  53 001a 1B68     		ldr	r3, [r3, #0]
+  54 001c 0F2B     		cmp	r3, #15
+  55 001e 0FD1     		bne	.L2
+  23:../main.c     **** 		{
+  24:../main.c     **** 			USART_ITConfig(USART3, USART_IT_RXNE, DISABLE);
+  56              		.loc 1 24 0
+  57 0020 0F48     		ldr	r0, .L4+8
+  58 0022 40F22551 		movw	r1, #1317
+  59 0026 4FF00002 		mov	r2, #0
+  60 002a FFF7FEFF 		bl	USART_ITConfig
+  25:../main.c     **** 			Calculations();
+  61              		.loc 1 25 0
+  62 002e FFF7FEFF 		bl	Calculations
+  26:../main.c     **** 			USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);
+  63              		.loc 1 26 0
+  64 0032 0B48     		ldr	r0, .L4+8
+  65 0034 40F22551 		movw	r1, #1317
+  66 0038 4FF00102 		mov	r2, #1
+  67 003c FFF7FEFF 		bl	USART_ITConfig
+  68              	.L2:
+  27:../main.c     **** 		}
+  28:../main.c     **** 
+  29:../main.c     **** 		USART_SendData(USART3, *txSeq[txCount]);
+  69              		.loc 1 29 0
+  70 0040 084B     		ldr	r3, .L4+12
+  71 0042 1A68     		ldr	r2, [r3, #0]
+  72 0044 084B     		ldr	r3, .L4+16
+  73 0046 53F82230 		ldr	r3, [r3, r2, lsl #2]
+  74 004a 1B88     		ldrh	r3, [r3, #0]
+  75 004c 0448     		ldr	r0, .L4+8
+  76 004e 1946     		mov	r1, r3
+  77 0050 FFF7FEFF 		bl	USART_SendData
+  30:../main.c     **** 	}
+  78              		.loc 1 30 0
+  79 0054 E0E7     		b	.L3
+  80              	.L5:
+  81 0056 00BF     		.align	2
+  82              	.L4:
+  83 0058 00000000 		.word	TmpBitVal
+  84 005c 00000000 		.word	rxCount
+  85 0060 00480040 		.word	1073760256
+  86 0064 00000000 		.word	txCount
+  87 0068 00000000 		.word	txSeq
+  88              		.cfi_endproc
+  89              	.LFE29:
+  91              		.align	2
+  92              		.global	RTC_IRQHandler
+  93              		.thumb
+  94              		.thumb_func
+  96              	RTC_IRQHandler:
+  97              	.LFB30:
+  31:../main.c     **** }
+  32:../main.c     **** 
+  33:../main.c     **** 
+  34:../main.c     **** 
+  35:../main.c     **** /**************** Interrupts *******************/
+  36:../main.c     **** 
+  37:../main.c     **** void RTC_IRQHandler(void)
+  38:../main.c     **** {
+  98              		.loc 1 38 0
+  99              		.cfi_startproc
+ 100              		@ args = 0, pretend = 0, frame = 0
+ 101              		@ frame_needed = 1, uses_anonymous_args = 0
+ 102 006c 80B5     		push	{r7, lr}
+ 103              	.LCFI2:
+ 104              		.cfi_def_cfa_offset 8
+ 105              		.cfi_offset 7, -8
+ 106              		.cfi_offset 14, -4
+ 107 006e 00AF     		add	r7, sp, #0
+ 108              	.LCFI3:
+ 109              		.cfi_def_cfa_register 7
+  39:../main.c     **** 	if(RTC_GetITStatus(RTC_IT_SEC))
+ 110              		.loc 1 39 0
+ 111 0070 4FF00100 		mov	r0, #1
+ 112 0074 FFF7FEFF 		bl	RTC_GetITStatus
+ 113 0078 0346     		mov	r3, r0
+ 114 007a 002B     		cmp	r3, #0
+ 115 007c 11D0     		beq	.L7
+  40:../main.c     **** 	{
+  41:../main.c     **** 		RTC_ClearITPendingBit(RTC_IT_SEC);
+ 116              		.loc 1 41 0
+ 117 007e 4FF00100 		mov	r0, #1
+ 118 0082 FFF7FEFF 		bl	RTC_ClearITPendingBit
+  42:../main.c     **** 		if(TmpBitVal == Bit_RESET) TmpBitVal = Bit_SET;
+ 119              		.loc 1 42 0
+ 120 0086 0C4B     		ldr	r3, .L9
+ 121 0088 1B78     		ldrb	r3, [r3, #0]
+ 122 008a DBB2     		uxtb	r3, r3
+ 123 008c 002B     		cmp	r3, #0
+ 124 008e 04D1     		bne	.L8
+ 125              		.loc 1 42 0 is_stmt 0 discriminator 1
+ 126 0090 094B     		ldr	r3, .L9
+ 127 0092 4FF00102 		mov	r2, #1
+ 128 0096 1A70     		strb	r2, [r3, #0]
+ 129 0098 03E0     		b	.L7
+ 130              	.L8:
+  43:../main.c     **** 		else TmpBitVal = Bit_RESET;
+ 131              		.loc 1 43 0 is_stmt 1
+ 132 009a 074B     		ldr	r3, .L9
+ 133 009c 4FF00002 		mov	r2, #0
+ 134 00a0 1A70     		strb	r2, [r3, #0]
+ 135              	.L7:
+  44:../main.c     **** 	}
+  45:../main.c     **** 
+  46:../main.c     **** 	GPIO_WriteBit(GPIOC, GPIO_Pin_12, TmpBitVal);
+ 136              		.loc 1 46 0
+ 137 00a2 054B     		ldr	r3, .L9
+ 138 00a4 1B78     		ldrb	r3, [r3, #0]
+ 139 00a6 DBB2     		uxtb	r3, r3
+ 140 00a8 0448     		ldr	r0, .L9+4
+ 141 00aa 4FF48051 		mov	r1, #4096
+ 142 00ae 1A46     		mov	r2, r3
+ 143 00b0 FFF7FEFF 		bl	GPIO_WriteBit
+  47:../main.c     **** 
+  48:../main.c     **** }
+ 144              		.loc 1 48 0
+ 145 00b4 80BD     		pop	{r7, pc}
+ 146              	.L10:
+ 147 00b6 00BF     		.align	2
+ 148              	.L9:
+ 149 00b8 00000000 		.word	TmpBitVal
+ 150 00bc 00100140 		.word	1073811456
+ 151              		.cfi_endproc
+ 152              	.LFE30:
+ 154              		.align	2
+ 155              		.global	USART3_IRQHandler
+ 156              		.thumb
+ 157              		.thumb_func
+ 159              	USART3_IRQHandler:
+ 160              	.LFB31:
+  49:../main.c     **** 
+  50:../main.c     **** void USART3_IRQHandler(void)
+  51:../main.c     **** {
+ 161              		.loc 1 51 0
+ 162              		.cfi_startproc
+ 163              		@ args = 0, pretend = 0, frame = 8
+ 164              		@ frame_needed = 1, uses_anonymous_args = 0
+ 165 00c0 80B5     		push	{r7, lr}
+ 166              	.LCFI4:
+ 167              		.cfi_def_cfa_offset 8
+ 168              		.cfi_offset 7, -8
+ 169              		.cfi_offset 14, -4
+ 170 00c2 82B0     		sub	sp, sp, #8
+ 171              	.LCFI5:
+ 172              		.cfi_def_cfa_offset 16
+ 173 00c4 00AF     		add	r7, sp, #0
+ 174              	.LCFI6:
+ 175              		.cfi_def_cfa_register 7
+  52:../main.c     **** 	if(USART_GetITStatus(USART3, USART_IT_RXNE))
+ 176              		.loc 1 52 0
+ 177 00c6 3248     		ldr	r0, .L18
+ 178 00c8 40F22551 		movw	r1, #1317
+ 179 00cc FFF7FEFF 		bl	USART_GetITStatus
+ 180 00d0 0346     		mov	r3, r0
+ 181 00d2 002B     		cmp	r3, #0
+ 182 00d4 25D0     		beq	.L12
+ 183              	.LBB2:
+  53:../main.c     **** 	{
+  54:../main.c     **** 		USART_ClearITPendingBit(USART3, USART_IT_RXNE);
+ 184              		.loc 1 54 0
+ 185 00d6 2E48     		ldr	r0, .L18
+ 186 00d8 40F22551 		movw	r1, #1317
+ 187 00dc FFF7FEFF 		bl	USART_ClearITPendingBit
+  55:../main.c     **** 		uint16_t tmp;
+  56:../main.c     **** 		tmp = USART_ReceiveData(USART3);
+ 188              		.loc 1 56 0
+ 189 00e0 2B48     		ldr	r0, .L18
+ 190 00e2 FFF7FEFF 		bl	USART_ReceiveData
+ 191 00e6 0346     		mov	r3, r0
+ 192 00e8 FB80     		strh	r3, [r7, #6]	@ movhi
+  57:../main.c     **** 		rxCount++;
+ 193              		.loc 1 57 0
+ 194 00ea 2A4B     		ldr	r3, .L18+4
+ 195 00ec 1B68     		ldr	r3, [r3, #0]
+ 196 00ee 03F10102 		add	r2, r3, #1
+ 197 00f2 284B     		ldr	r3, .L18+4
+ 198 00f4 1A60     		str	r2, [r3, #0]
+  58:../main.c     **** 
+  59:../main.c     **** 		if(rxCount > END_RX_SEQUENCE)
+ 199              		.loc 1 59 0
+ 200 00f6 274B     		ldr	r3, .L18+4
+ 201 00f8 1B68     		ldr	r3, [r3, #0]
+ 202 00fa 0F2B     		cmp	r3, #15
+ 203 00fc 09DD     		ble	.L13
+  60:../main.c     **** 		{
+  61:../main.c     **** 			if(tmp == START_RX_BYTE) rxCount = 0;
+ 204              		.loc 1 61 0
+ 205 00fe 264B     		ldr	r3, .L18+8
+ 206 0100 1B88     		ldrh	r3, [r3, #0]
+ 207 0102 FA88     		ldrh	r2, [r7, #6]
+ 208 0104 9A42     		cmp	r2, r3
+ 209 0106 28D1     		bne	.L14
+ 210              		.loc 1 61 0 is_stmt 0 discriminator 1
+ 211 0108 224B     		ldr	r3, .L18+4
+ 212 010a 4FF00002 		mov	r2, #0
+ 213 010e 1A60     		str	r2, [r3, #0]
+ 214 0110 23E0     		b	.L14
+ 215              	.L13:
+  62:../main.c     **** 		}
+  63:../main.c     **** 		else *rxSeq[rxCount] = tmp;
+ 216              		.loc 1 63 0 is_stmt 1
+ 217 0112 204B     		ldr	r3, .L18+4
+ 218 0114 1A68     		ldr	r2, [r3, #0]
+ 219 0116 214B     		ldr	r3, .L18+12
+ 220 0118 53F82230 		ldr	r3, [r3, r2, lsl #2]
+ 221 011c FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 222 011e 1A80     		strh	r2, [r3, #0]	@ movhi
+ 223 0120 1BE0     		b	.L14
+ 224              	.L12:
+ 225              	.LBE2:
+  64:../main.c     **** 	}
+  65:../main.c     **** 	else if(USART_GetITStatus(USART3, USART_IT_TC))
+ 226              		.loc 1 65 0
+ 227 0122 1B48     		ldr	r0, .L18
+ 228 0124 40F22661 		movw	r1, #1574
+ 229 0128 FFF7FEFF 		bl	USART_GetITStatus
+ 230 012c 0346     		mov	r3, r0
+ 231 012e 002B     		cmp	r3, #0
+ 232 0130 13D0     		beq	.L14
+  66:../main.c     **** 	{
+  67:../main.c     **** 		USART_ClearITPendingBit(USART3, USART_IT_TC);
+ 233              		.loc 1 67 0
+ 234 0132 1748     		ldr	r0, .L18
+ 235 0134 40F22661 		movw	r1, #1574
+ 236 0138 FFF7FEFF 		bl	USART_ClearITPendingBit
+  68:../main.c     **** 		if(txCount > END_TX_SEQUENCE) txCount = 0;
+ 237              		.loc 1 68 0
+ 238 013c 184B     		ldr	r3, .L18+16
+ 239 013e 1B68     		ldr	r3, [r3, #0]
+ 240 0140 062B     		cmp	r3, #6
+ 241 0142 04DD     		ble	.L15
+ 242              		.loc 1 68 0 is_stmt 0 discriminator 1
+ 243 0144 164B     		ldr	r3, .L18+16
+ 244 0146 4FF00002 		mov	r2, #0
+ 245 014a 1A60     		str	r2, [r3, #0]
+ 246 014c 05E0     		b	.L14
+ 247              	.L15:
+  69:../main.c     **** 		else txCount++;
+ 248              		.loc 1 69 0 is_stmt 1
+ 249 014e 144B     		ldr	r3, .L18+16
+ 250 0150 1B68     		ldr	r3, [r3, #0]
+ 251 0152 03F10102 		add	r2, r3, #1
+ 252 0156 124B     		ldr	r3, .L18+16
+ 253 0158 1A60     		str	r2, [r3, #0]
+ 254              	.L14:
+  70:../main.c     **** 	}
+  71:../main.c     **** 
+  72:../main.c     **** 	if(TmpBitVal == Bit_RESET) TmpBitVal = Bit_SET;
+ 255              		.loc 1 72 0
+ 256 015a 124B     		ldr	r3, .L18+20
+ 257 015c 1B78     		ldrb	r3, [r3, #0]
+ 258 015e DBB2     		uxtb	r3, r3
+ 259 0160 002B     		cmp	r3, #0
+ 260 0162 04D1     		bne	.L16
+ 261              		.loc 1 72 0 is_stmt 0 discriminator 1
+ 262 0164 0F4B     		ldr	r3, .L18+20
+ 263 0166 4FF00102 		mov	r2, #1
+ 264 016a 1A70     		strb	r2, [r3, #0]
+ 265 016c 03E0     		b	.L17
+ 266              	.L16:
+  73:../main.c     **** 	else TmpBitVal = Bit_RESET;
+ 267              		.loc 1 73 0 is_stmt 1
+ 268 016e 0D4B     		ldr	r3, .L18+20
+ 269 0170 4FF00002 		mov	r2, #0
+ 270 0174 1A70     		strb	r2, [r3, #0]
+ 271              	.L17:
+  74:../main.c     **** 	GPIO_WriteBit(GPIOC, GPIO_Pin_12, TmpBitVal);
+ 272              		.loc 1 74 0
+ 273 0176 0B4B     		ldr	r3, .L18+20
+ 274 0178 1B78     		ldrb	r3, [r3, #0]
+ 275 017a DBB2     		uxtb	r3, r3
+ 276 017c 0A48     		ldr	r0, .L18+24
+ 277 017e 4FF48051 		mov	r1, #4096
+ 278 0182 1A46     		mov	r2, r3
+ 279 0184 FFF7FEFF 		bl	GPIO_WriteBit
+  75:../main.c     **** }
+ 280              		.loc 1 75 0
+ 281 0188 07F10807 		add	r7, r7, #8
+ 282 018c BD46     		mov	sp, r7
+ 283 018e 80BD     		pop	{r7, pc}
+ 284              	.L19:
+ 285              		.align	2
+ 286              	.L18:
+ 287 0190 00480040 		.word	1073760256
+ 288 0194 00000000 		.word	rxCount
+ 289 0198 00000000 		.word	START_RX_BYTE
+ 290 019c 00000000 		.word	rxSeq
+ 291 01a0 00000000 		.word	txCount
+ 292 01a4 00000000 		.word	TmpBitVal
+ 293 01a8 00100140 		.word	1073811456
+ 294              		.cfi_endproc
+ 295              	.LFE31:
+ 297              	.Letext0:
+ 298              		.file 2 "/opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/../../../../arm-none-eab
+ 299              		.file 3 "/home/dzusan/workspace/sensitizer_probe/CMSIS/stm32f10x.h"
+ 300              		.file 4 "/home/dzusan/workspace/sensitizer_probe/STM32F10x_StdPeriph_Driver/inc/stm32f10x_gpio.h"
+ 301              		.file 5 "/home/dzusan/workspace/sensitizer_probe/CMSIS/core_cm3.h"
+ 302              		.file 6 "../utils.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+                            *COM*:0000001c txSeq
+                            *COM*:00000001 TmpBitVal
+     /tmp/ccSg2584.s:20     .text:00000000 $t
+     /tmp/ccSg2584.s:25     .text:00000000 main
+     /tmp/ccSg2584.s:83     .text:00000058 $d
+     /tmp/ccSg2584.s:91     .text:0000006c $t
+     /tmp/ccSg2584.s:96     .text:0000006c RTC_IRQHandler
+     /tmp/ccSg2584.s:149    .text:000000b8 $d
+     /tmp/ccSg2584.s:154    .text:000000c0 $t
+     /tmp/ccSg2584.s:159    .text:000000c0 USART3_IRQHandler
+     /tmp/ccSg2584.s:287    .text:00000190 $d
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.1.f2b32ee49e703f71d2941adfc5f04874
+                           .group:00000000 wm4.stm32f10x.h.51.b859cb68ed44ee02c916b41cb8c68f1c
+                           .group:00000000 wm4.core_cm3.h.25.d35e9a9b04ec4aaebae9bf79fff061f9
+                           .group:00000000 wm4.stdint.h.10.90b695f550ca6cc3fb08fa83baf01e05
+                           .group:00000000 wm4.core_cm3.h.113.b286929a54d33b4c8909a7132437b244
+                           .group:00000000 wm4.stm32f10x.h.522.9a9f642c8c562acb4a63ad5d933b7c01
+                           .group:00000000 wm4.stm32f10x_adc.h.83.4d35a50d598070ecea6f33bcef02c922
+                           .group:00000000 wm4.stm32f10x_bkp.h.25.4622919f1e30efdad5eb44e12edd5513
+                           .group:00000000 wm4.stm32f10x_can.h.25.48aab46fcce6d08400bf960b028e4698
+                           .group:00000000 wm4.stm32f10x_cec.h.25.8f03450e7bbb704d96e7bc73ec0f66a7
+                           .group:00000000 wm4.stm32f10x_dac.h.25.6e7f2924f39c60c10815105b99b8b446
+                           .group:00000000 wm4.stm32f10x_dbgmcu.h.25.d3351200fc7f9c8615d1ae81d40db08a
+                           .group:00000000 wm4.stm32f10x_dma.h.25.94e36204daa98cae5dcc70a10a9694d5
+                           .group:00000000 wm4.stm32f10x_exti.h.25.b9064155c5c006b5154b39788c79001a
+                           .group:00000000 wm4.stm32f10x_flash.h.25.4be61fcb02863962a1e006449d310650
+                           .group:00000000 wm4.stm32f10x_fsmc.h.25.bca154da2699cdb6024c0c6c4fc5aa89
+                           .group:00000000 wm4.stm32f10x_gpio.h.25.80c981af0e637567395034c576cfb3ce
+                           .group:00000000 wm4.stm32f10x_i2c.h.25.7b6cbaea24c6f25f538f8516d1814cb2
+                           .group:00000000 wm4.stm32f10x_iwdg.h.25.da9374ab9856795610487f312ccf3122
+                           .group:00000000 wm4.stm32f10x_pwr.h.25.37ef75009f751ef5fe27910e0bf00a62
+                           .group:00000000 wm4.stm32f10x_rcc.h.25.968bcf08d813e68e57c280a4da69fa5a
+                           .group:00000000 wm4.stm32f10x_rtc.h.25.361142606ba98ddcd10369f321f6e636
+                           .group:00000000 wm4.stm32f10x_sdio.h.25.1fb5280a7690ef99070096bf8c866b3a
+                           .group:00000000 wm4.stm32f10x_spi.h.25.68b3d5ccfcf895f9fe505ce20c0c300f
+                           .group:00000000 wm4.stm32f10x_tim.h.25.21c6ec062f1e74898cb96a57da276fec
+                           .group:00000000 wm4.stm32f10x_usart.h.25.29629c699b65db3f3efd3561f66b0bf6
+                           .group:00000000 wm4.stm32f10x_wwdg.h.25.dde12201d86b5aa9ecaafb5eccdc6549
+                           .group:00000000 wm4.misc.h.25.068e106f368fa5369a681ef57c106f4b
+                           .group:00000000 wm4.stm32f10x.h.8304.f7d8ad90959e99679b3257267c3aadfe
+                           .group:00000000 wm4.periph_setup.h.9.5317853503f61c3ea290521dac9d9aa0
+                           .group:00000000 wm4.utils.h.9.82e0c591dd42342daa7f6a87a622c8f1
+
+UNDEFINED SYMBOLS
+SetupLED
+Setup_USART_NVIC
+SetupUSART
+USART_ITConfig
+Calculations
+USART_SendData
+rxCount
+txCount
+RTC_GetITStatus
+RTC_ClearITPendingBit
+GPIO_WriteBit
+USART_GetITStatus
+USART_ClearITPendingBit
+USART_ReceiveData
+START_RX_BYTE
+rxSeq

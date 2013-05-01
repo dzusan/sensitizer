@@ -1,0 +1,2428 @@
+Archive member included because of file (symbol)
+
+/opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubsf3.o)
+                              ./calculations.o (__aeabi_fsub)
+/opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivsf3.o)
+                              ./calculations.o (__aeabi_fmul)
+/opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_cmpsf2.o)
+                              ./calculations.o (__aeabi_fcmplt)
+/opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
+                              ./calculations.o (__aeabi_f2iz)
+/opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixunssfsi.o)
+                              ./calculations.o (__aeabi_f2uiz)
+
+Allocating common symbols
+Common symbol       size              file
+
+TmpBitVal           0x1               ./main.o
+
+Discarded input sections
+
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .text          0x00000000      0xb00 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_info    0x00000000      0xc2f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_abbrev  0x00000000      0x19d ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_loc     0x00000000      0x7d4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x242 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x13e ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_line    0x00000000      0x4eb ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_str     0x00000000    0x4cc6b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .ARM.attributes
+                0x00000000       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .debug_frame   0x00000000      0x404 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .text          0x00000000      0x1c8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_info    0x00000000      0x882 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_abbrev  0x00000000      0x168 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_loc     0x00000000      0x264 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x1a0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_macro   0x00000000      0x13e ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_line    0x00000000      0x3db ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_str     0x00000000    0x4c74a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .ARM.attributes
+                0x00000000       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .debug_frame   0x00000000      0x160 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .text          0x00000000     0x1130 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_info    0x00000000      0xc6d ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_abbrev  0x00000000      0x1da ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_loc     0x00000000      0x578 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x19a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_macro   0x00000000      0x3c9 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_line    0x00000000      0x5c1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_str     0x00000000    0x4c84f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .ARM.attributes
+                0x00000000       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .debug_frame   0x00000000      0x2d4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .text          0x00000000      0x2bc ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_info    0x00000000      0x447 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_abbrev  0x00000000      0x1b3 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_loc     0x00000000      0x2ec ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x194 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_macro   0x00000000       0xc2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_line    0x00000000      0x401 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_str     0x00000000    0x4c4b7 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .ARM.attributes
+                0x00000000       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .debug_frame   0x00000000      0x198 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .text          0x00000000       0xd4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_info    0x00000000      0x203 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_abbrev  0x00000000      0x119 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_loc     0x00000000      0x12c ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x140 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_line    0x00000000      0x3c2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_str     0x00000000    0x4c170 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .ARM.attributes
+                0x00000000       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .debug_frame   0x00000000       0xb8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .text          0x00000000      0x344 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_info    0x00000000      0x4e1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_abbrev  0x00000000      0x178 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_loc     0x00000000      0x294 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x170 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_macro   0x00000000      0x174 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_line    0x00000000      0x3fa ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_str     0x00000000    0x4c3ed ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .ARM.attributes
+                0x00000000       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .debug_frame   0x00000000      0x160 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .text          0x00000000       0x74 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_info    0x00000000      0x15a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_abbrev  0x00000000       0xe3 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_loc     0x00000000       0x90 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x14c ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_macro   0x00000000       0xa6 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_line    0x00000000      0x3aa ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_str     0x00000000    0x4c165 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .ARM.attributes
+                0x00000000       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .debug_frame   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .text          0x00000000      0x438 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_info    0x00000000      0x4aa ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_abbrev  0x00000000      0x15a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_loc     0x00000000      0x268 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x19a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_macro   0x00000000      0x3a7 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_line    0x00000000      0x424 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_str     0x00000000    0x4c7c9 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .ARM.attributes
+                0x00000000       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .debug_frame   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .text          0x00000000      0x23c ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_info    0x00000000      0x366 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_abbrev  0x00000000      0x156 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_loc     0x00000000      0x1b4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x14c ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_macro   0x00000000       0x94 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_line    0x00000000      0x3e9 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_str     0x00000000    0x4c2b5 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .ARM.attributes
+                0x00000000       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .debug_frame   0x00000000       0xf0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .text          0x00000000      0x9d8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_info    0x00000000      0x832 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_abbrev  0x00000000      0x190 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_loc     0x00000000      0x5d8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x1ee ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_macro   0x00000000      0x2c9 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_line    0x00000000      0x51a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_str     0x00000000    0x4c901 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .ARM.attributes
+                0x00000000       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .debug_frame   0x00000000      0x350 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .text          0x00000000      0xa3c ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_info    0x00000000      0x9a9 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_abbrev  0x00000000      0x175 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_loc     0x00000000      0x41c ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x176 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_macro   0x00000000      0x273 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_line    0x00000000      0x507 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_str     0x00000000    0x4c7ee ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .ARM.attributes
+                0x00000000       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .debug_frame   0x00000000      0x224 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .text          0x00000000      0x9d0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_info    0x00000000      0xbb2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_abbrev  0x00000000      0x169 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_loc     0x00000000      0x738 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x218 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_macro   0x00000000      0x2ab ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_line    0x00000000      0x4c0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_str     0x00000000    0x4ca31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .ARM.attributes
+                0x00000000       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .debug_frame   0x00000000      0x3b4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .text          0x00000000       0xcc ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_info    0x00000000      0x203 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_abbrev  0x00000000      0x106 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_loc     0x00000000      0x138 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x152 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_macro   0x00000000       0x5e ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_line    0x00000000      0x3b9 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_str     0x00000000    0x4c1d3 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .ARM.attributes
+                0x00000000       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .debug_frame   0x00000000       0xb8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .text          0x00000000      0x554 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_info    0x00000000      0x8aa ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_abbrev  0x00000000      0x1b4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_loc     0x00000000      0x648 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x1f4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_macro   0x00000000      0x33b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_line    0x00000000      0x462 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_str     0x00000000    0x4cac1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .ARM.attributes
+                0x00000000       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .debug_frame   0x00000000      0x358 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .text          0x00000000      0x77c ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_info    0x00000000      0x985 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_abbrev  0x00000000      0x183 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_loc     0x00000000      0x508 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x1ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_macro   0x00000000      0x2be ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_line    0x00000000      0x48a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_str     0x00000000    0x4c78f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .ARM.attributes
+                0x00000000       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .debug_frame   0x00000000      0x29c ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .text          0x00000000     0x1f4c ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_info    0x00000000     0x1e70 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_abbrev  0x00000000      0x1b5 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_loc     0x00000000     0x13e8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x15e ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_macro   0x00000000      0x70b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_line    0x00000000      0x794 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_str     0x00000000    0x4cd93 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .ARM.attributes
+                0x00000000       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .debug_frame   0x00000000      0xa20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000       0x34 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .text          0x00000000      0x120 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .data          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .bss           0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_info    0x00000000      0x23a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_abbrev  0x00000000      0x11c ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_loc     0x00000000      0x190 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x176 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x81a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000       0x56 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000       0x22 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x214 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x69f ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000     0x7dbe ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x2df ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x144 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x3cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000       0xc8 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x17a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000       0xac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x3ad ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000       0x9a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x2cf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x279 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x2ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x2b1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000       0x64 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000       0x82 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x3e2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000       0x58 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x341 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x711 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000      0x220 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000       0x8b ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000       0x35 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_macro   0x00000000       0x2e ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_line    0x00000000      0x3c2 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_str     0x00000000    0x4c2c0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .ARM.attributes
+                0x00000000       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .debug_frame   0x00000000       0xf0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+ .group         0x00000000        0x8 ./CMSIS/core_cm3.o
+ .group         0x00000000        0x8 ./CMSIS/core_cm3.o
+ .text          0x00000000      0x28c ./CMSIS/core_cm3.o
+ .data          0x00000000        0x0 ./CMSIS/core_cm3.o
+ .bss           0x00000000        0x0 ./CMSIS/core_cm3.o
+ .debug_info    0x00000000      0x562 ./CMSIS/core_cm3.o
+ .debug_abbrev  0x00000000       0xe7 ./CMSIS/core_cm3.o
+ .debug_loc     0x00000000      0x3f0 ./CMSIS/core_cm3.o
+ .debug_aranges
+                0x00000000       0x20 ./CMSIS/core_cm3.o
+ .debug_macro   0x00000000       0x30 ./CMSIS/core_cm3.o
+ .debug_macro   0x00000000      0x81a ./CMSIS/core_cm3.o
+ .debug_macro   0x00000000      0x214 ./CMSIS/core_cm3.o
+ .debug_line    0x00000000      0x193 ./CMSIS/core_cm3.o
+ .debug_str     0x00000000     0x2c52 ./CMSIS/core_cm3.o
+ .comment       0x00000000       0x31 ./CMSIS/core_cm3.o
+ .ARM.attributes
+                0x00000000       0x33 ./CMSIS/core_cm3.o
+ .debug_frame   0x00000000      0x280 ./CMSIS/core_cm3.o
+ .text          0x00000000       0x14 ./CMSIS/startup_stm32f10x_md.o
+ .data          0x00000000        0x0 ./CMSIS/startup_stm32f10x_md.o
+ .bss           0x00000000        0x0 ./CMSIS/startup_stm32f10x_md.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./CMSIS/system_stm32f10x.o
+ .text          0x00000000      0x260 ./CMSIS/system_stm32f10x.o
+ .data          0x00000000       0x14 ./CMSIS/system_stm32f10x.o
+ .bss           0x00000000        0x0 ./CMSIS/system_stm32f10x.o
+ .debug_info    0x00000000      0x47d ./CMSIS/system_stm32f10x.o
+ .debug_abbrev  0x00000000      0x17c ./CMSIS/system_stm32f10x.o
+ .debug_loc     0x00000000       0xc8 ./CMSIS/system_stm32f10x.o
+ .debug_aranges
+                0x00000000       0x20 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x149 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x81a ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000       0x56 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000       0x22 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x214 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x69f ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000     0x7dbe ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x2df ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x144 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x3cf ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000       0xc8 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x17a ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000       0xac ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x3ad ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000       0x9a ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x2cf ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x279 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x2ac ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x2b1 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000       0x64 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000       0x82 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x3e2 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000       0x58 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x341 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x2c4 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x711 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000      0x220 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000       0x34 ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000       0x8b ./CMSIS/system_stm32f10x.o
+ .debug_macro   0x00000000       0x35 ./CMSIS/system_stm32f10x.o
+ .debug_line    0x00000000      0x403 ./CMSIS/system_stm32f10x.o
+ .debug_str     0x00000000    0x4c22b ./CMSIS/system_stm32f10x.o
+ .comment       0x00000000       0x31 ./CMSIS/system_stm32f10x.o
+ .ARM.attributes
+                0x00000000       0x33 ./CMSIS/system_stm32f10x.o
+ .debug_frame   0x00000000       0x80 ./CMSIS/system_stm32f10x.o
+ .group         0x00000000        0x8 ./calculations.o
+ .group         0x00000000        0x8 ./calculations.o
+ .group         0x00000000        0x8 ./calculations.o
+ .data          0x00000000        0x0 ./calculations.o
+ .bss           0x00000000        0x0 ./calculations.o
+ .debug_macro   0x00000000      0x81a ./calculations.o
+ .debug_macro   0x00000000      0x214 ./calculations.o
+ COMMON         0x00000000        0x0 ./calculations.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .group         0x00000000        0x8 ./main.o
+ .data          0x00000000        0x0 ./main.o
+ .bss           0x00000000        0x0 ./main.o
+ .debug_macro   0x00000000      0x81a ./main.o
+ .debug_macro   0x00000000       0x56 ./main.o
+ .debug_macro   0x00000000       0x22 ./main.o
+ .debug_macro   0x00000000      0x214 ./main.o
+ .debug_macro   0x00000000      0x69f ./main.o
+ .debug_macro   0x00000000     0x7dbe ./main.o
+ .debug_macro   0x00000000      0x2df ./main.o
+ .debug_macro   0x00000000      0x144 ./main.o
+ .debug_macro   0x00000000      0x3cf ./main.o
+ .debug_macro   0x00000000       0xc8 ./main.o
+ .debug_macro   0x00000000      0x17a ./main.o
+ .debug_macro   0x00000000       0xac ./main.o
+ .debug_macro   0x00000000      0x3ad ./main.o
+ .debug_macro   0x00000000       0x9a ./main.o
+ .debug_macro   0x00000000      0x2cf ./main.o
+ .debug_macro   0x00000000      0x279 ./main.o
+ .debug_macro   0x00000000      0x2ac ./main.o
+ .debug_macro   0x00000000      0x2b1 ./main.o
+ .debug_macro   0x00000000       0x64 ./main.o
+ .debug_macro   0x00000000       0x82 ./main.o
+ .debug_macro   0x00000000      0x3e2 ./main.o
+ .debug_macro   0x00000000       0x58 ./main.o
+ .debug_macro   0x00000000      0x341 ./main.o
+ .debug_macro   0x00000000      0x2c4 ./main.o
+ .debug_macro   0x00000000      0x711 ./main.o
+ .debug_macro   0x00000000      0x220 ./main.o
+ .debug_macro   0x00000000       0x34 ./main.o
+ .debug_macro   0x00000000       0x8b ./main.o
+ .debug_macro   0x00000000       0x35 ./main.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .group         0x00000000        0x8 ./periph_setup.o
+ .data          0x00000000        0x0 ./periph_setup.o
+ .bss           0x00000000        0x0 ./periph_setup.o
+ .debug_macro   0x00000000      0x81a ./periph_setup.o
+ .debug_macro   0x00000000       0x56 ./periph_setup.o
+ .debug_macro   0x00000000       0x22 ./periph_setup.o
+ .debug_macro   0x00000000      0x214 ./periph_setup.o
+ .debug_macro   0x00000000      0x69f ./periph_setup.o
+ .debug_macro   0x00000000     0x7dbe ./periph_setup.o
+ .debug_macro   0x00000000      0x2df ./periph_setup.o
+ .debug_macro   0x00000000      0x144 ./periph_setup.o
+ .debug_macro   0x00000000      0x3cf ./periph_setup.o
+ .debug_macro   0x00000000       0xc8 ./periph_setup.o
+ .debug_macro   0x00000000      0x17a ./periph_setup.o
+ .debug_macro   0x00000000       0xac ./periph_setup.o
+ .debug_macro   0x00000000      0x3ad ./periph_setup.o
+ .debug_macro   0x00000000       0x9a ./periph_setup.o
+ .debug_macro   0x00000000      0x2cf ./periph_setup.o
+ .debug_macro   0x00000000      0x279 ./periph_setup.o
+ .debug_macro   0x00000000      0x2ac ./periph_setup.o
+ .debug_macro   0x00000000      0x2b1 ./periph_setup.o
+ .debug_macro   0x00000000       0x64 ./periph_setup.o
+ .debug_macro   0x00000000       0x82 ./periph_setup.o
+ .debug_macro   0x00000000      0x3e2 ./periph_setup.o
+ .debug_macro   0x00000000       0x58 ./periph_setup.o
+ .debug_macro   0x00000000      0x341 ./periph_setup.o
+ .debug_macro   0x00000000      0x2c4 ./periph_setup.o
+ .debug_macro   0x00000000      0x711 ./periph_setup.o
+ .debug_macro   0x00000000      0x220 ./periph_setup.o
+ .debug_macro   0x00000000       0x34 ./periph_setup.o
+ .debug_macro   0x00000000       0x8b ./periph_setup.o
+ .debug_macro   0x00000000       0x35 ./periph_setup.o
+ .group         0x00000000        0x8 ./utils.o
+ .group         0x00000000        0x8 ./utils.o
+ .group         0x00000000        0x8 ./utils.o
+ .text          0x00000000        0x0 ./utils.o
+ .data          0x00000000        0x0 ./utils.o
+ .debug_macro   0x00000000      0x81a ./utils.o
+ .debug_macro   0x00000000      0x214 ./utils.o
+ .debug_macro   0x00000000       0x10 ./utils.o
+ .data          0x00000000        0x0 /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubsf3.o)
+ .bss           0x00000000        0x0 /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubsf3.o)
+ .data          0x00000000        0x0 /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivsf3.o)
+ .bss           0x00000000        0x0 /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivsf3.o)
+ .data          0x00000000        0x0 /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_cmpsf2.o)
+ .bss           0x00000000        0x0 /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_cmpsf2.o)
+ .data          0x00000000        0x0 /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
+ .bss           0x00000000        0x0 /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
+ .data          0x00000000        0x0 /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixunssfsi.o)
+ .bss           0x00000000        0x0 /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixunssfsi.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00020000         xr
+RAM              0x20000000         0x00005000         xrw
+MEMORY_B1        0x60000000         0x00000000         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD ./STM32F10x_StdPeriph_Driver/src/misc.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_can.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+LOAD ./STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.o
+LOAD ./CMSIS/core_cm3.o
+LOAD ./CMSIS/startup_stm32f10x_md.o
+LOAD ./CMSIS/system_stm32f10x.o
+LOAD ./calculations.o
+LOAD ./main.o
+LOAD ./periph_setup.o
+LOAD ./utils.o
+START GROUP
+LOAD /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a
+LOAD /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/../../../../arm-none-eabi/lib/thumb2/libc.a
+END GROUP
+                0x20005000                _estack = 0x20005000
+                0x00000000                _Min_Heap_Size = 0x0
+                0x00000100                _Min_Stack_Size = 0x100
+
+.isr_vector     0x08000000      0x10c
+                0x08000000                . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x08000000      0x10c ./CMSIS/startup_stm32f10x_md.o
+                0x08000000                g_pfnVectors
+                0x0800010c                . = ALIGN (0x4)
+
+.text           0x0800010c     0x2c14
+                0x0800010c                . = ALIGN (0x4)
+ *(.text)
+ .text          0x0800010c      0x19c ./STM32F10x_StdPeriph_Driver/src/misc.o
+                0x0800010c                NVIC_PriorityGroupConfig
+                0x08000130                NVIC_Init
+                0x08000204                NVIC_SetVectorTable
+                0x08000230                NVIC_SystemLPConfig
+                0x08000270                SysTick_CLKSourceConfig
+ .text          0x080002a8      0x6ac ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+                0x080002a8                GPIO_DeInit
+                0x080003c0                GPIO_AFIODeInit
+                0x080003e0                GPIO_Init
+                0x08000590                GPIO_StructInit
+                0x080005bc                GPIO_ReadInputDataBit
+                0x080005f8                GPIO_ReadInputData
+                0x08000614                GPIO_ReadOutputDataBit
+                0x08000650                GPIO_ReadOutputData
+                0x0800066c                GPIO_SetBits
+                0x08000688                GPIO_ResetBits
+                0x080006a4                GPIO_WriteBit
+                0x080006d4                GPIO_Write
+                0x080006f0                GPIO_PinLockConfig
+                0x08000734                GPIO_EventOutputConfig
+                0x08000780                GPIO_EventOutputCmd
+                0x080007a0                GPIO_PinRemapConfig
+                0x080008a0                GPIO_EXTILineConfig
+                0x08000938                GPIO_ETH_MediaInterfaceConfig
+ .text          0x08000954      0x1d4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+                0x0800096c                PWR_DeInit
+                0x0800098c                PWR_BackupAccessCmd
+                0x080009ac                PWR_PVDCmd
+                0x080009cc                PWR_PVDLevelConfig
+                0x08000a04                PWR_WakeUpPinCmd
+                0x08000a24                PWR_EnterSTOPMode
+                0x08000a8c                PWR_EnterSTANDBYMode
+                0x08000ac4                PWR_GetFlagStatus
+                0x08000b00                PWR_ClearFlag
+ .text          0x08000b28      0x840 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+                0x08000b28                RCC_DeInit
+                0x08000b84                RCC_HSEConfig
+                0x08000be0                RCC_WaitForHSEStartUp
+                0x08000c44                RCC_AdjustHSICalibrationValue
+                0x08000c84                RCC_HSICmd
+                0x08000ca4                RCC_PLLConfig
+                0x08000ce4                RCC_PLLCmd
+                0x08000d04                RCC_SYSCLKConfig
+                0x08000d3c                RCC_GetSYSCLKSource
+                0x08000d58                RCC_HCLKConfig
+                0x08000d90                RCC_PCLK1Config
+                0x08000dc8                RCC_PCLK2Config
+                0x08000e04                RCC_ITConfig
+                0x08000e50                RCC_USBCLKConfig
+                0x08000e6c                RCC_ADCCLKConfig
+                0x08000ea4                RCC_LSEConfig
+                0x08000ef0                RCC_LSICmd
+                0x08000f10                RCC_RTCCLKConfig
+                0x08000f34                RCC_RTCCLKCmd
+                0x08000f54                RCC_GetClocksFreq
+                0x080010d0                RCC_AHBPeriphClockCmd
+                0x08001110                RCC_APB2PeriphClockCmd
+                0x08001150                RCC_APB1PeriphClockCmd
+                0x08001190                RCC_APB2PeriphResetCmd
+                0x080011d0                RCC_APB1PeriphResetCmd
+                0x08001210                RCC_BackupResetCmd
+                0x08001230                RCC_ClockSecuritySystemCmd
+                0x08001250                RCC_MCOConfig
+                0x08001270                RCC_GetFlagStatus
+                0x080012f0                RCC_ClearFlag
+                0x0800130c                RCC_GetITStatus
+                0x08001348                RCC_ClearITPendingBit
+ .text          0x08001368      0x2d4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+                0x08001368                RTC_ITConfig
+                0x080013b4                RTC_EnterConfigMode
+                0x080013d4                RTC_ExitConfigMode
+                0x080013f4                RTC_GetCounter
+                0x08001424                RTC_SetCounter
+                0x08001454                RTC_SetPrescaler
+                0x08001488                RTC_SetAlarm
+                0x080014b8                RTC_GetDivider
+                0x080014f4                RTC_WaitForLastTask
+                0x08001514                RTC_WaitForSynchro
+                0x08001544                RTC_GetFlagStatus
+                0x08001584                RTC_ClearFlag
+                0x080015b4                RTC_GetITStatus
+                0x0800160c                RTC_ClearITPendingBit
+ .text          0x0800163c      0x99c ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+                0x0800163c                USART_DeInit
+                0x08001708                USART_Init
+                0x080018a4                USART_StructInit
+                0x080018e8                USART_ClockInit
+                0x08001940                USART_ClockStructInit
+                0x08001974                USART_Cmd
+                0x080019b4                USART_ITConfig
+                0x08001a58                USART_DMACmd
+                0x08001aa0                USART_SetAddress
+                0x08001ad8                USART_WakeUpConfig
+                0x08001b10                USART_ReceiverWakeUpCmd
+                0x08001b50                USART_LINBreakDetectLengthConfig
+                0x08001b88                USART_LINCmd
+                0x08001bc8                USART_SendData
+                0x08001bf0                USART_ReceiveData
+                0x08001c14                USART_SendBreak
+                0x08001c38                USART_SetGuardTime
+                0x08001c74                USART_SetPrescaler
+                0x08001cac                USART_SmartCardCmd
+                0x08001cec                USART_SmartCardNACKCmd
+                0x08001d2c                USART_HalfDuplexCmd
+                0x08001d6c                USART_OverSampling8Cmd
+                0x08001db4                USART_OneBitMethodCmd
+                0x08001df4                USART_IrDAConfig
+                0x08001e2c                USART_IrDACmd
+                0x08001e6c                USART_GetFlagStatus
+                0x08001eac                USART_ClearFlag
+                0x08001ed0                USART_GetITStatus
+                0x08001f94                USART_ClearITPendingBit
+ .text          0x08001fd8      0x2dc ./calculations.o
+                0x08001fd8                typeConversion
+                0x08002054                Calculations
+ .text          0x080022b4      0x1ac ./main.o
+                0x080022b4                main
+                0x08002320                RTC_IRQHandler
+                0x08002374                USART3_IRQHandler
+ .text          0x08002460      0x1dc ./periph_setup.o
+                0x08002460                SetupLED
+                0x080024a4                SetupRTC
+                0x08002514                Setup_RTC_NVIC
+                0x0800254c                SetupUSART
+                0x08002604                Setup_USART_NVIC
+ .text          0x0800263c      0x21c /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubsf3.o)
+                0x0800263c                __aeabi_frsub
+                0x08002644                __subsf3
+                0x08002644                __aeabi_fsub
+                0x08002648                __aeabi_fadd
+                0x08002648                __addsf3
+                0x080027a8                __aeabi_ui2f
+                0x080027a8                __floatunsisf
+                0x080027b0                __aeabi_i2f
+                0x080027b0                __floatsisf
+                0x080027cc                __floatundisf
+                0x080027cc                __aeabi_ul2f
+                0x080027dc                __floatdisf
+                0x080027dc                __aeabi_l2f
+ .text          0x08002858      0x2a0 /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivsf3.o)
+                0x08002858                __mulsf3
+                0x08002858                __aeabi_fmul
+                0x080029c0                __divsf3
+                0x080029c0                __aeabi_fdiv
+ .text          0x08002af8       0xec /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_cmpsf2.o)
+                0x08002af8                __gtsf2
+                0x08002af8                __gesf2
+                0x08002b00                __lesf2
+                0x08002b00                __ltsf2
+                0x08002b08                __nesf2
+                0x08002b08                __eqsf2
+                0x08002b08                __cmpsf2
+                0x08002b68                __aeabi_cfrcmple
+                0x08002b70                __aeabi_cfcmple
+                0x08002b70                __aeabi_cfcmpeq
+                0x08002b80                __aeabi_fcmpeq
+                0x08002b94                __aeabi_fcmplt
+                0x08002ba8                __aeabi_fcmple
+                0x08002bbc                __aeabi_fcmpge
+                0x08002bd0                __aeabi_fcmpgt
+ .text          0x08002be4       0x4c /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
+                0x08002be4                __fixsfsi
+                0x08002be4                __aeabi_f2iz
+ .text          0x08002c30       0x40 /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixunssfsi.o)
+                0x08002c30                __aeabi_f2uiz
+                0x08002c30                __fixunssfsi
+ *(.text*)
+ .text.Reset_Handler
+                0x08002c70       0x48 ./CMSIS/startup_stm32f10x_md.o
+                0x08002c70                Reset_Handler
+ .text.Default_Handler
+                0x08002cb8        0x4 ./CMSIS/startup_stm32f10x_md.o
+                0x08002cb8                EXTI2_IRQHandler
+                0x08002cb8                DebugMon_Handler
+                0x08002cb8                TIM1_CC_IRQHandler
+                0x08002cb8                HardFault_Handler
+                0x08002cb8                SysTick_Handler
+                0x08002cb8                PVD_IRQHandler
+                0x08002cb8                PendSV_Handler
+                0x08002cb8                NMI_Handler
+                0x08002cb8                EXTI3_IRQHandler
+                0x08002cb8                EXTI0_IRQHandler
+                0x08002cb8                I2C2_EV_IRQHandler
+                0x08002cb8                UsageFault_Handler
+                0x08002cb8                ADC1_2_IRQHandler
+                0x08002cb8                SPI1_IRQHandler
+                0x08002cb8                TAMPER_IRQHandler
+                0x08002cb8                DMA1_Channel4_IRQHandler
+                0x08002cb8                DMA1_Channel7_IRQHandler
+                0x08002cb8                CAN1_RX1_IRQHandler
+                0x08002cb8                TIM4_IRQHandler
+                0x08002cb8                I2C1_EV_IRQHandler
+                0x08002cb8                DMA1_Channel6_IRQHandler
+                0x08002cb8                TIM3_IRQHandler
+                0x08002cb8                RCC_IRQHandler
+                0x08002cb8                TIM1_TRG_COM_IRQHandler
+                0x08002cb8                DMA1_Channel1_IRQHandler
+                0x08002cb8                Default_Handler
+                0x08002cb8                EXTI15_10_IRQHandler
+                0x08002cb8                EXTI9_5_IRQHandler
+                0x08002cb8                SPI2_IRQHandler
+                0x08002cb8                MemManage_Handler
+                0x08002cb8                SVC_Handler
+                0x08002cb8                DMA1_Channel5_IRQHandler
+                0x08002cb8                EXTI4_IRQHandler
+                0x08002cb8                USB_LP_CAN1_RX0_IRQHandler
+                0x08002cb8                USB_HP_CAN1_TX_IRQHandler
+                0x08002cb8                DMA1_Channel3_IRQHandler
+                0x08002cb8                TIM1_UP_IRQHandler
+                0x08002cb8                WWDG_IRQHandler
+                0x08002cb8                TIM2_IRQHandler
+                0x08002cb8                TIM1_BRK_IRQHandler
+                0x08002cb8                EXTI1_IRQHandler
+                0x08002cb8                RTCAlarm_IRQHandler
+                0x08002cb8                USART2_IRQHandler
+                0x08002cb8                I2C2_ER_IRQHandler
+                0x08002cb8                DMA1_Channel2_IRQHandler
+                0x08002cb8                CAN1_SCE_IRQHandler
+                0x08002cb8                FLASH_IRQHandler
+                0x08002cb8                BusFault_Handler
+                0x08002cb8                USART1_IRQHandler
+                0x08002cb8                I2C1_ER_IRQHandler
+                0x08002cb8                USBWakeUp_IRQHandler
+ *(.rodata)
+ .rodata        0x08002cbc       0x64 ./utils.o
+                0x08002cbc                txSeq
+                0x08002cd8                START_RX_BYTE
+                0x08002cdc                rxSeq
+                0x08002d1c                START_TX_BYTE
+ *(.rodata*)
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+ *(.init)
+ *(.fini)
+                0x08002d20                . = ALIGN (0x4)
+                0x08002d20                _etext = .
+
+.vfp11_veneer   0x08002d20        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x08002d20        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x08002d20        0x0
+ .iplt          0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/misc.o
+
+.rel.dyn        0x08002d20        0x0
+ .rel.iplt      0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/misc.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+
+.ARM            0x08002d20        0x0
+                0x08002d20                __exidx_start = .
+ *(.ARM.exidx*)
+                0x08002d20                __exidx_end = .
+
+.ARM.attributes
+                0x08002d20       0x31
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x08002d20       0x33 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .ARM.attributes
+                0x08002d53       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .ARM.attributes
+                0x08002d86       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .ARM.attributes
+                0x08002db9       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .ARM.attributes
+                0x08002dec       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .ARM.attributes
+                0x08002e1f       0x33 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .ARM.attributes
+                0x08002e52       0x21 ./CMSIS/startup_stm32f10x_md.o
+ .ARM.attributes
+                0x08002e73       0x33 ./calculations.o
+ .ARM.attributes
+                0x08002ea6       0x33 ./main.o
+ .ARM.attributes
+                0x08002ed9       0x33 ./periph_setup.o
+ .ARM.attributes
+                0x08002f0c       0x33 ./utils.o
+ .ARM.attributes
+                0x08002f3f       0x19 /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubsf3.o)
+ .ARM.attributes
+                0x08002f58       0x19 /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivsf3.o)
+ .ARM.attributes
+                0x08002f71       0x19 /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_cmpsf2.o)
+ .ARM.attributes
+                0x08002f8a       0x19 /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
+ .ARM.attributes
+                0x08002fa3       0x19 /opt/codesourcery/arm-2012.09/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixunssfsi.o)
+
+.preinit_array  0x08002d20        0x0
+                0x08002d20                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array*)
+                0x08002d20                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x08002d20        0x0
+                0x08002d20                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array*)
+                0x08002d20                PROVIDE (__init_array_end, .)
+
+.fini_array     0x08002d20        0x0
+                0x08002d20                PROVIDE (__fini_array_start, .)
+ *(.fini_array*)
+ *(SORT(.fini_array.*))
+                0x08002d20                PROVIDE (__fini_array_end, .)
+                0x08002d20                _sidata = .
+
+.data           0x20000000       0x14 load address 0x08002fbc
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _sdata = .
+ *(.data)
+ .data          0x20000000       0x14 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ *(.data*)
+                0x20000014                . = ALIGN (0x4)
+                0x20000014                _edata = .
+
+.igot.plt       0x20000014        0x0 load address 0x08002fd0
+ .igot.plt      0x00000000        0x0 ./STM32F10x_StdPeriph_Driver/src/misc.o
+                0x20000014                . = ALIGN (0x4)
+
+.bss            0x20000014       0x44 load address 0x08002fd0
+                0x20000014                _sbss = .
+                0x20000014                __bss_start__ = _sbss
+ *(.bss)
+ .bss           0x20000014       0x40 ./utils.o
+                0x20000014                sensorValues
+                0x20000020                rotationMatrix
+                0x20000034                clearValues
+                0x20000040                rxCount
+                0x20000044                txCount
+                0x20000048                ToolProperties
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x20000054        0x1 ./main.o
+                0x20000054                TmpBitVal
+                0x20000058                . = ALIGN (0x4)
+ *fill*         0x20000055        0x3 
+                0x20000058                _ebss = .
+                0x20000058                __bss_end__ = _ebss
+                0x20000058                PROVIDE (end, _ebss)
+                0x20000058                PROVIDE (_end, _ebss)
+
+._user_heap_stack
+                0x20000058      0x100 load address 0x08003014
+                0x20000058                . = ALIGN (0x4)
+                0x20000058                . = (. + _Min_Heap_Size)
+                0x20000158                . = (. + _Min_Stack_Size)
+ *fill*         0x20000058      0x100 
+                0x20000158                . = ALIGN (0x4)
+
+.memory_b1_text
+ *(.mb1text)
+ *(.mb1text*)
+ *(.mb1rodata)
+ *(.mb1rodata*)
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+OUTPUT(sensitizer_probe.elf elf32-littlearm)
+
+.debug_info     0x00000000     0x3704
+ .debug_info    0x00000000      0x548 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_info    0x00000548      0x732 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_info    0x00000c7a      0x463 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_info    0x000010dd      0x91e ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_info    0x000019fb      0x475 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_info    0x00001e70      0xa86 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_info    0x000028f6       0x73 ./CMSIS/startup_stm32f10x_md.o
+ .debug_info    0x00002969      0x274 ./calculations.o
+ .debug_info    0x00002bdd      0x339 ./main.o
+ .debug_info    0x00002f16      0x5b6 ./periph_setup.o
+ .debug_info    0x000034cc      0x238 ./utils.o
+
+.debug_abbrev   0x00000000      0xd8b
+ .debug_abbrev  0x00000000      0x13b ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_abbrev  0x0000013b      0x1cd ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_abbrev  0x00000308      0x1b0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_abbrev  0x000004b8      0x1bf ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_abbrev  0x00000677      0x192 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_abbrev  0x00000809      0x167 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_abbrev  0x00000970       0x12 ./CMSIS/startup_stm32f10x_md.o
+ .debug_abbrev  0x00000982      0x106 ./calculations.o
+ .debug_abbrev  0x00000a88      0x153 ./main.o
+ .debug_abbrev  0x00000bdb      0x122 ./periph_setup.o
+ .debug_abbrev  0x00000cfd       0x8e ./utils.o
+
+.debug_loc      0x00000000     0x1956
+ .debug_loc     0x00000000      0x118 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_loc     0x00000118      0x3e4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_loc     0x000004fc      0x238 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_loc     0x00000734      0x6dc ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_loc     0x00000e10      0x2e0 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_loc     0x000010f0      0x658 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_loc     0x00001748       0x72 ./calculations.o
+ .debug_loc     0x000017ba       0x90 ./main.o
+ .debug_loc     0x0000184a      0x10c ./periph_setup.o
+
+.debug_aranges  0x00000000      0x160
+ .debug_aranges
+                0x00000000       0x20 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_aranges
+                0x00000020       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_aranges
+                0x00000040       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_aranges
+                0x00000060       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_aranges
+                0x00000080       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_aranges
+                0x000000a0       0x20 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_aranges
+                0x000000c0       0x28 ./CMSIS/startup_stm32f10x_md.o
+ .debug_aranges
+                0x000000e8       0x20 ./calculations.o
+ .debug_aranges
+                0x00000108       0x20 ./main.o
+ .debug_aranges
+                0x00000128       0x20 ./periph_setup.o
+ .debug_aranges
+                0x00000148       0x18 ./utils.o
+
+.debug_macro    0x00000000     0xd4e1
+ .debug_macro   0x00000000      0x14c ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000014c      0x81a ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x00000966       0x56 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x000009bc       0x22 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x000009de      0x214 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x00000bf2      0x69f ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x00001291     0x7dbe ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000904f      0x2df ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000932e      0x144 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x00009472      0x3cf ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x00009841       0xc8 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x00009909      0x17a ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x00009a83       0xac ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x00009b2f      0x3ad ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x00009edc       0x9a ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x00009f76      0x2cf ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000a245      0x279 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000a4be      0x2ac ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000a76a      0x2b1 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000aa1b       0x64 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000aa7f       0x82 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000ab01      0x3e2 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000aee3       0x58 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000af3b      0x341 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000b27c      0x2c4 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000b540      0x711 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000bc51      0x220 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000be71       0x34 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000bea5       0x35 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000beda       0x85 ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_macro   0x0000bf5f      0x194 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x0000c0f3      0x2a6 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_macro   0x0000c399      0x188 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x0000c521       0x7c ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_macro   0x0000c59d      0x262 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x0000c7ff      0x3dc ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_macro   0x0000cbdb      0x152 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x0000cd2d       0x52 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_macro   0x0000cd7f      0x1fa ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x0000cf79      0x21a ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_macro   0x0000d193       0x3d ./calculations.o
+ .debug_macro   0x0000d1d0       0x10 ./calculations.o
+ .debug_macro   0x0000d1e0      0x15c ./main.o
+ .debug_macro   0x0000d33c       0x10 ./main.o
+ .debug_macro   0x0000d34c       0x16 ./main.o
+ .debug_macro   0x0000d362      0x14c ./periph_setup.o
+ .debug_macro   0x0000d4ae       0x33 ./utils.o
+
+.debug_line     0x00000000     0x2435
+ .debug_line    0x00000000      0x3ba ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_line    0x000003ba      0x46e ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_line    0x00000828      0x3e1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_line    0x00000c09      0x4cb ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_line    0x000010d4      0x3ff ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_line    0x000014d3      0x4b9 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_line    0x0000198c       0x7a ./CMSIS/startup_stm32f10x_md.o
+ .debug_line    0x00001a06      0x187 ./calculations.o
+ .debug_line    0x00001b8d      0x3de ./main.o
+ .debug_line    0x00001f6b      0x3d0 ./periph_setup.o
+ .debug_line    0x0000233b       0xfa ./utils.o
+
+.debug_str      0x00000000    0x4e5bf
+ .debug_str     0x00000000    0x4c27a ./STM32F10x_StdPeriph_Driver/src/misc.o
+                              0x4c322 (size before relaxing)
+ .debug_str     0x0004c27a      0x5c1 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+                              0x4c68f (size before relaxing)
+ .debug_str     0x0004c83b      0x2c4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+                              0x4c3fa (size before relaxing)
+ .debug_str     0x0004caff      0xb63 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+                              0x4cc75 (size before relaxing)
+ .debug_str     0x0004d662      0x204 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+                              0x4c320 (size before relaxing)
+ .debug_str     0x0004d866      0x7fa ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+                              0x4c99f (size before relaxing)
+ .debug_str     0x0004e060      0x176 ./calculations.o
+                               0x2c58 (size before relaxing)
+ .debug_str     0x0004e1d6       0x82 ./main.o
+                              0x4c1f9 (size before relaxing)
+ .debug_str     0x0004e258      0x34e ./periph_setup.o
+                              0x4c694 (size before relaxing)
+ .debug_str     0x0004e5a6       0x19 ./utils.o
+                               0x2be2 (size before relaxing)
+
+.comment        0x00000000       0x30
+ .comment       0x00000000       0x30 ./STM32F10x_StdPeriph_Driver/src/misc.o
+                                 0x31 (size before relaxing)
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .comment       0x00000000       0x31 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .comment       0x00000000       0x31 ./calculations.o
+ .comment       0x00000000       0x31 ./main.o
+ .comment       0x00000000       0x31 ./periph_setup.o
+ .comment       0x00000000       0x31 ./utils.o
+
+.debug_frame    0x00000000      0xddc
+ .debug_frame   0x00000000       0x9c ./STM32F10x_StdPeriph_Driver/src/misc.o
+ .debug_frame   0x0000009c      0x210 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.o
+ .debug_frame   0x000002ac      0x148 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.o
+ .debug_frame   0x000003f4      0x394 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.o
+ .debug_frame   0x00000788      0x1a4 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.o
+ .debug_frame   0x0000092c      0x344 ./STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.o
+ .debug_frame   0x00000c70       0x58 ./calculations.o
+ .debug_frame   0x00000cc8       0x68 ./main.o
+ .debug_frame   0x00000d30       0xac ./periph_setup.o
+
+.debug_ranges   0x00000000       0x20
+ .debug_ranges  0x00000000       0x20 ./CMSIS/startup_stm32f10x_md.o
