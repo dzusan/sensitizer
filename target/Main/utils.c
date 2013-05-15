@@ -23,3 +23,5 @@ volatile CircularBuffer cb;
 volatile float basicMatrix[6][6];
 
 volatile BitAction TmpBitVal;
+
+volatile uint16_t previousTimerCounter;

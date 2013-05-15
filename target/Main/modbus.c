@@ -110,10 +110,10 @@ void response(uint16_t *startByte, int num)
 		RxFlag = 0;
 	}
 	
-	TIM_Cmd(TIM2, ENABLE);
-	TIM_ClearFlag(TIM2, TIM_FLAG_Update);
-	while(!TIM_GetFlagStatus(TIM2, TIM_FLAG_Update));
-	TIM_Cmd(TIM2, DISABLE);
+	TIM_Cmd(TIM3, ENABLE);
+	TIM_ClearFlag(TIM3, TIM_FLAG_Update);
+	while(!TIM_GetFlagStatus(TIM3, TIM_FLAG_Update));
+	TIM_Cmd(TIM3, DISABLE);
 }
 
 void BasicMatrixConversion(uint16_t *startByte)

@@ -124,6 +124,8 @@ void SetupUSART(void)
 		//USART_ITConfig(USART2, USART_IT_RXNE | USART_IT_TC, ENABLE);
 		USART_ITConfig(USART2, USART_IT_TC, ENABLE);
 		USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);
+		USART_ITConfig(USART2, USART_IT_ORE, ENABLE);
+
 
 }
 
@@ -135,7 +137,7 @@ void Setup_USART_NVIC(void)
 	
 	NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 	
 	NVIC_Init(&NVIC_InitStructure);
@@ -196,17 +198,50 @@ void SetupCAN(void)
 	CAN_FilterInitStructure.CAN_FilterActivation = ENABLE;
 	
 	CAN_FilterInit(&CAN_FilterInitStructure);
+	
+	CAN_ITConfig(CAN1, CAN_IT_FMP0, ENABLE);
+	CAN_ITConfig(CAN1, CAN_IT_FF0, ENABLE);
+	CAN_ITConfig(CAN1, CAN_IT_FOV0, ENABLE);
+}
+
+void Setup_CAN_NVIC(void)
+{
+		NVIC_InitTypeDef NVIC_InitStructure;
+
+		NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+
+		NVIC_InitStructure.NVIC_IRQChannel = USB_LP_CAN1_RX0_IRQn;
+		NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+		NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+		NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+
+		NVIC_Init(&NVIC_InitStructure);
 }
 
 void SetupTIM(void)
 {
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+	TIM_TimeBaseStructInit(&TIM_TimeBaseInitStructure);
 	
+	/* Start delay via TIM2*/
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 65535;
+	TIM_TimeBaseInitStructure.TIM_Period = 3300;
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
-	
-	TIM_TimeBaseInitStructure.TIM_Prescaler = 41840;
-	TIM_TimeBaseInitStructure.TIM_Period = 2;
-	
 	TIM_DeInit(TIM2);
 	TIM_TimeBaseInit(TIM2, &TIM_TimeBaseInitStructure);
+	
+	/* Modbus receive-transceive timeout via TIM3*/
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 65535;
+	TIM_TimeBaseInitStructure.TIM_Period = 3;
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
+	TIM_DeInit(TIM3);
+	TIM_TimeBaseInit(TIM3, &TIM_TimeBaseInitStructure);
+	
+	/* Raw stream timeout via TIM4*/
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 71;
+	TIM_TimeBaseInitStructure.TIM_Period = 65535;
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
+	TIM_DeInit(TIM4);
+	TIM_TimeBaseInit(TIM4, &TIM_TimeBaseInitStructure);
+	TIM_UpdateDisableConfig(TIM4, ENABLE);
 }

@@ -36,4 +36,6 @@ extern volatile float basicMatrix[6][6];
 
 extern volatile BitAction TmpBitVal;
 
+extern volatile uint16_t previousTimerCounter;
+
 #endif /* UTILS_H_ */
