@@ -79,17 +79,17 @@ void GaugeVectorConversion(void)
 		for(count = 0; count < 12; count += 2)
 		{
 			sum = (int16_t)(((uint16_t)seq.bytes[count] << 8) | (uint16_t)seq.bytes[count + 1]);
-			average[count / 2] = (float)sum / 5;
+			average[count / 2] = (float)sum; /* Write last value from buffer without Arithmetic mean */
 		}
 		
 		/*for(count = 0; count <= 12; count += 2)
 		{
 			sum = (int16_t)(((uint16_t)seq.bytes[count] << 8) | (uint16_t)seq.bytes[count + 1]);
-			average[count / 2] += (float)sum / 5;
+			average[count / 2] += (float)sum / 5; Arithmetic mean of all the values from buffer
 		}*/
 	}
 	
-	/*Gauge vector regularizing*/
+	/* Gauge vector regularizing */
 	orderedAverage[0] = average[0];
 	orderedAverage[1] = average[3];
 	orderedAverage[2] = average[1];
@@ -97,12 +97,15 @@ void GaugeVectorConversion(void)
 	orderedAverage[4] = average[2];
 	orderedAverage[5] = average[5];
 	
-	/*Conversion into units*/
+	/* F_T_units zeroing */
+	for(count = 0; count < 6; count++) F_T_units[count] = 0;
+	
+	/* Conversion into units */
 	for(countEx = 0; countEx < 6; countEx++)
 		for(countIn = 0; countIn < 6; countIn++)
 			F_T_units[countEx] += orderedAverage[countIn] * basicMatrix[countEx][countIn];
 	
-	/*Issuance*/
+	/* Issuance */
 	for(count = 0; count < 6; count += 2)
 	{
 		norm = (int16_t)(F_T_units[count / 2] / 10000);
