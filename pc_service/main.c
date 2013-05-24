@@ -39,7 +39,10 @@ int main(void)
     {
         eqvTmp = (uint16_t)(buf[i] << 8) | (uint16_t)buf[i + 1];
         zero[i / 2] = *(&eqvTmp);
+        printf("%8d ", zero[i / 2]);
     }
+
+    printf("\nCalibrating done\n");
 
     startTime = clock();
     while ((double)(clock() - startTime) / CLOCKS_PER_SEC < 1);
