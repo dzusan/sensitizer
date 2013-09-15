@@ -72,6 +72,9 @@ void GaugeVectorConversion(void)
 	uint8_t forceIssue[6];
 	uint8_t torqueIssue[6];
 	
+	/* average zeroing */
+	for(count = 0; count < 6; count++) average[count] = 0;
+
 	while (!cbIsEmpty(&cb))
 	{
 		cbRead(&cb, &seq);
@@ -85,7 +88,7 @@ void GaugeVectorConversion(void)
 		/*for(count = 0; count <= 12; count += 2)
 		{
 			sum = (int16_t)(((uint16_t)seq.bytes[count] << 8) | (uint16_t)seq.bytes[count + 1]);
-			average[count / 2] += (float)sum / 5; Arithmetic mean of all the values from buffer
+			average[count / 2] += (float)sum / 10; Arithmetic mean of all the values from buffer
 		}*/
 	}
 	
@@ -117,6 +120,8 @@ void GaugeVectorConversion(void)
 		torqueIssue[count + 1] = (uint8_t)(norm);
 	}
 	
+	CanTxMsgStructure.ExtId = (CanTxMsgStructure.ExtId & 0x1FFF80FF) | \
+														(CanRxMsgStructure.ExtId & 0x7F00);
 	for(count = 0; count < 6; count++)
 		CanTxMsgStructure.Data[count] = forceIssue[count];
 		//CanTxMsgStructure.Data[count] = seq.bytes[count];

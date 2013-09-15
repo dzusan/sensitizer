@@ -15,9 +15,9 @@ void SetupLED(void)
 {
 	GPIO_InitTypeDef  GPIO_InitStructure;
 	
-	//RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
 	
-	//GPIO_DeInit(GPIOB);
+	GPIO_DeInit(GPIOB);
 	
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
@@ -193,7 +193,7 @@ void SetupCAN(void)
 	
 	CAN_Init(CAN1, &CAN_InitStructure);
 	
-	CanTxMsgStructure.ExtId = 0x10408352;
+	CanTxMsgStructure.ExtId = 0x400000;
 	CanTxMsgStructure.IDE = CAN_Id_Extended;
 	CanTxMsgStructure.RTR = CAN_RTR_Data;
 	CanTxMsgStructure.DLC = 8;
@@ -215,4 +215,32 @@ void SetupCAN(void)
 	CAN_ITConfig(CAN1, CAN_IT_FF0, ENABLE);
 	CAN_ITConfig(CAN1, CAN_IT_FOV0, ENABLE);
 	
+}
+
+void SetupTIM(void)
+{
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+	TIM_TimeBaseStructInit(&TIM_TimeBaseInitStructure);
+	
+	/* Start delay via TIM2*/
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 65535;
+	TIM_TimeBaseInitStructure.TIM_Period = 4000;
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
+	TIM_DeInit(TIM2);
+	TIM_TimeBaseInit(TIM2, &TIM_TimeBaseInitStructure);
+	
+	/* Modbus receive-transceive timeout via TIM3*/
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 65535;
+	TIM_TimeBaseInitStructure.TIM_Period = 3;
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
+	TIM_DeInit(TIM3);
+	TIM_TimeBaseInit(TIM3, &TIM_TimeBaseInitStructure);
+	
+	/* Raw stream timeout via TIM4*/
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 71;
+	TIM_TimeBaseInitStructure.TIM_Period = 65535;
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
+	TIM_DeInit(TIM4);
+	TIM_TimeBaseInit(TIM4, &TIM_TimeBaseInitStructure);
+	TIM_UpdateDisableConfig(TIM4, ENABLE);
 }

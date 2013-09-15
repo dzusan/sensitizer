@@ -24,7 +24,7 @@ int main()
 	if(SensorSetup())
 	{
 		TmpBitVal = Bit_RESET;
-		cbInit(&cb, 5);
+		cbInit(&cb, 10);
 		TIM_Cmd(TIM4, ENABLE);
 		while(1);
 	}

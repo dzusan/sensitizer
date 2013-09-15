@@ -23,5 +23,6 @@ void SetupUSART(void);
 void Setup_USART_NVIC(void);
 void SetupCAN(void);
 void Setup_CAN_NVIC(void);
+void SetupTIM(void);
 
 #endif /* PERIPH_SETUP_H_ */

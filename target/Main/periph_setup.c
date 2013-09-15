@@ -150,6 +150,8 @@ void SetupCAN(void)
 	CAN_FilterInitTypeDef CAN_FilterInitStructure;
 	uint8_t defaultDataSample[8] = {6,5,4,1,2,3,0,1};
 	int i;
+	//uint32_t ID1 = 0x00400000 << 3;
+
 	
 	/* Configure CAN Rx (PA11) as input floating                         */
 	GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_11;
@@ -187,10 +189,10 @@ void SetupCAN(void)
 	CanTxMsgStructure.DLC = 8;
 	for(i = 0; i < 8; i++) CanTxMsgStructure.Data[i] = defaultDataSample[i];
 	
-	CAN_FilterInitStructure.CAN_FilterIdHigh = 0x0000; //0x0040; /* 8-bit adress is 0b00001000 */
-	CAN_FilterInitStructure.CAN_FilterIdLow = 0x0000; //0x0000;
-	CAN_FilterInitStructure.CAN_FilterMaskIdHigh = 0x0000; //0x07E0;
-	CAN_FilterInitStructure.CAN_FilterMaskIdLow = 0x0000; //0x0000;
+	CAN_FilterInitStructure.CAN_FilterIdHigh = 0x0040 << 3; //0x0040; /* 8-bit adress is 0b00001000 */
+	CAN_FilterInitStructure.CAN_FilterIdLow = 0; //0x0000;
+	CAN_FilterInitStructure.CAN_FilterMaskIdHigh = 0x07E0 << 3; //0x07E0;
+	CAN_FilterInitStructure.CAN_FilterMaskIdLow = 0x0; //0x0000;
 	CAN_FilterInitStructure.CAN_FilterFIFOAssignment = CAN_Filter_FIFO0;
 	CAN_FilterInitStructure.CAN_FilterNumber = 0;
 	CAN_FilterInitStructure.CAN_FilterMode = CAN_FilterMode_IdMask;
@@ -225,7 +227,7 @@ void SetupTIM(void)
 	
 	/* Start delay via TIM2*/
 	TIM_TimeBaseInitStructure.TIM_Prescaler = 65535;
-	TIM_TimeBaseInitStructure.TIM_Period = 3300;
+	TIM_TimeBaseInitStructure.TIM_Period = 3600;
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
 	TIM_DeInit(TIM2);
 	TIM_TimeBaseInit(TIM2, &TIM_TimeBaseInitStructure);
