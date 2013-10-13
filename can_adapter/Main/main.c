@@ -6,6 +6,7 @@ volatile int countUSART = 0;
 volatile int countCAN = 0;
 volatile uint8_t countPkg = 0;
 volatile uint8_t autoSendFlag = 0;
+volatile uint8_t startFlag = 0;
 
 int main()
 {
@@ -19,6 +20,9 @@ int main()
 	SetupLED();
 	SetupTIM();
 	
+
+	while(!startFlag);
+
 	TIM_Cmd(TIM2, ENABLE);
 	TIM_ClearFlag(TIM2, TIM_FLAG_Update);
 	while(!TIM_GetFlagStatus(TIM2, TIM_FLAG_Update));
@@ -26,20 +30,27 @@ int main()
 
 	GPIO_WriteBit(GPIOB, GPIO_Pin_14, Bit_SET);
 
-	for(count = 0; count < 13; count++)
+	/*for(count = 0; count < 13; count++)
 	{
 		while(!USART_GetFlagStatus(USART2, USART_FLAG_TC));
 		USART_SendData(USART2, dataSeq[count]);
 		USART_ClearFlag(USART2, USART_FLAG_TC);
-	}
+	}*/
 			
 	count = 0;
 			
 	while(1)
 	{
 		autoSendFlag = 0;
+		
 		CAN_Transmit(CAN1, &CanTxMsgStructure);
-		while(!autoSendFlag);
+		
+		//while(autoSendFlag < 2);
+		
+		TIM_Cmd(TIM3, ENABLE);
+		TIM_ClearFlag(TIM3, TIM_FLAG_Update);
+		while(!TIM_GetFlagStatus(TIM3, TIM_FLAG_Update));
+		TIM_Cmd(TIM3, DISABLE);
 	}
 				
 }
@@ -81,10 +92,7 @@ void USB_LP_CAN1_RX0_IRQHandler(void)
 			USART_ClearFlag(USART2, USART_FLAG_TC);
 		}
 		
-		autoSendFlag = 1;
-		
-		USART_SendData(USART2, '\n');
-		while(!USART_GetFlagStatus(USART2, USART_FLAG_TC));
-		USART_ClearFlag(USART2, USART_FLAG_TC);
+		autoSendFlag++;
+		startFlag = 1;
 	}
 }

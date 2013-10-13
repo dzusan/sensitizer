@@ -23,6 +23,6 @@ void cbRead(CircularBuffer *cb, ElemType *elem);
 
 uint8_t StreamingSample(void);
 
-void GaugeVectorConversion(void);
+void GaugeVectorConversion(void/*float *F_T_units*/);
 
 #endif /* CALC_H_ */

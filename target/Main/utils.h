@@ -38,4 +38,21 @@ extern volatile BitAction TmpBitVal;
 
 extern volatile uint16_t previousTimerCounter;
 
+/* Modbus receive vars (for interrupts using) */
+extern volatile uint8_t MODBUS;
+extern volatile uint8_t *modbusByte;
+extern volatile uint8_t RxFlag;
+
+/* Tables of CRC values */
+extern const uint8_t auchCRCHi[256];
+extern const uint8_t auchCRCLo[256];
+
+/* Debug vars */
+extern volatile uint16_t DEBUG_count;
+
+extern volatile float F_T_units[6];
+
+/* Global error code */
+extern volatile uint8_t errFlag;
+
 #endif /* UTILS_H_ */

@@ -13,19 +13,23 @@ uint8_t StreamingSample(void)
 {
 	int count;
 	uint8_t checkSum = 0;
+	uint8_t tmpStat = 0;
 	
 	for(count = 0; count < 12; count++)
 		checkSum += gaugeByte.bytes[count];
 	
+	/************** Error checking: "Open in the sensor wire" ******************/
+	for(count = 0; count < 12; count += 2)
+	  if(gaugeByte.bytes[count] == 0x7F && gaugeByte.bytes[count + 1] == 0xFF) 
+			tmpStat++;
+	if(tmpStat != 0) errFlag = 2;
+	else errFlag = 0;
+	/***************************************************************************/
+	
 	if((checkSum & 0x7f) != (gaugeByte.bytes[12] & 0x7f))
 		return 0;
 	else
-	{
-	//	for(count = 0; count <= 12; count += 2)
-	//		gauge[count / 2] = ((uint16_t)gaugeByte[count] << 8) | (uint16_t)gaugeByte[count + 1];
-		return 1;
-	}
-	
+		return 1;	
 }
 
 void cbInit(CircularBuffer *cb, int size) {
@@ -59,7 +63,7 @@ void cbRead(CircularBuffer *cb, ElemType *elem) {
     cb->start = (cb->start + 1) % cb->size;
 }
 
-void GaugeVectorConversion(void)
+void GaugeVectorConversion(void/*float *F_T_units*/)
 {
 	int count = 0;
 	int countEx, countIn;
@@ -67,10 +71,6 @@ void GaugeVectorConversion(void)
 	int16_t sum;
 	float average[6];
 	float orderedAverage[6];
-	float F_T_units[6];
-	int16_t norm;
-	uint8_t forceIssue[6];
-	uint8_t torqueIssue[6];
 	
 	/* average zeroing */
 	for(count = 0; count < 6; count++) average[count] = 0;
@@ -82,14 +82,14 @@ void GaugeVectorConversion(void)
 		for(count = 0; count < 12; count += 2)
 		{
 			sum = (int16_t)(((uint16_t)seq.bytes[count] << 8) | (uint16_t)seq.bytes[count + 1]);
-			average[count / 2] = (float)sum; /* Write last value from buffer without Arithmetic mean */
+			average[count / 2] = (float)sum; //Write last value from buffer without Arithmetic mean
 		}
 		
-		/*for(count = 0; count <= 12; count += 2)
-		{
-			sum = (int16_t)(((uint16_t)seq.bytes[count] << 8) | (uint16_t)seq.bytes[count + 1]);
-			average[count / 2] += (float)sum / 10; Arithmetic mean of all the values from buffer
-		}*/
+		//for(count = 0; count <= 12; count += 2)
+		//{
+		//	sum = (int16_t)(((uint16_t)seq.bytes[count] << 8) | (uint16_t)seq.bytes[count + 1]);
+		//	average[count / 2] += (float)sum / 12; //Arithmetic mean of all the values from buffer
+		//}
 	}
 	
 	/* Gauge vector regularizing */
@@ -107,28 +107,4 @@ void GaugeVectorConversion(void)
 	for(countEx = 0; countEx < 6; countEx++)
 		for(countIn = 0; countIn < 6; countIn++)
 			F_T_units[countEx] += orderedAverage[countIn] * basicMatrix[countEx][countIn];
-	
-	/* Issuance */
-	for(count = 0; count < 6; count += 2)
-	{
-		norm = (int16_t)(F_T_units[count / 2] / 10000);
-		forceIssue[count]     = (uint8_t)(norm >> 8);
-		forceIssue[count + 1] = (uint8_t)(norm);
-		
-		norm = (int16_t)(F_T_units[3 + count / 2] / 10000);
-		torqueIssue[count]     = (uint8_t)(norm >> 8);
-		torqueIssue[count + 1] = (uint8_t)(norm);
-	}
-	
-	CanTxMsgStructure.ExtId = (CanTxMsgStructure.ExtId & 0x1FFF80FF) | \
-														(CanRxMsgStructure.ExtId & 0x7F00);
-	for(count = 0; count < 6; count++)
-		CanTxMsgStructure.Data[count] = forceIssue[count];
-		//CanTxMsgStructure.Data[count] = seq.bytes[count];
-	CAN_Transmit(CAN1, &CanTxMsgStructure);
-	
-	for(count = 0; count < 6; count++)
-		CanTxMsgStructure.Data[count] = torqueIssue[count];
-		//CanTxMsgStructure.Data[count] = seq.bytes[6 + count];
-	//CAN_Transmit(CAN1, &CanTxMsgStructure);
 }

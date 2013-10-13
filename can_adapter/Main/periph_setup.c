@@ -123,7 +123,7 @@ void SetupUSART(void)
 		/* Enable USART2 clock                                                   */
 		RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
 
-		USART_InitStructure.USART_BaudRate            = 9600;
+		USART_InitStructure.USART_BaudRate            = 1250000;
 		USART_InitStructure.USART_WordLength          = USART_WordLength_9b;
 		USART_InitStructure.USART_StopBits            = USART_StopBits_1;
 		USART_InitStructure.USART_Parity              = USART_Parity_Even;
@@ -193,7 +193,7 @@ void SetupCAN(void)
 	
 	CAN_Init(CAN1, &CAN_InitStructure);
 	
-	CanTxMsgStructure.ExtId = 0x400000;
+	CanTxMsgStructure.ExtId = 0x400003;
 	CanTxMsgStructure.IDE = CAN_Id_Extended;
 	CanTxMsgStructure.RTR = CAN_RTR_Data;
 	CanTxMsgStructure.DLC = 8;
@@ -224,14 +224,14 @@ void SetupTIM(void)
 	
 	/* Start delay via TIM2*/
 	TIM_TimeBaseInitStructure.TIM_Prescaler = 65535;
-	TIM_TimeBaseInitStructure.TIM_Period = 4000;
+	TIM_TimeBaseInitStructure.TIM_Period = 200;
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
 	TIM_DeInit(TIM2);
 	TIM_TimeBaseInit(TIM2, &TIM_TimeBaseInitStructure);
 	
 	/* Modbus receive-transceive timeout via TIM3*/
-	TIM_TimeBaseInitStructure.TIM_Prescaler = 65535;
-	TIM_TimeBaseInitStructure.TIM_Period = 3;
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 40000;
+	TIM_TimeBaseInitStructure.TIM_Period = 2;
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
 	TIM_DeInit(TIM3);
 	TIM_TimeBaseInit(TIM3, &TIM_TimeBaseInitStructure);

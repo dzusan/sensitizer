@@ -9,6 +9,7 @@
 #include "utils.h"
 #include "calc.h"
 #include "modbus.h"
+#include "handlers.h"
 
 void USART2_IRQHandler(void)
 {
@@ -71,7 +72,8 @@ void USB_LP_CAN1_RX0_IRQHandler(void)
 		CAN_Receive(CAN1, 0, &CanRxMsgStructure);	
 		
 		GPIO_WriteBit(GPIOB, GPIO_Pin_14, Bit_SET);
-		if(cbIsFull(&cb)) GaugeVectorConversion();
+		//if(cbIsFull(&cb)) GaugeVectorConversion();
+		CAN_requestHandler();
 		GPIO_WriteBit(GPIOB, GPIO_Pin_14, Bit_RESET);
 	}
 }

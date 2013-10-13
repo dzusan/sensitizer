@@ -201,9 +201,9 @@ void SetupCAN(void)
 	
 	CAN_FilterInit(&CAN_FilterInitStructure);
 	
-	CAN_ITConfig(CAN1, CAN_IT_FMP0, ENABLE);
-	CAN_ITConfig(CAN1, CAN_IT_FF0, ENABLE);
-	CAN_ITConfig(CAN1, CAN_IT_FOV0, ENABLE);
+	//CAN_ITConfig(CAN1, CAN_IT_FMP0, ENABLE);
+	//CAN_ITConfig(CAN1, CAN_IT_FF0, ENABLE);
+	//CAN_ITConfig(CAN1, CAN_IT_FOV0, ENABLE);
 }
 
 void Setup_CAN_NVIC(void)

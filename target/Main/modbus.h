@@ -14,15 +14,11 @@
 #include "utils.h"
 #include <stdlib.h>
 
-extern volatile uint8_t MODBUS;
-
-extern volatile uint16_t *modbusByte;
-extern volatile uint8_t RxFlag;
-
-uint8_t SensorSetup(void);
-void request(uint16_t *startByte, int num);
-void response(uint16_t *startByte, int num);
-void BasicMatrixConversion(uint16_t *startByte);
-
+void request(uint8_t *startByte, int num);
+void response(uint8_t *startByte, int num);
+uint16_t CRC16 (const uint8_t *puchMsg, int usDataLen, uint16_t crc_initialize );
+uint8_t Write(uint8_t node, uint16_t reg, uint16_t length, uint16_t *data);
+uint8_t Read(uint8_t node, uint16_t reg, uint16_t length, uint16_t *data);
+uint8_t Com(uint8_t node, uint8_t com, uint16_t data);
 
 #endif /* MODBUS_H_ */
