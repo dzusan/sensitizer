@@ -2,5 +2,9 @@ can_adapter/StdPeripheralDriver
 target/StdPeripheralDriver
 can_adapter/*.*
 target/*.*
-calc/*.o
+pc/calc/*.o
+pc/calc/*.csv
+pc/context/*.csv
+pc/converter/*.csv
+pc/toolkit/*.csv
 .fuse*

@@ -22,13 +22,13 @@ int main(void)
 	Context currentConst;
 	Stream currentReading;
 	Clear currentOutput;
-	int count;
+	long int count;
 	long int filePosition = 0;
 	float timeStamp = 0;
 
 	currentConst = ContextRead();
 
-	for(count = 0; count < 3; count++)
+	for(count = 0; count < 37000; count++)
 	{
 		currentReading = StreamRead(&filePosition, &timeStamp);
 		currentOutput = Calc(currentConst, currentReading);
