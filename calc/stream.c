@@ -1,26 +1,26 @@
 #include "stream.h"
 
-Stream StreamRead(long int *filePosition)
+Stream StreamRead(long int *filePosition, float *timeStamp)
 {
-	int count;
 	Stream data;
-	float *dataPtr;
 	FILE *fp;
 
-	if ((fp = fopen("stream","rb")) == NULL)
+	if ((fp = fopen("stream.csv","rb")) == NULL)
 	{
-  		printf("Cant open \"stream\" file\n");
+  		printf("Cant open \"stream.csv\" file\n");
   		exit(1);
 	}
 	fseek(fp, *filePosition, SEEK_SET);
 
-	dataPtr = &data.Fx;
+	if(*filePosition == SEEK_SET)
+		fscanf(fp, "F-PkgTimeStamp,Fx,Fy,Fz,T-PkgTimeStamp,Tx,Ty,Tz,Rx,Ry,Rz\n");
 
-	for (count = 0; count < 6; count++)
-	{
-    	fscanf(fp, "%f\n", dataPtr);
-    	dataPtr++;
-	}
+	fscanf(fp, "%f,%f,%f,%f,%*f,%f,%f,%f,%f,%f,%f,\n",
+				timeStamp,
+				&data.Fx, &data.Fy, &data.Fz,
+				&data.Tx, &data.Ty, &data.Tz,
+				&data.Rx, &data.Ry, &data.Rz);
+
 	*filePosition = ftell(fp);
 
 	fclose(fp);

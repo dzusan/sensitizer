@@ -10,6 +10,10 @@ Clear Calc(Context constant, Stream reading)
 	final.Fy = reading.Fy - constant.Fy0 - constant.P * reading.Ry;
 	final.Fz = reading.Fz - constant.Fz0 - constant.P * reading.Rz;
 
+	final.Tx = reading.Tx - constant.Tx0 - constant.Cx * reading.Rx;
+	final.Ty = reading.Ty - constant.Ty0 - constant.Cy * reading.Ry;
+	final.Tz = reading.Tz - constant.Tz0 - constant.Cz * reading.Rz;
+
 	return final;
 }
 
@@ -20,14 +24,15 @@ int main(void)
 	Clear currentOutput;
 	int count;
 	long int filePosition = 0;
+	float timeStamp = 0;
 
 	currentConst = ContextRead();
 
 	for(count = 0; count < 3; count++)
 	{
-		currentReading = StreamRead(&filePosition);
+		currentReading = StreamRead(&filePosition, &timeStamp);
 		currentOutput = Calc(currentConst, currentReading);
-		ClearWrite(currentOutput);
+		ClearWrite(currentOutput, &timeStamp);
 	}
 
 	return 0;

@@ -11,11 +11,15 @@ typedef struct
 	float Fy;
 	float Fz;
 
+	float Tx;
+	float Ty;
+	float Tz;
+
 	float Rx;
 	float Ry;
 	float Rz;
 }Stream;
 
-Stream StreamRead(long int *filePosition);
+Stream StreamRead(long int *filePosition, float *timeStamp);
 
 #endif /* STREAM_H_ */

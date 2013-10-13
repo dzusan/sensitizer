@@ -10,7 +10,16 @@ typedef struct
 	float Fx0;
 	float Fy0;
 	float Fz0;
+
 	float P;
+
+	float Tx0;
+	float Ty0;
+	float Tz0;
+	
+	float Cx;
+	float Cy;
+	float Cz;
 }Context;
 
 Context ContextRead(void);

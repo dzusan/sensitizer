@@ -10,8 +10,12 @@ typedef struct
 	float Fx;
 	float Fy;
 	float Fz;
+
+	float Tx;
+	float Ty;
+	float Tz;
 }Clear;
 
-int ClearWrite(Clear final);
+int ClearWrite(Clear final, float *timeStamp);
 
 #endif /* OUTPUT_H_ */

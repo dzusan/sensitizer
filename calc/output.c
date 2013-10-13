@@ -1,25 +1,19 @@
 #include "output.h"
 
-int ClearWrite(Clear final)
+int ClearWrite(Clear final, float *timeStamp)
 {
-	int count;
-	float *dataPtr;
 	FILE *fp;
 
-	if ((fp = fopen("output","a")) == NULL)
+	if ((fp = fopen("output.csv","a")) == NULL)
 	{
-  		printf("Cant open \"output\" file\n");
+  		printf("Cant open \"output.csv\" file\n");
   		exit(1);
 	}
 
-	dataPtr = &final.Fx;
-
-	for (count = 0; count < 3; count++)
-	{
-		fprintf(fp, "%f\n", *dataPtr);
-    	dataPtr++;
-	}
-	fprintf(fp, "\n");
+	fprintf(fp, "%f,%f,%f,%f,%f,%f,%f\n", 
+			*timeStamp,
+			final.Fx, final.Fy, final.Fz,
+			final.Tx, final.Ty, final.Tz);
 
 	fclose(fp);
 	return 0;
