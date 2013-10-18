@@ -17,4 +17,4 @@ All code was wtitten in clear C99.
 All embedded code was compiled and debugged in Keil uVision.  
 All pc code was compilled by gcc-4.8.1 and debugged in native linux environment.  
 
-**Manual of integrating calc module whith medical robotic arm control system is in /pc/manual**
+**Manual of integrating calc module whith medical robotic arm control system in Russian is in /pc/manual.txt**
