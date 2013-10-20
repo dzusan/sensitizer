@@ -6,5 +6,4 @@ pc/calc/*.o
 pc/calc/*.csv
 pc/context/*.csv
 pc/converter/*.csv
-pc/toolkit/*.csv
 .fuse*

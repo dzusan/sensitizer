@@ -28,7 +28,7 @@ int main(void)
 
 	currentConst = ContextRead();
 
-	for(count = 0; count < 37000; count++)
+	for(count = 0; count < 37000; count++)/*37000 for large record sample*/
 	{
 		currentReading = StreamRead(&filePosition, &timeStamp);
 		currentOutput = Calc(currentConst, currentReading);
